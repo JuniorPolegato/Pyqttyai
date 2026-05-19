@@ -1,0 +1,4 @@
+FROM qwen3-vl:32b
+PARAMETER num_thread 4
+PARAMETER num_ctx 8192    # 🎯 Drop from 256K → 8K, saves several GB
+PARAMETER num_gpu 0       # 💻 Pure CPU

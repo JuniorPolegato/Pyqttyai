@@ -1,0 +1,1012 @@
+! ==========================================
+! R1 (ASN 3030)
+! ==========================================
+hostname R1
+no cdp run
+ipv6 unicast-routing
+
+interface Loopback0
+ ip address 192.168.30.1 255.255.255.255
+!
+interface Ethernet0/0
+ ip address 31.31.31.1 255.255.255.252
+ ipv6 address 31:31:31::1/64
+ ipv6 ospf 1 area 0
+!
+interface Ethernet0/1
+ ip address 31.31.31.5 255.255.255.252
+ ipv6 address 31:31:31::5/64
+ ipv6 ospf 1 area 0
+!
+ipv6 router ospf 1
+ router-id 192.168.30.1
+!
+router bgp 3030
+ bgp router-id 192.168.30.1
+ neighbor 192.168.30.2 remote-as 3030
+  update-source Loopback0
+  next-hop-self
+ !
+ neighbor 192.168.30.3 remote-as 3030
+  update-source Loopback0
+  next-hop-self
+ !
+ address-family ipv4 unicast
+  neighbor 192.168.30.2 activate
+  neighbor 192.168.30.3 activate
+ !
+ exit-address-family
+!
+
+! ==========================================
+! R2 (ASN 3030)
+! ==========================================
+hostname R2
+no cdp run
+ipv6 unicast-routing
+
+interface Loopback0
+ ip address 192.168.30.2 255.255.255.255
+!
+interface Ethernet0/0
+ ip address 31.31.31.2 255.255.255.252
+ ipv6 address 31:31:31::2/64
+ ipv6 ospf 1 area 0
+!
+interface Ethernet0/1
+ ip address 40.40.40.1 255.255.255.252
+ ipv6 address 40:40:40::1/64
+!
+interface Ethernet0/2
+ ip address 31.31.31.10 255.255.255.252
+ ipv6 address 31:31:31::10/64
+ ipv6 ospf 1 area 0
+!
+ipv6 router ospf 1
+ router-id 192.168.30.2
+!
+router bgp 3030
+ bgp router-id 192.168.30.2
+ neighbor 192.168.30.1 remote-as 3030
+  update-source Loopback0
+  next-hop-self
+ !
+ neighbor 192.168.30.3 remote-as 3030
+  update-source Loopback0
+  next-hop-self
+ !
+ neighbor 192.168.11.4 remote-as 1111
+  update-source Loopback0
+  next-hop-self
+  ebgp-multihop 2
+ !
+ address-family ipv4 unicast
+  neighbor 192.168.30.1 activate
+  neighbor 192.168.30.3 activate
+  neighbor 192.168.11.4 activate
+ !
+ exit-address-family
+!
+
+! ==========================================
+! R3 (ASN 3030)
+! ==========================================
+hostname R3
+no cdp run
+ipv6 unicast-routing
+
+interface Loopback0
+ ip address 192.168.30.3 255.255.255.255
+!
+interface Ethernet0/0
+ ip address 31.31.31.6 255.255.255.252
+ ipv6 address 31:31:31::6/64
+ ipv6 ospf 1 area 0
+!
+interface Ethernet0/1
+ ip address 90.90.90.1 255.255.255.252
+ ipv6 address 90:90:90::1/64
+!
+interface Ethernet0/2
+ ip address 100.100.100.1 255.255.255.252
+ ipv6 address 100:100:100::1/64
+!
+interface Ethernet0/3
+ ip address 31.31.31.9 255.255.255.252
+ ipv6 address 31:31:31::9/64
+ ipv6 ospf 1 area 0
+!
+ipv6 router ospf 1
+ router-id 192.168.30.3
+!
+router bgp 3030
+ bgp router-id 192.168.30.3
+ neighbor 192.168.30.1 remote-as 3030
+  update-source Loopback0
+  next-hop-self
+ !
+ neighbor 192.168.30.2 remote-as 3030
+  update-source Loopback0
+  next-hop-self
+ !
+ neighbor 192.168.13.8 remote-as 1313
+  update-source Loopback0
+  next-hop-self
+  ebgp-multihop 2
+ !
+ neighbor 192.168.14.19 remote-as 1414
+  update-source Loopback0
+  next-hop-self
+  ebgp-multihop 2
+ !
+ address-family ipv4 unicast
+  neighbor 192.168.30.1 activate
+  neighbor 192.168.30.2 activate
+  neighbor 192.168.13.8 activate
+  neighbor 192.168.14.19 activate
+ !
+ exit-address-family
+!
+
+! ==========================================
+! R4 (ASN 1111)
+! ==========================================
+hostname R4
+no cdp run
+ipv6 unicast-routing
+
+interface Loopback0
+ ip address 192.168.11.4 255.255.255.255
+!
+interface Ethernet0/0
+ ip address 50.50.50.1 255.255.255.252
+ ipv6 address 50:50:50::1/64
+!
+interface Ethernet0/1
+ ip address 40.40.40.2 255.255.255.252
+ ipv6 address 40:40:40::2/64
+!
+ip route 0.0.0.0 0.0.0.0 50.50.50.2
+ip route 0.0.0.0 0.0.0.0 40.40.40.1
+!
+router bgp 1111
+ bgp router-id 192.168.11.4
+ neighbor 192.168.12.5 remote-as 1212
+  update-source Loopback0
+  next-hop-self
+  ebgp-multihop 2
+ !
+ neighbor 192.168.30.2 remote-as 3030
+  update-source Loopback0
+  next-hop-self
+  ebgp-multihop 2
+ !
+ address-family ipv4 unicast
+  neighbor 192.168.12.5 activate
+  neighbor 192.168.30.2 activate
+ !
+ exit-address-family
+!
+
+! ==========================================
+! R5 (ASN 1212)
+! ==========================================
+hostname R5
+no cdp run
+ipv6 unicast-routing
+
+interface Loopback0
+ ip address 192.168.12.5 255.255.255.255
+!
+interface Ethernet0/0
+ ip address 50.50.50.2 255.255.255.252
+ ipv6 address 50:50:50::2/64
+!
+interface Ethernet0/1
+ ip address 60.60.60.1 255.255.255.252
+ ipv6 address 60:60:60::1/64
+!
+ip route 0.0.0.0 0.0.0.0 50.50.50.1
+ip route 0.0.0.0 0.0.0.0 60.60.60.2
+!
+router bgp 1212
+ bgp router-id 192.168.12.5
+ neighbor 192.168.11.4 remote-as 1111
+  update-source Loopback0
+  next-hop-self
+  ebgp-multihop 2
+ !
+ neighbor 192.168.20.9 remote-as 2020
+  update-source Loopback0
+  next-hop-self
+  ebgp-multihop 2
+ !
+ address-family ipv4 unicast
+  neighbor 192.168.11.4 activate
+  neighbor 192.168.20.9 activate
+ !
+ exit-address-family
+!
+
+! ==========================================
+! R6 (ASN 1313)
+! ==========================================
+hostname R6
+no cdp run
+ipv6 unicast-routing
+
+interface Loopback0
+ ip address 192.168.13.6 255.255.255.255
+!
+interface Ethernet0/0
+ ip address 13.14.14.1 255.255.255.252
+ ipv6 address 13:14:14::1/64
+!
+ip route 0.0.0.0 0.0.0.0 13.14.14.2
+!
+router bgp 1313
+ bgp router-id 192.168.13.6
+ neighbor 192.168.13.7 remote-as 1313
+  update-source Loopback0
+  next-hop-self
+ !
+ neighbor 192.168.13.8 remote-as 1313
+  update-source Loopback0
+  next-hop-self
+ !
+ address-family ipv4 unicast
+  neighbor 192.168.13.7 activate
+  neighbor 192.168.13.8 activate
+ !
+ exit-address-family
+!
+
+! ==========================================
+! R7 (ASN 1313)
+! ==========================================
+hostname R7
+no cdp run
+ipv6 unicast-routing
+
+interface Loopback0
+ ip address 192.168.13.7 255.255.255.255
+!
+interface Ethernet0/0
+ ip address 13.14.14.2 255.255.255.252
+ ipv6 address 13:14:14::2/64
+!
+interface Ethernet0/1
+ ip address 13.15.15.1 255.255.255.252
+ ipv6 address 13:15:15::1/64
+!
+ip route 0.0.0.0 0.0.0.0 13.14.14.1
+ip route 0.0.0.0 0.0.0.0 13.15.15.2
+!
+router bgp 1313
+ bgp router-id 192.168.13.7
+ neighbor 192.168.13.6 remote-as 1313
+  update-source Loopback0
+  next-hop-self
+ !
+ neighbor 192.168.13.8 remote-as 1313
+  update-source Loopback0
+  next-hop-self
+ !
+ address-family ipv4 unicast
+  neighbor 192.168.13.6 activate
+  neighbor 192.168.13.8 activate
+ !
+ exit-address-family
+!
+
+! ==========================================
+! R8 (ASN 1313)
+! ==========================================
+hostname R8
+no cdp run
+ipv6 unicast-routing
+
+interface Loopback0
+ ip address 192.168.13.8 255.255.255.255
+!
+interface Ethernet0/0
+ ip address 13.15.15.2 255.255.255.252
+ ipv6 address 13:15:15::2/64
+!
+interface Ethernet0/1
+ ip address 90.90.90.2 255.255.255.252
+ ipv6 address 90:90:90::2/64
+!
+interface Ethernet0/2
+ ip address 70.70.70.1 255.255.255.252
+ ipv6 address 70:70:70::1/64
+!
+interface Ethernet0/3
+ ip address 80.80.80.1 255.255.255.252
+ ipv6 address 80:80:80::1/64
+!
+ip route 0.0.0.0 0.0.0.0 13.15.15.1
+ip route 0.0.0.0 0.0.0.0 90.90.90.1
+ip route 0.0.0.0 0.0.0.0 70.70.70.2
+ip route 0.0.0.0 0.0.0.0 80.80.80.2
+!
+router bgp 1313
+ bgp router-id 192.168.13.8
+ neighbor 192.168.13.6 remote-as 1313
+  update-source Loopback0
+  next-hop-self
+ !
+ neighbor 192.168.13.7 remote-as 1313
+  update-source Loopback0
+  next-hop-self
+ !
+ neighbor 192.168.30.3 remote-as 3030
+  update-source Loopback0
+  next-hop-self
+  ebgp-multihop 2
+ !
+ neighbor 192.168.20.11 remote-as 2020
+  update-source Loopback0
+  next-hop-self
+  ebgp-multihop 2
+ !
+ neighbor 192.168.18.14 remote-as 1818
+  update-source Loopback0
+  next-hop-self
+  ebgp-multihop 2
+ !
+ address-family ipv4 unicast
+  neighbor 192.168.13.6 activate
+  neighbor 192.168.13.7 activate
+  neighbor 192.168.30.3 activate
+  neighbor 192.168.20.11 activate
+  neighbor 192.168.18.14 activate
+ !
+ exit-address-family
+!
+
+! ==========================================
+! R9 (ASN 2020)
+! ==========================================
+hostname R9
+no cdp run
+ipv6 unicast-routing
+
+interface Loopback0
+ ip address 192.168.20.9 255.255.255.255
+!
+interface Loopback1
+ ip address 10.10.10.1 255.255.255.255
+!
+interface Ethernet0/0
+ ip address 60.60.60.2 255.255.255.252
+ ipv6 address 60:60:60::2/64
+!
+interface Ethernet0/1
+ ip address 21.21.21.2 255.255.255.252
+ ipv6 address 21:21:21::2/64
+!
+interface Ethernet0/2
+ ip address 21.21.21.17 255.255.255.252
+ ipv6 address 21:21:21::17/64
+!
+router eigrp LAB
+ address-family ipv4 unicast autonomous-system 100
+  network 10.10.10.1 0.0.0.0
+  network 21.21.21.0 0.0.0.3
+  network 21.21.21.16 0.0.0.3
+  eigrp router-id 192.168.20.9
+ !
+ exit-address-family
+!
+router bgp 2020
+ bgp router-id 192.168.20.9
+ neighbor 192.168.20.10 remote-as 2020
+  update-source Loopback0
+  next-hop-self
+ !
+ neighbor 192.168.20.11 remote-as 2020
+  update-source Loopback0
+  next-hop-self
+ !
+ neighbor 192.168.20.12 remote-as 2020
+  update-source Loopback0
+  next-hop-self
+ !
+ neighbor 192.168.20.13 remote-as 2020
+  update-source Loopback0
+  next-hop-self
+ !
+ neighbor 192.168.12.5 remote-as 1212
+  update-source Loopback0
+  next-hop-self
+  ebgp-multihop 2
+ !
+ address-family ipv4 unicast
+  neighbor 192.168.20.10 activate
+  neighbor 192.168.20.11 activate
+  neighbor 192.168.20.12 activate
+  neighbor 192.168.20.13 activate
+  neighbor 192.168.12.5 activate
+ !
+ exit-address-family
+!
+
+! ==========================================
+! R10 (ASN 2020)
+! ==========================================
+hostname R10
+no cdp run
+ipv6 unicast-routing
+
+interface Loopback0
+ ip address 192.168.20.10 255.255.255.255
+!
+interface Loopback1
+ ip address 10.10.10.2 255.255.255.255
+!
+interface Ethernet0/0
+ ip address 21.21.21.1 255.255.255.252
+ ipv6 address 21:21:21::1/64
+!
+interface Ethernet0/1
+ ip address 21.21.21.5 255.255.255.252
+ ipv6 address 21:21:21::5/64
+!
+interface Ethernet0/2
+ ip address 21.21.21.13 255.255.255.252
+ ipv6 address 21:21:21::13/64
+!
+interface Ethernet0/3
+ ip address 21.21.21.9 255.255.255.252
+ ipv6 address 21:21:21::9/64
+!
+router eigrp LAB
+ address-family ipv4 unicast autonomous-system 100
+  network 10.10.10.2 0.0.0.0
+  network 21.21.21.0 0.0.0.3
+  network 21.21.21.4 0.0.0.3
+  network 21.21.21.12 0.0.0.3
+  network 21.21.21.8 0.0.0.3
+  eigrp router-id 192.168.20.10
+ !
+ exit-address-family
+!
+router bgp 2020
+ bgp router-id 192.168.20.10
+ neighbor 192.168.20.9 remote-as 2020
+  update-source Loopback0
+  next-hop-self
+ !
+ neighbor 192.168.20.11 remote-as 2020
+  update-source Loopback0
+  next-hop-self
+ !
+ neighbor 192.168.20.12 remote-as 2020
+  update-source Loopback0
+  next-hop-self
+ !
+ neighbor 192.168.20.13 remote-as 2020
+  update-source Loopback0
+  next-hop-self
+ !
+ address-family ipv4 unicast
+  neighbor 192.168.20.9 activate
+  neighbor 192.168.20.11 activate
+  neighbor 192.168.20.12 activate
+  neighbor 192.168.20.13 activate
+ !
+ exit-address-family
+!
+
+! ==========================================
+! R11 (ASN 2020)
+! ==========================================
+hostname R11
+no cdp run
+ipv6 unicast-routing
+
+interface Loopback0
+ ip address 192.168.20.11 255.255.255.255
+!
+interface Loopback1
+ ip address 10.10.10.3 255.255.255.255
+!
+interface Ethernet0/0
+ ip address 70.70.70.2 255.255.255.252
+ ipv6 address 70:70:70::2/64
+!
+interface Ethernet0/1
+ ip address 21.21.21.6 255.255.255.252
+ ipv6 address 21:21:21::6/64
+!
+interface Ethernet0/2
+ ip address 21.21.21.21 255.255.255.252
+ ipv6 address 21:21:21::21/64
+!
+router eigrp LAB
+ address-family ipv4 unicast autonomous-system 100
+  network 10.10.10.3 0.0.0.0
+  network 70.70.70.0 0.0.0.3
+  network 21.21.21.4 0.0.0.3
+  network 21.21.21.20 0.0.0.3
+  eigrp router-id 192.168.20.11
+ !
+ exit-address-family
+!
+router bgp 2020
+ bgp router-id 192.168.20.11
+ neighbor 192.168.20.9 remote-as 2020
+  update-source Loopback0
+  next-hop-self
+ !
+ neighbor 192.168.20.10 remote-as 2020
+  update-source Loopback0
+  next-hop-self
+ !
+ neighbor 192.168.20.12 remote-as 2020
+  update-source Loopback0
+  next-hop-self
+ !
+ neighbor 192.168.20.13 remote-as 2020
+  update-source Loopback0
+  next-hop-self
+ !
+ neighbor 192.168.13.8 remote-as 1313
+  update-source Loopback0
+  next-hop-self
+  ebgp-multihop 2
+ !
+ address-family ipv4 unicast
+  neighbor 192.168.20.9 activate
+  neighbor 192.168.20.10 activate
+  neighbor 192.168.20.12 activate
+  neighbor 192.168.20.13 activate
+  neighbor 192.168.13.8 activate
+ !
+ exit-address-family
+!
+
+! ==========================================
+! R12 (ASN 2020) - ROUTE REFLECTOR
+! ==========================================
+hostname R12
+no cdp run
+ipv6 unicast-routing
+
+interface Loopback0
+ ip address 192.168.20.12 255.255.255.255
+!
+interface Loopback1
+ ip address 10.10.10.4 255.255.255.255
+!
+interface Ethernet0/0
+ ip address 21.21.21.14 255.255.255.252
+ ipv6 address 21:21:21::14/64
+!
+interface Ethernet0/1
+ ip address 21.21.21.18 255.255.255.252
+ ipv6 address 21:21:21::18/64
+!
+router eigrp LAB
+ address-family ipv4 unicast autonomous-system 100
+  network 10.10.10.4 0.0.0.0
+  network 21.21.21.12 0.0.0.3
+  network 21.21.21.16 0.0.0.3
+  eigrp router-id 192.168.20.12
+ !
+ exit-address-family
+!
+router bgp 2020
+ bgp router-id 192.168.20.12
+ neighbor 192.168.20.9 remote-as 2020
+  update-source Loopback0
+  next-hop-self
+  route-reflector-client
+ !
+ neighbor 192.168.20.10 remote-as 2020
+  update-source Loopback0
+  next-hop-self
+  route-reflector-client
+ !
+ neighbor 192.168.20.11 remote-as 2020
+  update-source Loopback0
+  next-hop-self
+  route-reflector-client
+ !
+ neighbor 192.168.20.13 remote-as 2020
+  update-source Loopback0
+  next-hop-self
+  route-reflector-client
+ !
+ address-family ipv4 unicast
+  neighbor 192.168.20.9 activate
+  neighbor 192.168.20.10 activate
+  neighbor 192.168.20.11 activate
+  neighbor 192.168.20.13 activate
+ !
+ exit-address-family
+!
+
+! ==========================================
+! R13 (ASN 2020) - ROUTE REFLECTOR
+! ==========================================
+hostname R13
+no cdp run
+ipv6 unicast-routing
+
+interface Loopback0
+ ip address 192.168.20.13 255.255.255.255
+!
+interface Loopback1
+ ip address 10.10.10.5 255.255.255.255
+!
+interface Ethernet0/0
+ ip address 21.21.21.22 255.255.255.252
+ ipv6 address 21:21:21::22/64
+!
+interface Ethernet0/1
+ ip address 21.21.21.10 255.255.255.252
+ ipv6 address 21:21:21::10/64
+!
+router eigrp LAB
+ address-family ipv4 unicast autonomous-system 100
+  network 10.10.10.5 0.0.0.0
+  network 21.21.21.20 0.0.0.3
+  network 21.21.21.8 0.0.0.3
+  eigrp router-id 192.168.20.13
+ !
+ exit-address-family
+!
+router bgp 2020
+ bgp router-id 192.168.20.13
+ neighbor 192.168.20.9 remote-as 2020
+  update-source Loopback0
+  next-hop-self
+  route-reflector-client
+ !
+ neighbor 192.168.20.10 remote-as 2020
+  update-source Loopback0
+  next-hop-self
+  route-reflector-client
+ !
+ neighbor 192.168.20.11 remote-as 2020
+  update-source Loopback0
+  next-hop-self
+  route-reflector-client
+ !
+ neighbor 192.168.20.12 remote-as 2020
+  update-source Loopback0
+  next-hop-self
+  route-reflector-client
+ !
+ address-family ipv4 unicast
+  neighbor 192.168.20.9 activate
+  neighbor 192.168.20.10 activate
+  neighbor 192.168.20.11 activate
+  neighbor 192.168.20.12 activate
+ !
+ exit-address-family
+!
+
+! ==========================================
+! R14 (ASN 1818)
+! ==========================================
+hostname R14
+no cdp run
+ipv6 unicast-routing
+
+interface Loopback0
+ ip address 192.168.18.14 255.255.255.255
+!
+interface Ethernet0/0
+ ip address 18.20.20.1 255.255.255.252
+ ipv6 address 18:20:20::1/64
+!
+interface Ethernet0/1
+ ip address 80.80.80.2 255.255.255.252
+ ipv6 address 80:80:80::2/64
+!
+interface Ethernet0/2
+ ip address 140.140.140.2 255.255.255.252
+ ipv6 address 140:140:140::2/64
+!
+ip route 0.0.0.0 0.0.0.0 18.20.20.2
+ip route 0.0.0.0 0.0.0.0 80.80.80.1
+ip route 0.0.0.0 0.0.0.0 140.140.140.1
+!
+router bgp 1818
+ bgp router-id 192.168.18.14
+ neighbor 192.168.18.15 remote-as 1818
+  update-source Loopback0
+  next-hop-self
+ !
+ neighbor 192.168.13.8 remote-as 1313
+  update-source Loopback0
+  next-hop-self
+  ebgp-multihop 2
+ !
+ neighbor 192.168.16.17 remote-as 1616
+  update-source Loopback0
+  next-hop-self
+  ebgp-multihop 2
+ !
+ address-family ipv4 unicast
+  neighbor 192.168.18.15 activate
+  neighbor 192.168.13.8 activate
+  neighbor 192.168.16.17 activate
+ !
+ exit-address-family
+!
+
+! ==========================================
+! R15 (ASN 1818)
+! ==========================================
+hostname R15
+no cdp run
+ipv6 unicast-routing
+
+interface Loopback0
+ ip address 192.168.18.15 255.255.255.255
+!
+interface Ethernet0/0
+ ip address 18.20.20.2 255.255.255.252
+ ipv6 address 18:20:20::2/64
+!
+interface Ethernet0/1
+ ip address 150.150.150.1 255.255.255.252
+ ipv6 address 150:150:150::1/64
+!
+ip route 0.0.0.0 0.0.0.0 18.20.20.1
+ip route 0.0.0.0 0.0.0.0 150.150.150.2
+!
+router bgp 1818
+ bgp router-id 192.168.18.15
+ neighbor 192.168.18.14 remote-as 1818
+  update-source Loopback0
+  next-hop-self
+ !
+ neighbor 192.168.19.16 remote-as 1919
+  update-source Loopback0
+  next-hop-self
+  ebgp-multihop 2
+ !
+ address-family ipv4 unicast
+  neighbor 192.168.18.14 activate
+  neighbor 192.168.19.16 activate
+ !
+ exit-address-family
+!
+
+! ==========================================
+! R16 (ASN 1919)
+! ==========================================
+hostname R16
+no cdp run
+ipv6 unicast-routing
+
+interface Loopback0
+ ip address 192.168.19.16 255.255.255.255
+!
+interface Ethernet0/0
+ ip address 160.160.160.2 255.255.255.252
+ ipv6 address 160:160:160::2/64
+!
+interface Ethernet0/1
+ ip address 150.150.150.2 255.255.255.252
+ ipv6 address 150:150:150::2/64
+!
+ip route 0.0.0.0 0.0.0.0 160.160.160.1
+ip route 0.0.0.0 0.0.0.0 150.150.150.1
+!
+router bgp 1919
+ bgp router-id 192.168.19.16
+ neighbor 192.168.17.18 remote-as 1717
+  update-source Loopback0
+  next-hop-self
+  ebgp-multihop 2
+ !
+ neighbor 192.168.18.15 remote-as 1818
+  update-source Loopback0
+  next-hop-self
+  ebgp-multihop 2
+ !
+ address-family ipv4 unicast
+  neighbor 192.168.17.18 activate
+  neighbor 192.168.18.15 activate
+ !
+ exit-address-family
+!
+
+! ==========================================
+! R17 (ASN 1616)
+! ==========================================
+hostname R17
+no cdp run
+ipv6 unicast-routing
+
+interface Loopback0
+ ip address 192.168.16.17 255.255.255.255
+!
+interface Ethernet0/0
+ ip address 120.120.120.2 255.255.255.252
+ ipv6 address 120:120:120::2/64
+!
+interface Ethernet0/1
+ ip address 140.140.140.1 255.255.255.252
+ ipv6 address 140:140:140::1/64
+!
+interface Ethernet0/2
+ ip address 130.130.130.1 255.255.255.252
+ ipv6 address 130:130:130::1/64
+!
+ip route 0.0.0.0 0.0.0.0 120.120.120.1
+ip route 0.0.0.0 0.0.0.0 140.140.140.2
+ip route 0.0.0.0 0.0.0.0 130.130.130.2
+!
+router bgp 1616
+ bgp router-id 192.168.16.17
+ neighbor 192.168.14.19 remote-as 1414
+  update-source Loopback0
+  next-hop-self
+  ebgp-multihop 2
+ !
+ neighbor 192.168.18.14 remote-as 1818
+  update-source Loopback0
+  next-hop-self
+  ebgp-multihop 2
+ !
+ neighbor 192.168.17.18 remote-as 1717
+  update-source Loopback0
+  next-hop-self
+  ebgp-multihop 2
+ !
+ address-family ipv4 unicast
+  neighbor 192.168.14.19 activate
+  neighbor 192.168.18.14 activate
+  neighbor 192.168.17.18 activate
+ !
+ exit-address-family
+!
+
+! ==========================================
+! R18 (ASN 1717)
+! ==========================================
+hostname R18
+no cdp run
+ipv6 unicast-routing
+
+interface Loopback0
+ ip address 192.168.17.18 255.255.255.255
+!
+interface Ethernet0/0
+ ip address 170.170.170.2 255.255.255.252
+ ipv6 address 170:170:170::2/64
+!
+interface Ethernet0/1
+ ip address 160.160.160.1 255.255.255.252
+ ipv6 address 160:160:160::1/64
+!
+interface Ethernet0/2
+ ip address 130.130.130.2 255.255.255.252
+ ipv6 address 130:130:130::2/64
+!
+ip route 0.0.0.0 0.0.0.0 170.170.170.1
+ip route 0.0.0.0 0.0.0.0 160.160.160.2
+ip route 0.0.0.0 0.0.0.0 130.130.130.1
+!
+router bgp 1717
+ bgp router-id 192.168.17.18
+ neighbor 192.168.15.20 remote-as 1515
+  update-source Loopback0
+  next-hop-self
+  ebgp-multihop 2
+ !
+ neighbor 192.168.19.16 remote-as 1919
+  update-source Loopback0
+  next-hop-self
+  ebgp-multihop 2
+ !
+ neighbor 192.168.16.17 remote-as 1616
+  update-source Loopback0
+  next-hop-self
+  ebgp-multihop 2
+ !
+ address-family ipv4 unicast
+  neighbor 192.168.15.20 activate
+  neighbor 192.168.19.16 activate
+  neighbor 192.168.16.17 activate
+ !
+ exit-address-family
+!
+
+! ==========================================
+! R19 (ASN 1414)
+! ==========================================
+hostname R19
+no cdp run
+ipv6 unicast-routing
+
+interface Loopback0
+ ip address 192.168.14.19 255.255.255.255
+!
+interface Ethernet0/0
+ ip address 100.100.100.2 255.255.255.252
+ ipv6 address 100:100:100::2/64
+!
+interface Ethernet0/1
+ ip address 110.110.110.1 255.255.255.252
+ ipv6 address 110:110:110::1/64
+!
+interface Ethernet0/2
+ ip address 120.120.120.1 255.255.255.252
+ ipv6 address 120:120:120::1/64
+!
+ip route 0.0.0.0 0.0.0.0 100.100.100.1
+ip route 0.0.0.0 0.0.0.0 110.110.110.2
+ip route 0.0.0.0 0.0.0.0 120.120.120.2
+!
+router bgp 1414
+ bgp router-id 192.168.14.19
+ neighbor 192.168.30.3 remote-as 3030
+  update-source Loopback0
+  next-hop-self
+  ebgp-multihop 2
+ !
+ neighbor 192.168.15.20 remote-as 1515
+  update-source Loopback0
+  next-hop-self
+  ebgp-multihop 2
+ !
+ neighbor 192.168.16.17 remote-as 1616
+  update-source Loopback0
+  next-hop-self
+  ebgp-multihop 2
+ !
+ address-family ipv4 unicast
+  neighbor 192.168.30.3 activate
+  neighbor 192.168.15.20 activate
+  neighbor 192.168.16.17 activate
+ !
+ exit-address-family
+!
+
+! ==========================================
+! R20 (ASN 1515)
+! ==========================================
+hostname R20
+no cdp run
+ipv6 unicast-routing
+
+interface Loopback0
+ ip address 192.168.15.20 255.255.255.255
+!
+interface Ethernet0/0
+ ip address 110.110.110.2 255.255.255.252
+ ipv6 address 110:110:110::2/64
+!
+interface Ethernet0/1
+ ip address 170.170.170.1 255.255.255.252
+ ipv6 address 170:170:170::1/64
+!
+ip route 0.0.0.0 0.0.0.0 110.110.110.1
+ip route 0.0.0.0 0.0.0.0 170.170.170.2
+!
+router bgp 1515
+ bgp router-id 192.168.15.20
+ neighbor 192.168.14.19 remote-as 1414
+  update-source Loopback0
+  next-hop-self
+  ebgp-multihop 2
+ !
+ neighbor 192.168.17.18 remote-as 1717
+  update-source Loopback0
+  next-hop-self
+  ebgp-multihop 2
+ !
+ address-family ipv4 unicast
+  neighbor 192.168.14.19 activate
+  neighbor 192.168.17.18 activate
+ !
+ exit-address-family
+!

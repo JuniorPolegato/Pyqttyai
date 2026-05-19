@@ -1,0 +1,11 @@
+PyQt6>=6.5                  # GUI
+paramiko>=3.3               # ssh/telnet
+requests>=2.0               # EVE-NG
+pyinstaller>=6.0            # Windows
+platformdirs>=4.0           # configs
+faster-whisper>=1.2         # STT - local
+openvino_genai>=2026.1.0.0  # SST - openVINO via repository Hugging Face
+groq>=0.11                  # STT - Groq
+openai>=2.3                 # STT - multi-cloud via OpenAI API
+#optimum[openvino]>=2.1      # STT - openVINO ~ 2.5 GB
+#librosa>=0.11               # STT - openVINO audiio adaptor

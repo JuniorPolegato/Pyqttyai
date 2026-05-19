@@ -1,0 +1,61 @@
+# 🎬 Protected demo videos (large binaries — host on YouTube instead)
+#Protected_Pyqttyai_v*.mp4
+#*.mp4
+*.m4a
+*.mp3
+*.wav
+
+# 🔑 Local secrets
+.env
+.env.local
+*.key
+api_keys.json
+
+# 🐍 Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+*.egg-info/
+*.egg
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+venv/
+.venv/
+env/
+
+# 💾 Whisper model cache (multi-GB, downloadable on demand)
+whisper_models/
+models/
+versions/
+*.bin
+*.safetensors
+
+# 🗺️ User workspaces (personal — users create their own)
+#workspaces/
+#*.workspace.json
+
+# 🛠️ IDE
+.vscode/
+.idea/
+*.swp
+*~
+
+# 🖥️ OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# 🔧 Tooling artifacts
+#diff_meld
+#ffmpeg_command.txt
+#versioning
+*.log
