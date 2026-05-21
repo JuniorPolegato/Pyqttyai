@@ -1,7 +1,11 @@
-"""✂️ Silero VAD pre-trimming for cleaner Whisper input.
+"""✂️ Silero VAD pre-trimming for cleaner Whisper input — provider-agnostic.
 
 Inspired by Claudio's benchmark showing 3× speedup + better accuracy
 when silence/noise is removed before transcription.
+
+CRITICAL: Whisper hallucinates on non-speech audio. VAD pre-trim
+eliminates silence, coughs, doorbells, music, etc. before they
+reach the model, dramatically reducing "ghost text" output.
 """
 
 import wave
@@ -11,16 +15,14 @@ from typing import Optional
 
 # 🪶 Lazy-imported Silero VAD from faster_whisper assets
 _VAD_FN = None
-_VAD_OPTIONS_CLS = None
 
 
 def _ensure_vad_loaded():
-    """🔌 Lazy-load Silero VAD from faster_whisper assets."""
-    global _VAD_FN, _VAD_OPTIONS_CLS
+    """🔌 Lazy-load standalone Silero VAD."""
+    global _VAD_FN
     if _VAD_FN is None:
-        from faster_whisper.vad import get_speech_timestamps, VadOptions
+        from pyqttyai.audio.silero_vad import get_speech_timestamps
         _VAD_FN = get_speech_timestamps
-        _VAD_OPTIONS_CLS = VadOptions
 
 
 def vad_trim(
@@ -69,13 +71,13 @@ def vad_trim(
     audio_np = np.frombuffer(audio_bytes, dtype=np.int16).astype(np.float32) / 32768.0
     original_duration = len(audio_np) / 16000.0
 
-    # 🎚️ Run VAD
-    options = _VAD_OPTIONS_CLS(
+    # 🎚️ Run VAD (standalone, no VadOptions object needed)
+    timestamps = _VAD_FN(
+        audio_np,
         threshold=threshold,
         speech_pad_ms=speech_pad_ms,
-        min_silence_duration_ms=min_silence_ms,
+        min_silence_ms=min_silence_ms,
     )
-    timestamps = _VAD_FN(audio_np, options)
 
     if not timestamps:
         # 🤐 No speech detected

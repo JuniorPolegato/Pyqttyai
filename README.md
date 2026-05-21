@@ -82,7 +82,7 @@ Pyqttyai/
 ├────────────────────┬─────────────────────────────────────────────────┤
 │                    │ [🟢📡 R1-Core]  [🔴📡 SW1-Access]  [🟢🔒 FW1]   │
 │                    ├─────────────────────────────────────────────────┤
-│                    │ ⚡Connect ✖Disconnect ▶Send Script  Delay:500ms  │
+│                    │ ⚡Connect ✖Disconnect ▶Send Script  Delay:500ms │
 │   🕸️ Topology      │─────────────────────────────────────────────────│
 │      Viewer        │ 📝 Script Editor                                │
 │                    │  1 │ enable                                     │
@@ -105,6 +105,19 @@ Pyqttyai/
 - **Left panel:** topology image viewer (zoom, pan, fit-to-window).
 - **Right panel:** `QTabWidget`, one tab per device.
 - **Each tab:** vertical `QSplitter` → editor on top, TTY on bottom.
+
+---
+
+## 🙏 Special Thanks
+
+A heartfelt thank you to **Thiago G. Figueiredo** for his invaluable contributions to this project:
+
+- 🧪 **EVE-NG Labs** — designed and shared the network topologies used throughout development, demos, and documentation videos.
+- 🖼️ **Topology Images** — provided the visual diagrams that power the image-based device mapping (v0.2) and the multi-vendor lab walkthroughs.
+- 🛠️ **Router Configurations** — authored the per-device scripts (Cisco IOS, routing protocols, BGP/OSPF/EIGRP setups) that became the reference workloads for testing **Send All**, **Send Each**, and the v0.5 NLP rules engine.
+- ✅ **Testing & Validation** — exercised every release across real lab scenarios, surfacing the edge cases that shaped v0.1's protocol handler robustness and v0.4's parallel-execution model.
+
+Without Thiago's labs, configs, and patient teaching and testing, Pyqttyai would still a wish for replace a Putty single-tab terminal. **Obrigado, Thiago!** 🇧🇷🎯
 
 ---
 
@@ -1473,118 +1486,165 @@ default value is what it is. 🧠🎙️🌎
 
 ```
 Pyqttyai/
-├── diff_meld
-├── ffmpeg_command.txt
-├── main.py
-├── Protected_Pyqttyai_v0.1-10fps_hevc.mp4
-├── Protected_Pyqttyai_v0.2_10fps_hevc.mp4
-├── Protected_Pyqttyai_v0.4_10fps_hevc.mp4
+├── diff_meld*
+├── main.py*
 ├── Pyqttyai.bat
-├── Pyqttyai.desktop
-├── Pyqttyai.sh
+├── Pyqttyai.desktop*
+├── Pyqttyai.sh*
 ├── README.md
 ├── requirements_min.txt
 ├── requirements.txt
+├── versioning*
 ├── docs/
-│   ├── benchmark_cloud_providers.md
-│   ├── benchmark_cpu_memory.md
-│   ├── benchmark_local_vs_groq.md
-│   ├── benchmark_ollama_qwen3_6_35b_a3b_cpu.md
-│   ├── benchmark_openvino_repository.md
-│   └── benchmark_optimum_genai.md
+│   ├── benchmark_cloud_providers.md
+│   ├── benchmark_cpu_memory.md
+│   ├── benchmark_local_vs_groq.md
+│   ├── benchmark_ollama_qwen3_6_35b_a3b_cpu.md
+│   ├── benchmark_openvino_repository.md
+│   ├── benchmark_optimum_genai.md
+│   ├── TTS.md
+│   ├── v0.5_editor.md
+│   ├── v0.5_nlp_rules.md
+│   ├── v0.5_whisper_playground.md
+│   └── olllama/
+│       ├── config1.ios
+│       ├── config1.md
+│       ├── Modelfile
+│       ├── Modelfile3b
+│       ├── Modelfile_qwen3.6:35b_cisco
+│       ├── Modelfile_qwen3.6:35b_cisco2
+│       ├── Modelfile_qwen3.6:35b_python
+│       ├── Modelfile_qwen3-vl:2b_4cpu
+│       ├── Modelfile_qwen3-vl:32b_4cpu
+│       ├── ollama.md
+│       ├── topology_eval.md
+│       └── topology_eval_response.md
 ├── images/
-│   ├── btop_openvino.png
-│   ├── LAB_BGP_CCNP_ENARSI_AULA.png
-│   ├── openvino_cpu.png
-│   ├── openvino_gpu.png
-│   ├── phase_breakdown.png
-│   ├── pyqttyai_1024.png
-│   ├── pyqttyai_128.png
-│   ├── pyqttyai_16.png
-│   ├── pyqttyai_24.png
-│   ├── pyqttyai_256.png
-│   ├── pyqttyai_32.png
-│   ├── pyqttyai_48.png
-│   ├── pyqttyai_512.png
-│   ├── pyqttyai_64.png
-│   └── pyqttyai.ico
+│   ├── ai_agentic_1.jpg
+│   ├── ai_agentic_2.jpg
+│   ├── ai_agentic_3.jpg
+│   ├── ai_agentic_4.jpg
+│   ├── ai_agentic_5.jpg
+│   ├── ai_agentic_6.jpg
+│   ├── btop_openvino.png
+│   ├── LAB_BGP_CCNP_ENARSI_AULA.png
+│   ├── openvino_cpu.png
+│   ├── openvino_gpu.png
+│   ├── phase_breakdown.png
+│   ├── pyqttyai_1024.png
+│   ├── pyqttyai_128.png
+│   ├── pyqttyai_16.png
+│   ├── pyqttyai_24.png
+│   ├── pyqttyai_256.png
+│   ├── pyqttyai_32.png
+│   ├── pyqttyai_48.png
+│   ├── pyqttyai_512.png
+│   ├── pyqttyai_64.png
+│   └── pyqttyai.ico
 ├── pyqttyai/
-│   ├── __init__.py
-│   ├── __main__.py
-│   ├── single_instance.py
-│   ├── audio/
-│   │   ├── __init__.py
-│   │   ├── openai_compat_engine.py
-│   │   ├── openvino_engine.py
-│   │   ├── openvino_genai_engine.py
-│   │   ├── recorder.py
-│   │   ├── transcription_service.py
-│   │   ├── transcription_worker_process.py
-│   │   └── vad_preprocessor.py
-│   ├── core/
-│   │   ├── __init__.py
-│   │   ├── device.py
-│   │   ├── paths.py
-│   │   ├── rules_engine.py
-│   │   ├── script_runner.py
-│   │   ├── session.py
-│   │   ├── voice_rules.py
-│   │   ├── whisper_config.py
-│   │   ├── whisper_languages.py
-│   │   └── winreg_protocols.py
-│   └── widgets/
-│       ├── __init__.py
-│       ├── about_dialog.py
-│       ├── ansi_parser.py
-│       ├── api_key_dialog.py
-│       ├── device_tab.py
-│       ├── find_replace_bar.py
-│       ├── main_window.py
-│       ├── mic_vu_button.py
-│       ├── rules_editor_dialog.py
-│       ├── script_editor.py
-│       ├── send_all_dialog.py
-│       ├── shutdown_spinner.py
-│       ├── splash_screen.py
-│       ├── topology_viewer.py
-│       ├── tty_console.py
-│       ├── whisper_download_widget.py
-│       ├── whisper_settings_dialog.py
-│       └── whisper_test_panel.py
+│   ├── __init__.py
+│   ├── __main__.py
+│   ├── single_instance.py
+│   ├── audio/
+│   │   ├── __init__.py
+│   │   ├── openai_compat_engine.py
+│   │   ├── openvino_engine.py
+│   │   ├── openvino_genai_engine.py
+│   │   ├── recorder.py
+│   │   ├── transcription_service.py
+│   │   ├── transcription_worker_process.py
+│   │   └── vad_preprocessor.py
+│   ├── core/
+│   │   ├── __init__.py
+│   │   ├── device.py
+│   │   ├── paths.py
+│   │   ├── rules_engine.py
+│   │   ├── script_runner.py
+│   │   ├── session.py
+│   │   ├── voice_rules.py
+│   │   ├── whisper_config.py
+│   │   ├── whisper_languages.py
+│   │   └── winreg_protocols.py
+│   └── widgets/
+│       ├── __init__.py
+│       ├── about_dialog.py
+│       ├── ansi_parser.py
+│       ├── api_key_dialog.py
+│       ├── device_tab.py
+│       ├── find_replace_bar.py
+│       ├── main_window.py
+│       ├── mic_vu_button.py
+│       ├── rules_editor_dialog.py
+│       ├── script_editor.py
+│       ├── send_all_dialog.py
+│       ├── shutdown_spinner.py
+│       ├── splash_screen.py
+│       ├── topology_viewer.py
+│       ├── tty_console.py
+│       ├── whisper_download_widget.py
+│       ├── whisper_settings_dialog.py
+│       └── whisper_test_panel.py
 ├── pyqttyto/
-│   ├── __init__.py
-│   └── agent.py
+│   ├── __init__.py
+│   └── agent.py
 ├── tests/
-│   ├── __init__.py
-│   ├── repo_hf.py
-│   ├── result_cloud.txt
-│   ├── result_groq_cuda_openvino.txt
-│   ├── result_openvino.txt
-│   ├── results.txt
-│   ├── test_ipv6.py
-│   ├── test_ollama_graph.py
-│   ├── test_openai.py
-│   ├── test_ov_3_quant.py
-│   ├── test_qwen3_moe_int4_ov_2.sh
-│   ├── test_qwen3_moe_int4_ov.py
-│   ├── test_qwen_ov_2.py
-│   ├── test_qwen_ov.py
-│   └── test_recorder_vad_groq.py
+│   ├── __init__.py
+│   ├── repo_hf.py
+│   ├── result_cloud.txt
+│   ├── result_groq_cuda_openvino.txt
+│   ├── result_openvino.txt
+│   ├── results.txt
+│   ├── test_groq_to_srt.py
+│   ├── test_ipv6.py
+│   ├── test_ollama_graph.py
+│   ├── test_openai.py
+│   ├── test_ov_3_quant.py
+│   ├── test_qwen3_moe_int4_ov_2.sh*
+│   ├── test_qwen3_moe_int4_ov.py
+│   ├── test_qwen_ov_2.py
+│   ├── test_qwen_ov.py
+│   ├── test_recorder_vad_groq.py
+│   └── test_word_timestamp_srt.py
 ├── topologies/
-│   ├── ia_coordinates.json
-│   ├── LAB_BGP_CCNP_ENARSI_AULA.json
-│   ├── LAB_BGP_CCNP_ENARSI_AULA.png
-│   ├── LAB_BGP_CCNP_ENARSI_AULA.png.bak
-│   ├── lab_ospf-CCNP_Enarsi.jpg
-│   ├── lab_ospf-CCNP_Enarsi.json
-│   ├── topology.jpg
-│   └── topology.json
+│   ├── ia_coordinates.json
+│   ├── LAB_BGP_CCNP_ENARSI_ADRESS_FAMILY.json
+│   ├── LAB_BGP_CCNP_ENARSI_ADRESS_FAMILY.png
+│   ├── LAB_BGP_CCNP_ENARSI_AULA.json
+│   ├── LAB_BGP_CCNP_ENARSI_AULA.png
+│   ├── lab_ospf-CCNP_Enarsi.jpg
+│   ├── lab_ospf-CCNP_Enarsi.json
+│   ├── topology.jpg
+│   └── topology.json
+├── videos/
+│   ├── ffmpeg_command.txt
+│   ├── group_chunks_for_tts.py
+│   ├── Protected_Pyqttyai_v0.1_10fps_hevc_dubbed.mp4
+│   ├── Protected_Pyqttyai_v0.1_10fps_hevc.mp4
+│   ├── Protected_Pyqttyai_v0.2_10fps_hevc_dubbed.mp4
+│   ├── Protected_Pyqttyai_v0.2_10fps_hevc.mp4
+│   ├── Protected_Pyqttyai_v0.4_10fps_hevc_dubbed.mp4
+│   ├── Protected_Pyqttyai_v0.4_10fps_hevc.mp4
+│   ├── Protected_Pyqttyai_v0.5_10fps_hevc.mp4
+│   ├── v0.1_captions_en-us.sbv
+│   ├── v0.1_captions_en-us_sentences.sbv
+│   ├── v0.1_captions_pt-br.sbv
+│   ├── v0.2_captions_en-us.sbv
+│   ├── v0.2_captions_en-us_sentences.sbv
+│   ├── v0.2_captions_pt-br.sbv
+│   ├── v0.4_captions_en-us.sbv
+│   ├── v0.4_captions_en-us_sentences.sbv
+│   ├── v0.4_captions_pt-br.sbv
+│   ├── v0.5_captions_en-us.sbv
+│   └── v0.5_captions_pt-br.sbv
 └── workspaces/
     ├── LAB_BGP_CCNP_ENARSI_AULA.json
     ├── workspace1.json
     ├── workspace2.json
     ├── workspace3.json
+    ├── Workspace_LAB_BGP_CCNP_ENARSI_ADRESS_FAMILY.json
     └── workspace_win.json
+
+13 directories, 150 files
 ```
 
 ---

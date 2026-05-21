@@ -1,0 +1,3 @@
+#!/bin/bash
+
+diff -rq $@ | sed 's/^Files /meld /;s/ and / /;s/ differ//'

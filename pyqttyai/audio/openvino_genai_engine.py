@@ -68,6 +68,46 @@ _QUANT_SUFFIX = {
 }
 
 
+def _load_wav_mono16k(path: str) -> tuple["np.ndarray", float]:
+    """Load WAV as mono 16 kHz float32 numpy array — stdlib only.
+
+    Our recorder.py already produces this exact format, so no
+    resampling lib (librosa, soundfile, soxr) is required.
+    """
+    import numpy as np
+    import wave
+
+    with wave.open(path, "rb") as wf:
+        n_ch      = wf.getnchannels()
+        sr        = wf.getframerate()
+        sampwidth = wf.getsampwidth()
+        n_frames  = wf.getnframes()
+        raw       = wf.readframes(n_frames)
+
+    if sampwidth != 2:
+        raise ValueError(
+            f"Expected 16-bit PCM WAV, got {sampwidth * 8}-bit. "
+            "Re-record with AudioRecorder (Int16 @ 16 kHz mono)."
+        )
+    if sr != 16000:
+        raise ValueError(
+            f"Expected 16 kHz audio, got {sr} Hz. "
+            "Pre-resample to 16 kHz (librosa was intentionally removed)."
+        )
+
+    pcm = np.frombuffer(raw, dtype=np.int16)
+
+    # 🔀 Stereo → mono (if a foreign file sneaks in)
+    if n_ch == 2:
+        pcm = pcm.reshape(-1, 2).mean(axis=1).astype(np.int16)
+    elif n_ch != 1:
+        raise ValueError(f"Unsupported channel count: {n_ch}")
+
+    audio = pcm.astype(np.float32) / 32768.0
+    duration = n_frames / float(sr)
+    return audio, duration
+
+
 def _resolve_repo_id(
     model: str,
     compute_type: str,
@@ -133,17 +173,15 @@ class OpenVINOGenAIWhisperModel:
         audio_path: str,
         beam_size: int = 5,
         language: str | None = None,
-        vad_filter: bool = False,           # 🚫 ignored — no VAD inside genai
-        initial_prompt: str | None = None,  # 🚫 ignored — not exposed by WhisperPipeline
+        vad_filter: bool = False,
+        initial_prompt: str | None = None,
         **_ignored,
     ):
         """Transcribe one WAV file. Returns `(segments_iter, info)`."""
         import openvino_genai as ov_genai  # 🪶 lazy
-        import librosa                      # 🎵 lazy
 
-        # 🎵 Load mono 16 kHz float32 — required by WhisperPipeline
-        audio, _sr = librosa.load(audio_path, sr=16000, mono=True)
-        duration = float(len(audio)) / 16000.0
+        # 🎵 Load mono 16 kHz float32 — recorder.py already provides this
+        audio, duration = _load_wav_mono16k(audio_path)
 
         # 🧠 Build generation config
         gen_cfg = self._pipeline.get_generation_config()

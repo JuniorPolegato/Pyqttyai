@@ -1,0 +1,229 @@
+{
+  "devices": [
+    {
+      "name": "R1",
+      "host": "10.15.65.50",
+      "port": 32769,
+      "protocol": "telnet",
+      "username": "",
+      "password": "",
+      "description": "EVE-NG: iol",
+      "eve_node_id": "1",
+      "script": "\nenable\nconfigure terminal \nrouter bgp 3030\n bgp router-id 1.1.1.1\n no bgp default ipv4-unicast\n neighbor 192.168.30.2 remote-as 3030\n neighbor 192.168.30.2 update-source loopback 1\n neighbor 192.168.30.3 remote-as 3030\n neighbor 192.168.30.3 update-source loopback 1\n neighbor 192:168:30:2::1 remote-as 3030\n neighbor 192:168:30:2::1 update-source loopback 1\n neighbor 192:168:30:3::1 remote-as 3030\n neighbor 192:168:30:3::1 update-source loopback 1\n address-family ipv4 unicast\n  neighbor 192.168.30.2 activate\n  neighbor 192.168.30.3 activate\n  network 30.30.30.0 mask 255.255.255.0\n address-family ipv6 unicast\n  neighbor 192:168:30:2::1 activate\n  neighbor 192:168:30:3::1 activate\n  network 30:30:30:30::/64\n  "
+    },
+    {
+      "name": "R2",
+      "host": "10.15.65.50",
+      "port": 32770,
+      "protocol": "telnet",
+      "username": "",
+      "password": "",
+      "description": "EVE-NG: iol",
+      "eve_node_id": "2",
+      "script": "\nenable\nconfigure terminal \nrouter bgp 3030\n bgp router-id 2.2.2.2\n no bgp default ipv4-unicast\n neighbor 192.168.30.1 remote-as 3030\n neighbor 192.168.30.1 update-source loopback 1\n neighbor 192.168.30.3 remote-as 3030\n neighbor 192.168.30.3 update-source loopback 1\n neighbor 192:168:30:1::1 remote-as 3030\n neighbor 192:168:30:1::1 update-source loopback 1\n neighbor 192:168:30:3::1 remote-as 3030\n neighbor 192:168:30:3::1 update-source loopback 1\n neighbor 40.40.40.2 remote-as 1111\n neighbor 40:40:40::2 remote-as 1111\n address-family ipv4 unicast\n  neighbor 192.168.30.1 activate\n  neighbor 192.168.30.1 next-hop-self\n  neighbor 192.168.30.3 activate\n  neighbor 192.168.30.3 next-hop-self\n  neighbor 40.40.40.2 activate\n address-family ipv6 unicast\n  neighbor 192:168:30:1::1 activate\n  neighbor 192:168:30:1::1 next-hop-self\n  neighbor 192:168:30:3::1 activate\n  neighbor 192:168:30:3::1 next-hop-self\n  neighbor 40:40:40::2 activate\n  "
+    },
+    {
+      "name": "R3",
+      "host": "10.15.65.50",
+      "port": 32771,
+      "protocol": "telnet",
+      "username": "",
+      "password": "",
+      "description": "EVE-NG: iol",
+      "eve_node_id": "3",
+      "script": "\nenable\nconfigure terminal \nrouter bgp 3030\n bgp router-id 3.3.3.3\n no bgp default ipv4-unicast\n neighbor 192.168.30.1 remote-as 3030\n neighbor 192.168.30.1 update-source loopback 1\n neighbor 192.168.30.2 remote-as 3030\n neighbor 192.168.30.2 update-source loopback 1\n neighbor 192:168:30:1::1 remote-as 3030\n neighbor 192:168:30:1::1 update-source loopback 1\n neighbor 192:168:30:2::1 remote-as 3030\n neighbor 192:168:30:2::1 update-source loopback 1\n neighbor 90.90.90.2 remote-as 1313\n neighbor 100.100.100.2 remote-as 1414\n neighbor 90:90:90::2 remote-as 1313\n neighbor 100:100:100::2 remote-as 1414\n address-family ipv4 unicast\n  neighbor 192.168.30.1 activate\n  neighbor 192.168.30.1 next-hop-self\n  neighbor 192.168.30.2 activate\n  neighbor 192.168.30.2 next-hop-self\n  neighbor 90.90.90.2 activate\n  neighbor 100.100.100.2 activate\n address-family ipv6 unicast\n  neighbor 192:168:30:1::1 activate\n  neighbor 192:168:30:1::1 next-hop-self\n  neighbor 192:168:30:2::1 activate\n  neighbor 192:168:30:2::1 next-hop-self\n  neighbor 90:90:90::2 activate\n  neighbor 100:100:100::2 activate\n"
+    },
+    {
+      "name": "R4",
+      "host": "10.15.65.50",
+      "port": 32772,
+      "protocol": "telnet",
+      "username": "",
+      "password": "",
+      "description": "EVE-NG: iol",
+      "eve_node_id": "4",
+      "script": "\nenable\nconfigure terminal \nrouter bgp 1111\n bgp router-id 4.4.4.4\n no bgp default ipv4-unicast\n neighbor 40.40.40.1 remote-as 3030\n neighbor 50.50.50.2 remote-as 1212\n neighbor 40:40:40::1 remote-as 3030\n neighbor 50:50:50::2 remote-as 1212\n address-family ipv4 unicast\n  neighbor 40.40.40.1 activate\n  neighbor 50.50.50.2 activate\n  network 11.11.11.0 mask 255.255.255.0\n address-family ipv6 unicast\n  neighbor 40:40:40::1 activate\n  neighbor 50:50:50::2 activate\n  network 11:11:11:11::/64\n"
+    },
+    {
+      "name": "R5",
+      "host": "10.15.65.50",
+      "port": 32773,
+      "protocol": "telnet",
+      "username": "",
+      "password": "",
+      "description": "EVE-NG: iol",
+      "eve_node_id": "5",
+      "script": "\nenable\nconfigure terminal \nrouter bgp 1212\n bgp router-id 5.5.5.5\n no bgp default ipv4-unicast\n neighbor 50.50.50.1 remote-as 1111\n neighbor 60.60.60.2 remote-as 2020\n neighbor 50:50:50::1 remote-as 1111\n neighbor 60:60:60::2 remote-as 2020\n address-family ipv4 unicast\n  neighbor 50.50.50.1 activate\n  neighbor 60.60.60.2 activate\n  network 12.12.12.0 mask 255.255.255.0\n address-family ipv6 unicast\n  neighbor 50:50:50::1 activate\n  neighbor 60:60:60::2 activate\n  network 12:12:12:12::/64\n"
+    },
+    {
+      "name": "R6",
+      "host": "10.15.65.50",
+      "port": 32774,
+      "protocol": "telnet",
+      "username": "",
+      "password": "",
+      "description": "EVE-NG: iol",
+      "eve_node_id": "6",
+      "script": "\nenable\nconfigure terminal \nrouter bgp 1313\n bgp router-id 6.6.6.6\n no bgp default ipv4-unicast\n neighbor 172.16.13.7 remote-as 1313\n neighbor 172.16.13.7 update-source loopback 1\n neighbor 172.16.13.8 remote-as 1313\n neighbor 172.16.13.8 update-source loopback 1\n neighbor 172:16:13:7::7 remote-as 1313\n neighbor 172:16:13:7::7 update-source loopback 1\n neighbor 172:16:13:8::8 remote-as 1313\n neighbor 172:16:13:8::8 update-source loopback 1\n address-family ipv4 unicast\n  neighbor 172.16.13.7 activate\n  neighbor 172.16.13.8 activate\n  network 13.13.13.0 mask 255.255.255.0\n address-family ipv6 unicast\n  neighbor 172:16:13:7::7 activate\n  neighbor 172:16:13:8::8 activate\n  network 13:13:13:13::/64\n"
+    },
+    {
+      "name": "R7",
+      "host": "10.15.65.50",
+      "port": 32775,
+      "protocol": "telnet",
+      "username": "",
+      "password": "",
+      "description": "EVE-NG: iol",
+      "eve_node_id": "7",
+      "script": "\nenable\nconfigure terminal \nrouter bgp 1313\n bgp router-id 7.7.7.7\n no bgp default ipv4-unicast\n neighbor 172.16.13.6 remote-as 1313\n neighbor 172.16.13.6 update-source loopback 1\n neighbor 172.16.13.8 remote-as 1313\n neighbor 172.16.13.8 update-source loopback 1\n neighbor 172:16:13:6::6 remote-as 1313\n neighbor 172:16:13:6::6 update-source loopback 1\n neighbor 172:16:13:8::8 remote-as 1313\n neighbor 172:16:13:8::8 update-source loopback 1\n address-family ipv4 unicast\n  neighbor 172.16.13.6 activate\n  neighbor 172.16.13.8 activate\n address-family ipv6 unicast\n  neighbor 172:16:13:6::6 activate\n  neighbor 172:16:13:8::8 activate\n"
+    },
+    {
+      "name": "R8",
+      "host": "10.15.65.50",
+      "port": 32776,
+      "protocol": "telnet",
+      "username": "",
+      "password": "",
+      "description": "EVE-NG: iol",
+      "eve_node_id": "8",
+      "script": "\nenable\nconfigure terminal \nrouter bgp 1313\n bgp router-id 8.8.8.8\n no bgp default ipv4-unicast\n neighbor 70.70.70.2 remote-as 2020\n neighbor 80.80.80.2 remote-as 1818\n neighbor 90.90.90.1 remote-as 3030\n neighbor 70:70:70::2 remote-as 2020\n neighbor 80:80:80::2 remote-as 1818\n neighbor 90:90:90::1 remote-as 3030\n neighbor 172.16.13.6 remote-as 1313\n neighbor 172.16.13.6 update-source loopback 1\n neighbor 172.16.13.7 remote-as 1313\n neighbor 172.16.13.7 update-source loopback 1\n neighbor 172:16:13:6::6 remote-as 1313\n neighbor 172:16:13:6::6 update-source loopback 1\n neighbor 172:16:13:7::7 remote-as 1313\n neighbor 172:16:13:7::7 update-source loopback 1\n address-family ipv4 unicast\n  neighbor 70.70.70.2 activate\n  neighbor 80.80.80.2 activate\n  neighbor 90.90.90.1 activate\n  neighbor 172.16.13.6 activate\n  neighbor 172.16.13.6 next-hop-self\n  neighbor 172.16.13.7 activate\n  neighbor 172.16.13.7 next-hop-self\n address-family ipv6 unicast\n  neighbor 70:70:70::2 activate\n  neighbor 80:80:80::2 activate\n  neighbor 90:90:90::1 activate\n  neighbor 172:16:13:6::6 activate\n  neighbor 172:16:13:6::6 next-hop-self\n  neighbor 172:16:13:7::7 activate\n  neighbor 172:16:13:7::7 next-hop-self\n"
+    },
+    {
+      "name": "R9",
+      "host": "10.15.65.50",
+      "port": 32777,
+      "protocol": "telnet",
+      "username": "",
+      "password": "",
+      "description": "EVE-NG: iol",
+      "eve_node_id": "9",
+      "script": "\nenable\nconfigure terminal \nrouter bgp 2020\n bgp router-id 9.9.9.9\n no bgp default ipv4-unicast\n neighbor 60.60.60.1 remote-as 1212\n neighbor 10.10.10.4 remote-as 2020\n neighbor 10.10.10.4 update-source loopback 1\n neighbor 10.10.10.5 remote-as 2020\n neighbor 10.10.10.5 update-source loopback 1\n neighbor 60:60:60::1 remote-as 1212\n neighbor 10:10:10:4::1 remote-as 2020\n neighbor 10:10:10:4::1 update-source loopback 1\n neighbor 10:10:10:5::1 remote-as 2020\n neighbor 10:10:10:5::1 update-source loopback 1\n address-family ipv4 unicast\n  neighbor 60.60.60.1 activate\n  neighbor 10.10.10.4 activate\n  neighbor 10.10.10.4 next-hop-self\n  neighbor 10.10.10.5 activate\n  neighbor 10.10.10.5 next-hop-self\n address-family ipv6 unicast\n  neighbor 60:60:60::1 activate\n  neighbor 10:10:10:4::1 activate\n  neighbor 10:10:10:4::1 next-hop-self\n  neighbor 10:10:10:5::1 activate\n  neighbor 10:10:10:5::1 next-hop-self\n"
+    },
+    {
+      "name": "R10",
+      "host": "10.15.65.50",
+      "port": 32778,
+      "protocol": "telnet",
+      "username": "",
+      "password": "",
+      "description": "EVE-NG: iol",
+      "eve_node_id": "10",
+      "script": "\nenable\nconfigure terminal \nrouter bgp 2020\n bgp router-id 10.10.10.10\n no bgp default ipv4-unicast\n neighbor 10.10.10.4 remote-as 2020\n neighbor 10.10.10.4 update-source loopback 1\n neighbor 10.10.10.5 remote-as 2020\n neighbor 10.10.10.5 update-source loopback 1\n neighbor 10:10:10:4::1 remote-as 2020\n neighbor 10:10:10:4::1 update-source loopback 1\n neighbor 10:10:10:5::1 remote-as 2020\n neighbor 10:10:10:5::1 update-source loopback 1\n address-family ipv4 unicast\n  neighbor 10.10.10.4 activate\n  neighbor 10.10.10.4 next-hop-self\n  neighbor 10.10.10.5 activate\n  neighbor 10.10.10.5 next-hop-self\n address-family ipv6 unicast\n  neighbor 10:10:10:4::1 activate\n  neighbor 10:10:10:4::1 next-hop-self\n  neighbor 10:10:10:5::1 activate\n  neighbor 10:10:10:5::1 next-hop-self\n"
+    },
+    {
+      "name": "R11",
+      "host": "10.15.65.50",
+      "port": 32779,
+      "protocol": "telnet",
+      "username": "",
+      "password": "",
+      "description": "EVE-NG: iol",
+      "eve_node_id": "11",
+      "script": "\nenable\nconfigure terminal \nrouter bgp 2020\n bgp router-id 11.11.11.11\n no bgp default ipv4-unicast\n neighbor 70.70.70.1 remote-as 1313\n neighbor 10.10.10.4 remote-as 2020\n neighbor 10.10.10.4 update-source loopback 1\n neighbor 10.10.10.5 remote-as 2020\n neighbor 10.10.10.5 update-source loopback 1\n neighbor 70:70:70::1 remote-as 1313\n neighbor 10:10:10:4::1 remote-as 2020\n neighbor 10:10:10:4::1 update-source loopback 1\n neighbor 10:10:10:5::1 remote-as 2020\n neighbor 10:10:10:5::1 update-source loopback 1\n address-family ipv4 unicast\n  neighbor 70.70.70.1 activate\n  neighbor 10.10.10.4 activate\n  neighbor 10.10.10.4 next-hop-self\n  neighbor 10.10.10.5 activate\n  neighbor 10.10.10.5 next-hop-self\n address-family ipv6 unicast\n  neighbor 70:70:70::1 activate\n  neighbor 10:10:10:4::1 activate\n  neighbor 10:10:10:4::1 next-hop-self\n  neighbor 10:10:10:5::1 activate\n  neighbor 10:10:10:5::1 next-hop-self\n"
+    },
+    {
+      "name": "R12",
+      "host": "10.15.65.50",
+      "port": 32780,
+      "protocol": "telnet",
+      "username": "",
+      "password": "",
+      "description": "EVE-NG: iol",
+      "eve_node_id": "12",
+      "script": "\nenable\nconfigure terminal \nrouter bgp 2020\n bgp router-id 12.12.12.12\n no bgp default ipv4-unicast\n neighbor 10.10.10.1 remote-as 2020\n neighbor 10.10.10.1 update-source loopback 1\n neighbor 10.10.10.2 remote-as 2020\n neighbor 10.10.10.2 update-source loopback 1\n neighbor 10.10.10.3 remote-as 2020\n neighbor 10.10.10.3 update-source loopback 1\n neighbor 10.10.10.5 remote-as 2020\n neighbor 10.10.10.5 update-source loopback 1\n neighbor 10:10:10:1::1 remote-as 2020\n neighbor 10:10:10:1::1 update-source loopback 1\n neighbor 10:10:10:2::1 remote-as 2020\n neighbor 10:10:10:2::1 update-source loopback 1\n neighbor 10:10:10:3::1 remote-as 2020\n neighbor 10:10:10:3::1 update-source loopback 1\n neighbor 10:10:10:5::1 remote-as 2020\n neighbor 10:10:10:5::1 update-source loopback 1\n address-family ipv4 unicast\n  neighbor 10.10.10.1 activate\n  neighbor 10.10.10.1 route-reflector-client\n  neighbor 10.10.10.2 activate\n  neighbor 10.10.10.2 route-reflector-client\n  neighbor 10.10.10.3 activate\n  neighbor 10.10.10.3 route-reflector-client\n  neighbor 10.10.10.5 activate\n  network 25.25.25.0 mask 255.255.255.0\n address-family ipv6 unicast\n  neighbor 10:10:10:1::1 activate\n  neighbor 10:10:10:1::1 route-reflector-client\n  neighbor 10:10:10:2::1 activate\n  neighbor 10:10:10:2::1 route-reflector-client\n  neighbor 10:10:10:3::1 activate\n  neighbor 10:10:10:3::1 route-reflector-client\n  neighbor 10:10:10:5::1 activate\n  network 25:25:25:25::/64\n"
+    },
+    {
+      "name": "R13",
+      "host": "10.15.65.50",
+      "port": 32781,
+      "protocol": "telnet",
+      "username": "",
+      "password": "",
+      "description": "EVE-NG: iol",
+      "eve_node_id": "13",
+      "script": "\nenable\nconfigure terminal \nrouter bgp 2020\n bgp router-id 13.13.13.13\n no bgp default ipv4-unicast\n neighbor 10.10.10.1 remote-as 2020\n neighbor 10.10.10.1 update-source loopback 1\n neighbor 10.10.10.2 remote-as 2020\n neighbor 10.10.10.2 update-source loopback 1\n neighbor 10.10.10.3 remote-as 2020\n neighbor 10.10.10.3 update-source loopback 1\n neighbor 10.10.10.4 remote-as 2020\n neighbor 10.10.10.4 update-source loopback 1\n neighbor 10:10:10:1::1 remote-as 2020\n neighbor 10:10:10:1::1 update-source loopback 1\n neighbor 10:10:10:2::1 remote-as 2020\n neighbor 10:10:10:2::1 update-source loopback 1\n neighbor 10:10:10:3::1 remote-as 2020\n neighbor 10:10:10:3::1 update-source loopback 1\n neighbor 10:10:10:4::1 remote-as 2020\n neighbor 10:10:10:4::1 update-source loopback 1\n address-family ipv4 unicast\n  neighbor 10.10.10.1 activate\n  neighbor 10.10.10.1 route-reflector-client\n  neighbor 10.10.10.2 activate\n  neighbor 10.10.10.2 route-reflector-client\n  neighbor 10.10.10.3 activate\n  neighbor 10.10.10.3 route-reflector-client\n  neighbor 10.10.10.4 activate\n  network 20.20.20.0 mask 255.255.255.0\n address-family ipv6 unicast\n  neighbor 10:10:10:1::1 activate\n  neighbor 10:10:10:1::1 route-reflector-client\n  neighbor 10:10:10:2::1 activate\n  neighbor 10:10:10:2::1 route-reflector-client\n  neighbor 10:10:10:3::1 activate\n  neighbor 10:10:10:3::1 route-reflector-client\n  neighbor 10:10:10:4::1 activate\n  network 20:20:20:20::/64\n"
+    },
+    {
+      "name": "R14",
+      "host": "10.15.65.50",
+      "port": 32782,
+      "protocol": "telnet",
+      "username": "",
+      "password": "",
+      "description": "EVE-NG: iol",
+      "eve_node_id": "14",
+      "script": "\nenable\nconfigure terminal \nrouter bgp 1818\n bgp router-id 14.14.14.14\n no bgp default ipv4-unicast\n neighbor 18.20.20.2 remote-as 1818\n neighbor 80.80.80.1 remote-as 1313\n neighbor 140.140.140.1 remote-as 1616\n neighbor 18:20:20::2 remote-as 1818\n neighbor 80:80:80::1 remote-as 1313\n neighbor 140:140:140::1 remote-as 1616\n address-family ipv4 unicast\n  neighbor 18.20.20.2 activate\n  neighbor 18.20.20.2 next-hop-self\n  neighbor 80.80.80.1 activate\n  neighbor 140.140.140.1 activate\n address-family ipv6 unicast\n  neighbor 18:20:20::2 activate\n  neighbor 18:20:20::2 next-hop-self\n  neighbor 80:80:80::1 activate\n  neighbor 140:140:140::1 activate\n"
+    },
+    {
+      "name": "R15",
+      "host": "10.15.65.50",
+      "port": 32783,
+      "protocol": "telnet",
+      "username": "",
+      "password": "",
+      "description": "EVE-NG: iol",
+      "eve_node_id": "15",
+      "script": "\nenable\nconfigure terminal \nrouter bgp 1818\n bgp router-id 15.15.15.15\n no bgp default ipv4-unicast\n neighbor 18.20.20.1 remote-as 1818\n neighbor 150.150.150.2 remote-as 1919\n neighbor 18:20:20::1 remote-as 1818\n neighbor 150:150:150::2 remote-as 1919\n address-family ipv4 unicast\n  neighbor 18.20.20.1 activate\n  neighbor 18.20.20.1 next-hop-self\n  neighbor 150.150.150.2 activate\n  network 18.18.18.0 mask 255.255.255.0\n address-family ipv6 unicast\n  neighbor 18:20:20::1 activate\n  neighbor 18:20:20::1 next-hop-self\n  neighbor 150:150:150::2 activate\n  network 18:18:18:18::/64\n"
+    },
+    {
+      "name": "R16",
+      "host": "10.15.65.50",
+      "port": 32784,
+      "protocol": "telnet",
+      "username": "",
+      "password": "",
+      "description": "EVE-NG: iol",
+      "eve_node_id": "16",
+      "script": "\nenable\nconfigure terminal \nrouter bgp 1919\n bgp router-id 16.16.16.16\n no bgp default ipv4-unicast\n neighbor 150.150.150.1 remote-as 1818\n neighbor 160.160.160.1 remote-as 1717\n neighbor 150:150:150::1 remote-as 1818\n neighbor 160:160:160::1 remote-as 1717\n address-family ipv4 unicast\n  neighbor 150.150.150.1 activate\n  neighbor 160.160.160.1 activate\n  network 19.19.19.0 mask 255.255.255.0\n address-family ipv6 unicast\n  neighbor 150:150:150::1 activate\n  neighbor 160:160:160::1 activate\n  network 19:19:19:19::/64\n"
+    },
+    {
+      "name": "R17",
+      "host": "10.15.65.50",
+      "port": 32785,
+      "protocol": "telnet",
+      "username": "",
+      "password": "",
+      "description": "EVE-NG: iol",
+      "eve_node_id": "17",
+      "script": "\nenable\nconfigure terminal \nrouter bgp 1616\n bgp router-id 17.17.17.17\n no bgp default ipv4-unicast\n neighbor 120.120.120.1 remote-as 1414\n neighbor 130.130.130.2 remote-as 1717\n neighbor 140.140.140.2 remote-as 1818\n neighbor 120:120:120::1 remote-as 1414\n neighbor 130:130:130::2 remote-as 1717\n neighbor 140:140:140::2 remote-as 1818\n address-family ipv4 unicast\n  neighbor 120.120.120.1 activate\n  neighbor 130.130.130.2 activate\n  neighbor 140.140.140.2 activate\n  network 16.16.16.0 mask 255.255.255.0\n address-family ipv6 unicast\n  neighbor 120:120:120::1 activate\n  neighbor 130:130:130::2 activate\n  neighbor 140:140:140::2 activate\n  network 16:16:16:16::/64\n"
+    },
+    {
+      "name": "R18",
+      "host": "10.15.65.50",
+      "port": 32786,
+      "protocol": "telnet",
+      "username": "",
+      "password": "",
+      "description": "EVE-NG: iol",
+      "eve_node_id": "18",
+      "script": "\nenable\nconfigure terminal \nrouter bgp 1717\n bgp router-id 18.18.18.18\n no bgp default ipv4-unicast\n neighbor 130.130.130.1 remote-as 1616\n neighbor 160.160.160.2 remote-as 1919\n neighbor 170.170.170.1 remote-as 1515\n neighbor 130:130:130::1 remote-as 1616\n neighbor 160:160:160::2 remote-as 1919\n neighbor 170:170:170::1 remote-as 1515\n address-family ipv4 unicast\n  neighbor 130.130.130.1 activate\n  neighbor 160.160.160.2 activate\n  neighbor 170.170.170.1 activate\n  network 17.17.17.0 mask 255.255.255.0\n address-family ipv6 unicast\n  neighbor 130:130:130::1 activate\n  neighbor 160:160:160::2 activate\n  neighbor 170:170:170::1 activate\n  network 17:17:17:17::/64\n"
+    },
+    {
+      "name": "R19",
+      "host": "10.15.65.50",
+      "port": 32787,
+      "protocol": "telnet",
+      "username": "",
+      "password": "",
+      "description": "EVE-NG: iol",
+      "eve_node_id": "19",
+      "script": "\nenable\nconfigure terminal \nrouter bgp 1414\n bgp router-id 19.19.19.19\n no bgp default ipv4-unicast\n neighbor 100.100.100.1 remote-as 3030\n neighbor 110.110.110.2 remote-as 1515\n neighbor 120.120.120.2 remote-as 1616\n neighbor 100:100:100::1 remote-as 3030\n neighbor 110:110:110::2 remote-as 1515\n neighbor 120:120:120::2 remote-as 1616\n address-family ipv4 unicast\n  neighbor 100.100.100.1 activate\n  neighbor 110.110.110.2 activate\n  neighbor 120.120.120.2 activate\n  network 14.14.14.0 mask 255.255.255.0\n address-family ipv6 unicast\n  neighbor 100:100:100::1 activate\n  neighbor 110:110:110::2 activate\n  neighbor 120:120:120::2 activate\n  network 14:14:14:14::/64\n"
+    },
+    {
+      "name": "R20",
+      "host": "10.15.65.50",
+      "port": 32788,
+      "protocol": "telnet",
+      "username": "",
+      "password": "",
+      "description": "EVE-NG: iol",
+      "eve_node_id": "20",
+      "script": "\nenable\nconfigure terminal \nrouter bgp 1515\n bgp router-id 20.20.20.20\n no bgp default ipv4-unicast\n neighbor 110.110.110.1 remote-as 1414\n neighbor 170.170.170.2 remote-as 1717\n neighbor 110:110:110::1 remote-as 1414\n neighbor 170:170:170::2 remote-as 1717\n address-family ipv4 unicast\n  neighbor 110.110.110.1 activate\n  neighbor 170.170.170.2 activate\n  network 15.15.15.0 mask 255.255.255.0\n address-family ipv6 unicast\n  neighbor 110:110:110::1 activate\n  neighbor 170:170:170::2 activate\n  network 15:15:15:15::/64\n"
+    }
+  ],
+  "topology": "/home/junior/Projetos/pyqttyai/topologies/LAB_BGP_CCNP_ENARSI_ADRESS_FAMILY.png",
+  "topology_map": "/home/junior/Projetos/pyqttyai/topologies/LAB_BGP_CCNP_ENARSI_ADRESS_FAMILY.json",
+  "tty_font_family": "Monospace",
+  "tty_font_size": 12,
+  "send_all_scripts": []
+}

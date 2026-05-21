@@ -1,0 +1,28 @@
+{
+  "topology": "C:/Users/junior/Downloads/pyqttyai_v0.3/topologies/topology.jpg",
+  "devices": [
+    {
+      "name": "Linux-DC-19",
+      "x": 519,
+      "y": 603,
+      "width": 137,
+      "height": 113
+    },
+    {
+      "name": "Linux-DC-20",
+      "x": 669,
+      "y": 600,
+      "width": 125,
+      "height": 112
+    },
+    {
+      "name": "Linux-DC-21",
+      "x": 813,
+      "y": 598,
+      "width": 137,
+      "height": 116
+    }
+  ],
+  "image_width": 1285,
+  "image_height": 924
+}

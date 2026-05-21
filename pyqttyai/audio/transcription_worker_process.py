@@ -649,6 +649,7 @@ def _transcribe_one(
 
     t0 = time.time()
     segments, info = model.transcribe(wav_path, **kwargs)
+    segments = list(segments)
 
     if word_timestamps:
         _process_word_timestamps_srt(segments)

@@ -123,7 +123,7 @@ class OpenAICompatibleEngine:
         """Returns Whisper JSON as a converted dict from Gemini responsse."""
         audio_b64 = base64.b64encode(params["file"][1]).decode('utf-8')
         response = self._client.chat.completions.create(
-            model="gemini-3.1-flash-lite-preview",
+            model=params.get("model") or self._model_id,
             messages=[
                 {
                     "role": "user",

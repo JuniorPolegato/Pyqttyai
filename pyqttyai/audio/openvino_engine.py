@@ -7,6 +7,7 @@ from typing import Any
 from pyqttyai.core.whisper_config import (
     WhisperConfig, model_name_to_hf_id,
 )
+from pyqttyai.audio.openvino_genai_engine import _load_wav_mono16k
 
 
 class OpenVINOWhisperModel:
@@ -26,17 +27,14 @@ class OpenVINOWhisperModel:
         audio_path: str,
         beam_size: int = 5,
         language: str | None = None,
-        vad_filter: bool = False,  # 🚫 ignored (no VAD in optimum-intel)
+        vad_filter: bool = False,
         **_ignored,
     ):
         """Transcribe an audio file. Returns (segments_iter, info)."""
-        import librosa  # 🎵 lazy import
+        # 🎵 Stdlib-only WAV loader (librosa dropped to keep bundle lean)
+        audio, duration = _load_wav_mono16k(audio_path)
 
-        # 🎵 Load audio at 16kHz mono
-        audio, _ = librosa.load(audio_path, sr=16000, mono=True)
-        duration = len(audio) / 16000.0
-
-        inputs = self._processor(
+        inputs = self._processor(   
             audio, sampling_rate=16000, return_tensors="pt",
         )
 
