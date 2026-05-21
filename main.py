@@ -36,6 +36,7 @@ from pyqttyai.core.voice_rules import load_rules
 from pyqttyai.core.paths import ensure_all, config_dir
 from pyqttyai.core.whisper_config import WhisperConfig
 from pyqttyai.audio.transcription_service import TranscriptionService
+from pyqttyai.audio.capabilities import log_capabilities, get_build_flavor
 
 # ── Base path (works for script, frozen exe, and any CWD) ──
 BASE_DIR = Path(__file__).resolve().parent
@@ -94,6 +95,8 @@ def main():
 
     # 🎙️ Phase 1: load Whisper configuration
     splash.show_status("Loading Whisper configuration...")
+    log_capabilities()
+    app.setApplicationName(f"{app_id} ({get_build_flavor()})")
     whisper_config = WhisperConfig.load()
     cfg_path = config_dir() / WhisperConfig.CONFIG_FILE
     if not cfg_path.exists():

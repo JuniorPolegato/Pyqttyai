@@ -119,7 +119,14 @@ class AboutDialog(QDialog):
         ))
         content_layout.addWidget(self._make_card(
             "THANKS & LAB CREDITS",
-            [("Thiago G Figueiredo", True)],
+            [
+                ("Thiago G. Figueiredo", True),
+                (
+                    "EVE-NG labs, topology images, router configurations, "
+                    "and testing across every release.",
+                    False,
+                ),
+            ],
             "#fab387",
         ))
 

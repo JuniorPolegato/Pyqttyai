@@ -1,0 +1,217 @@
+{
+  "topology": "/home/junior/Projetos/pyqttyai/topologies/lab_ospf-CCNP_Enarsi.jpg",
+  "devices": [
+    {
+      "name": "SW1",
+      "x": 245,
+      "y": 80,
+      "width": 77,
+      "height": 62
+    },
+    {
+      "name": "R1",
+      "x": 254,
+      "y": 222,
+      "width": 62,
+      "height": 62
+    },
+    {
+      "name": "R2",
+      "x": 86,
+      "y": 433,
+      "width": 62,
+      "height": 62
+    },
+    {
+      "name": "R3",
+      "x": 397,
+      "y": 440,
+      "width": 62,
+      "height": 62
+    },
+    {
+      "name": "SW2",
+      "x": 80,
+      "y": 559,
+      "width": 77,
+      "height": 62
+    },
+    {
+      "name": "SW3",
+      "x": 388,
+      "y": 560,
+      "width": 77,
+      "height": 62
+    },
+    {
+      "name": "PC1",
+      "x": 81,
+      "y": 687,
+      "width": 74,
+      "height": 82
+    },
+    {
+      "name": "R4",
+      "x": 485,
+      "y": 223,
+      "width": 62,
+      "height": 62
+    },
+    {
+      "name": "R5",
+      "x": 623,
+      "y": 226,
+      "width": 62,
+      "height": 62
+    },
+    {
+      "name": "R6",
+      "x": 766,
+      "y": 225,
+      "width": 62,
+      "height": 62
+    },
+    {
+      "name": "R7",
+      "x": 896,
+      "y": 219,
+      "width": 62,
+      "height": 62
+    },
+    {
+      "name": "SW7",
+      "x": 1035,
+      "y": 225,
+      "width": 77,
+      "height": 62
+    },
+    {
+      "name": "R8",
+      "x": 1234,
+      "y": 78,
+      "width": 62,
+      "height": 62
+    },
+    {
+      "name": "SW4",
+      "x": 1353,
+      "y": 77,
+      "width": 77,
+      "height": 62
+    },
+    {
+      "name": "R9",
+      "x": 1258,
+      "y": 222,
+      "width": 62,
+      "height": 62
+    },
+    {
+      "name": "SW5",
+      "x": 1415,
+      "y": 222,
+      "width": 77,
+      "height": 62
+    },
+    {
+      "name": "R10",
+      "x": 1183,
+      "y": 344,
+      "width": 62,
+      "height": 62
+    },
+    {
+      "name": "SW6",
+      "x": 1312,
+      "y": 342,
+      "width": 77,
+      "height": 62
+    },
+    {
+      "name": "PC2",
+      "x": 1457,
+      "y": 335,
+      "width": 62,
+      "height": 62
+    },
+    {
+      "name": "R11",
+      "x": 1062,
+      "y": 441,
+      "width": 62,
+      "height": 62
+    },
+    {
+      "name": "R12",
+      "x": 1374,
+      "y": 447,
+      "width": 62,
+      "height": 62
+    },
+    {
+      "name": "R13",
+      "x": 914,
+      "y": 510,
+      "width": 62,
+      "height": 62
+    },
+    {
+      "name": "R14",
+      "x": 714,
+      "y": 508,
+      "width": 62,
+      "height": 62
+    },
+    {
+      "name": "SW10",
+      "x": 707,
+      "y": 655,
+      "width": 77,
+      "height": 62
+    },
+    {
+      "name": "SW9",
+      "x": 904,
+      "y": 661,
+      "width": 77,
+      "height": 62
+    },
+    {
+      "name": "PC24",
+      "x": 1054,
+      "y": 689,
+      "width": 77,
+      "height": 77
+    },
+    {
+      "name": "SW8",
+      "x": 1369,
+      "y": 556,
+      "width": 77,
+      "height": 62
+    },
+    {
+      "name": "PC25",
+      "x": 1367,
+      "y": 658,
+      "width": 77,
+      "height": 80
+    },
+    {
+      "name": "SW11",
+      "x": 1053,
+      "y": 563,
+      "width": 81,
+      "height": 67
+    },
+    {
+      "name": "Linux",
+      "x": 1450,
+      "y": 78,
+      "width": 85,
+      "height": 73
+    }
+  ],
+  "image_width": 1574,
+  "image_height": 807
+}

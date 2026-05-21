@@ -1,0 +1,29 @@
+{
+  "devices": [
+    {
+      "name": "Linux",
+      "host": "192.168.18.81",
+      "port": 22,
+      "protocol": "ssh",
+      "username": "junior",
+      "password": "ke8ig6ma13",
+      "description": "Main computer",
+      "eve_node_id": null,
+      "script": "\ntest\nbash\nclear\necho \"$BASH - $BASH_VERSION\"\n"
+    },
+    {
+      "name": "R1",
+      "host": "10.15.65.50",
+      "port": 32769,
+      "protocol": "telnet",
+      "username": "",
+      "password": "",
+      "description": "Old R1",
+      "eve_node_id": null,
+      "script": ""
+    }
+  ],
+  "topology": "/home/junior/Projetos/pyqttyai/topologies/lab_ospf-CCNP_Enarsi.jpg",
+  "tty_font_family": "MesloLGS NF",
+  "tty_font_size": 12
+}

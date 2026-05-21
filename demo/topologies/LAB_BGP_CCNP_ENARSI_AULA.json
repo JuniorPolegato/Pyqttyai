@@ -1,0 +1,147 @@
+{
+  "topology": "/home/junior/Downloads/pyqttyai/v0.3.4/topologies/LAB_BGP_CCNP_ENARSI_AULA.png",
+  "devices": [
+    {
+      "name": "R1",
+      "x": 584,
+      "y": 22,
+      "width": 109,
+      "height": 82
+    },
+    {
+      "name": "R2",
+      "x": 427,
+      "y": 93,
+      "width": 124,
+      "height": 93
+    },
+    {
+      "name": "R3",
+      "x": 744,
+      "y": 92,
+      "width": 98,
+      "height": 91
+    },
+    {
+      "name": "R8",
+      "x": 740,
+      "y": 286,
+      "width": 104,
+      "height": 92
+    },
+    {
+      "name": "R7",
+      "x": 605,
+      "y": 284,
+      "width": 98,
+      "height": 101
+    },
+    {
+      "name": "R6",
+      "x": 448,
+      "y": 288,
+      "width": 113,
+      "height": 102
+    },
+    {
+      "name": "R19",
+      "x": 980,
+      "y": 94,
+      "width": 83,
+      "height": 89
+    },
+    {
+      "name": "R4",
+      "x": 163,
+      "y": 183,
+      "width": 96,
+      "height": 86
+    },
+    {
+      "name": "R5",
+      "x": 164,
+      "y": 357,
+      "width": 102,
+      "height": 103
+    },
+    {
+      "name": "R17",
+      "x": 971,
+      "y": 295,
+      "width": 106,
+      "height": 90
+    },
+    {
+      "name": "R20",
+      "x": 1342,
+      "y": 96,
+      "width": 109,
+      "height": 90
+    },
+    {
+      "name": "R18",
+      "x": 1348,
+      "y": 299,
+      "width": 104,
+      "height": 96
+    },
+    {
+      "name": "R16",
+      "x": 1338,
+      "y": 483,
+      "width": 112,
+      "height": 98
+    },
+    {
+      "name": "R15",
+      "x": 1117,
+      "y": 494,
+      "width": 92,
+      "height": 78
+    },
+    {
+      "name": "R14",
+      "x": 977,
+      "y": 482,
+      "width": 92,
+      "height": 96
+    },
+    {
+      "name": "R9",
+      "x": 438,
+      "y": 521,
+      "width": 85,
+      "height": 67
+    },
+    {
+      "name": "R11",
+      "x": 753,
+      "y": 515,
+      "width": 83,
+      "height": 73
+    },
+    {
+      "name": "R10",
+      "x": 583,
+      "y": 631,
+      "width": 103,
+      "height": 78
+    },
+    {
+      "name": "R12",
+      "x": 444,
+      "y": 771,
+      "width": 92,
+      "height": 79
+    },
+    {
+      "name": "R13",
+      "x": 745,
+      "y": 764,
+      "width": 98,
+      "height": 86
+    }
+  ],
+  "image_width": 1727,
+  "image_height": 907
+}

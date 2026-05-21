@@ -388,7 +388,7 @@ class RulesEditorDialog(QDialog):
         v.addWidget(self._add_test_btn)
 
         self._test_all_rules_btn = QPushButton("▶ Run Rules")
-        self._test_all_rules_btn.setToolTip("Run every rule over this test text")
+        self._test_all_rules_btn.setToolTip("Run every enabled rule over this test text")
         self._test_all_rules_btn.clicked.connect(self._on_run_all_rules)
         v.addWidget(self._test_all_rules_btn)
 

@@ -3,6 +3,34 @@
 All notable changes to Pyqttyai are documented here.
 Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## [0.5.7] — 2026-05-21
+
+### 📦 Build System Overhaul
+- 🎯 New `packman.py` dispatcher replaces hand-written `.spec` files
+- 🧩 Feature-flag matrix produces **8 shippable Windows builds** from a
+  single template (`do-not-tell-me`, `cloud`, `fwhisper`, `fwhisper-cloud`,
+  `ovgenai`, `ovgenai-cloud`, `fwhisper-ovgenai`, `fwhisper-ovgenai-cloud`)
+- 📉 Significant size reductions vs. v0.5.6:
+  - Cloud-only build: **230 MB → 91 MB** (60% smaller)
+  - Faster-whisper + cloud: **~250 MB → 148 MB**
+  - All-local power user build: 222 MB (was not separately available)
+- 🛡️ **Silero VAD bundled in all transcription-capable builds** (1.2 MB
+  ONNX) — eliminates hallucinations on silence/noise across every backend
+- 🔇 Runtime hook silences `tqdm`, Hugging Face telemetry, and symlink
+  warnings in windowed mode
+
+### 🧰 Build Internals
+- 🔧 Auto-generated `.spec` files written to `packing/generated/`
+- 🚫 Smart excludes prevent accidental transitive bundling (e.g., excludes
+  `torch` from any non-OpenVINO-Optimum profile)
+- 🐉 Selective UPX with explicit exclusions for native DLLs
+  (`onnxruntime*`, `openvino*`, `torch*`, `vcruntime140`, `python3*`)
+
+### 📚 Documentation
+- ✏️ Rewrote `README_BUILDS.md` around the 8-flavor matrix
+- ✏️ Rewrote `docs/packing.md` to document `packman.py`
+- 📐 Added measured sizes from real v0.5.7 builds (no more estimates)
+
 ## [0.5.6] — 2026-05-19
 
 ### ✨ Added — Voice + NLP Intelligence Layer

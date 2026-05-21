@@ -1,0 +1,7 @@
+#!/bin/bash
+
+version="`grep __version__ pyqttyai/__init__.py | sed 's/^[^"]*"\([^"]*\).*/\1/'`"
+
+mkdir "versions/v$version"
+
+tar c `find . \( -name ".venv" -o -name ".git"  -o -name ".docs" -o -name "__pycache__" -o -name "versions" -o -name "pyqttyai_win*" \) -prune -o -type f -print` | tar xv -C "versions/v$version"

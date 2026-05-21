@@ -9,6 +9,7 @@ from PyQt6.QtWidgets import (
     QTextEdit, QMessageBox,
 )
 from PyQt6.QtCore import Qt, pyqtSignal
+from PyQt6.QtGui import QStandardItem
 
 from pyqttyai.core.paths import whisper_models_dir
 from pyqttyai.core.whisper_config import (
@@ -26,6 +27,7 @@ from pyqttyai.audio.transcription_service import TranscriptionService
 from pyqttyai.widgets.whisper_test_panel import WhisperTestPanel
 from pyqttyai.widgets.whisper_download_widget import WhisperDownloadWidget
 from pyqttyai.widgets.api_key_dialog import ApiKeyDialog
+from pyqttyai.audio.capabilities import AVAILABLE_BACKENDS
 
 
 # ═══════════════════════════════════════════════════════════
@@ -67,7 +69,7 @@ _DEVICE_DESCRIPTIONS: dict[str, str] = {
 }
 
 # 🆕 (description, is_openvino) — used to filter combo by backend
-_COMPUTE_DESCRIPTIONS: dict[str, tuple[str, bool]] = {
+_COMPUTE_DESCRIPTIONS: dict[str, tuple[str, bool | None]] = {
     # ── faster-whisper ──
     "int8":          ("📦 8-bit · smallest, fastest, lowest quality", False),
     "int8_float32":  ("📦 INT8 weights + FP32 compute · CPU-friendly", False),
@@ -87,6 +89,18 @@ _COMPUTE_DESCRIPTIONS: dict[str, tuple[str, bool]] = {
     "INT8":          ("📦 INT8 · OpenVINO quantized (fastest)", True),
     "INT4":          ("📦 INT4 · OpenVINO quantized (fastest)", True),
 }
+
+
+def _is_device_available(device: str) -> bool:
+    if is_openvino_genai_device(device):
+        return AVAILABLE_BACKENDS["openvino_genai"]
+    if is_openvino_device(device):
+        return AVAILABLE_BACKENDS["openvino"]
+    if is_groq_device(device):
+        return AVAILABLE_BACKENDS["groq"]
+    if is_openai_device(device):
+        return AVAILABLE_BACKENDS["openai"]
+    return AVAILABLE_BACKENDS["faster-whisper"]  # cpu/cuda (faster)
 
 
 # ═══════════════════════════════════════════════════════════
@@ -290,7 +304,15 @@ class WhisperSettingsDialog(QDialog):
         device_row.setSpacing(8)
 
         self._device_combo = QComboBox()
-        self._device_combo.addItems(WHISPER_DEVICES)
+        # self._device_combo.addItems(WHISPER_DEVICES)
+        for device in WHISPER_DEVICES:
+            available = _is_device_available(device)
+            label = device if available else f"{device}  ⛔"
+            item = QStandardItem(label)
+            item.setData(device, Qt.ItemDataRole.UserRole)
+            # if not available:
+            #     item.setFlags(item.flags() & ~Qt.ItemFlag.ItemIsEnabled)
+            self._device_combo.model().appendRow(item)
         device_row.addWidget(self._device_combo)
 
         beam_label = QLabel("Beam:")
@@ -501,7 +523,7 @@ class WhisperSettingsDialog(QDialog):
 
     def _refresh_compute_combo(self):
         """🆕 Filter compute_type combo based on selected backend."""
-        device = self._device_combo.currentText()
+        device = self._device_combo.currentText().strip('  ⛔')
         is_ov_genai = is_openvino_genai_device(device)
         is_ov = is_ov_genai or is_openvino_device(device)
         is_groq = is_groq_device(device)
@@ -542,7 +564,7 @@ class WhisperSettingsDialog(QDialog):
         self._compute_combo.blockSignals(False)
 
     def _refresh_enabled_state(self):
-        device = self._device_combo.currentText()
+        device = self._device_combo.currentText().strip('  ⛔')
         cpu_relevant = "cpu" in device.lower() or "auto" in device.lower()
         self._cpu_threads_spin.setEnabled(cpu_relevant)
         if not cpu_relevant:
@@ -558,7 +580,11 @@ class WhisperSettingsDialog(QDialog):
         compute = self._compute_combo.currentText()
 
         self._model_hint.setText(_MODEL_DESCRIPTIONS.get(model, ""))
-        self._device_hint.setText(_DEVICE_DESCRIPTIONS.get(device, ""))
+        device_hint_text = _DEVICE_DESCRIPTIONS.get(device.strip("  ⛔"), "")
+        if device.endswith('⛔'):
+            device = device[:-3]
+            device_hint_text += "\n⛔ not in this build"
+        self._device_hint.setText(device_hint_text)
 
         compute_desc = _COMPUTE_DESCRIPTIONS.get(compute)
         if compute_desc:
@@ -647,7 +673,7 @@ class WhisperSettingsDialog(QDialog):
         """Build a WhisperConfig from current UI state."""
         return WhisperConfig(
             model=self._model_combo.currentText(),
-            device=self._device_combo.currentText(),
+            device=self._device_combo.currentText().strip("  ⛔"),
             compute_type=self._compute_combo.currentText(),
             cpu_threads=self._cpu_threads_spin.value(),
             beam_size=self._beam_spin.value(),
