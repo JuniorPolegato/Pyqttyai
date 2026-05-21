@@ -1,0 +1,369 @@
+taskset 0,1,2,3 python tests/test_ov_3_quant.py /tmp/pyqttyai_test_ibjkrk0w.wav; taskset 0,1,2,3 python tests/test_ov_3_quant.py /tmp/pyqttyai_test_ibjkrk0w_vad.wav
+
+1. Carregue o áudio convertendo automaticamente para 16kHz e float32
+O librosa já normaliza o áudio entre -1.0 e 1.0 por padrão
+
+
+librosa: 1.029s
+
+Download do snapshot (se necessário)
+
+Fetching 21 files: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 21/21 [00:00<00:00, 3068.36it/s]
+Download complete: : 0.00B [00:00, ?B/s]                                                                                                                               | 0/21 [00:00<?, ?it/s]
+Download: 0.400s
+
+Pipe...
+
+
+Pipe: 4.820s
+
+1. Configurar para retornar timestamps
+
+config: 0.003s
+
+2. Converta para uma lista ou mantenha como array (o OpenVINO aceita a sequência)
+O WhisperPipeline do OpenVINO GenAI espera o input direto
+
+
+generate: 6.183s
+
+3. Construir o dicionário completo (estilo JSON)
+
+Verbose JSON: 5.316734313964844e-05s
+
+Exemplo de visualização
+____________________________________________________________________________________________________
+{
+    "task": "transcribe",
+    "duration": 43.6463125,
+    "text": " I'm speaking for this test and it's very sensible microphone now. Now it's ok. I think the level of the... Noisy, it's ok. So, I'm finishing here.",
+    "segments": [
+        {
+            "id": 0,
+            "start": 0.0,
+            "end": 7.0,
+            "text": " I'm speaking for this test and it's very sensible microphone now."
+        },
+        {
+            "id": 1,
+            "start": 20.0,
+            "end": 27.0,
+            "text": " Now it's ok. I think the level of the..."
+        },
+        {
+            "id": 2,
+            "start": 30.0,
+            "end": 32.0,
+            "text": " Noisy, it's ok."
+        },
+        {
+            "id": 3,
+            "start": 32.900001525878906,
+            "end": 34.900001525878906,
+            "text": " So, I'm finishing here."
+        }
+    ],
+    "quantizes": "int4",
+    "load_time": 4.819730758666992,
+    "librosa_time": 1.0290465354919434,
+    "transcribe_time": 6.182574510574341,
+    "per_audio_time": 7.211621046066284
+}
+‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
+
+show: 0.0003371238708496094s
+
+Download do snapshot (se necessário)
+
+Fetching 21 files: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 21/21 [00:00<00:00, 2935.82it/s]
+Downloading (incomplete total...): 0.00B [00:00, ?B/s]
+Download: 0.355se: : 0.00B [00:00, ?B/s]                                                                                                                               | 0/21 [00:00<?, ?it/s]
+
+Pipe...
+
+
+Pipe: 4.528s
+
+1. Configurar para retornar timestamps
+
+config: 0.000s
+
+2. Converta para uma lista ou mantenha como array (o OpenVINO aceita a sequência)
+O WhisperPipeline do OpenVINO GenAI espera o input direto
+
+
+generate: 8.285s
+
+3. Construir o dicionário completo (estilo JSON)
+
+Verbose JSON: 7.796287536621094e-05s
+
+Exemplo de visualização
+____________________________________________________________________________________________________
+{
+    "task": "transcribe",
+    "duration": 43.6463125,
+    "text": " I'm speaking for this test and it's very sensible microphone now. I think the level of the noise is ok, so I am finishing here.",
+    "segments": [
+        {
+            "id": 0,
+            "start": 0.0,
+            "end": 23.0,
+            "text": " I'm speaking for this test and it's very sensible microphone now."
+        },
+        {
+            "id": 1,
+            "start": 23.0,
+            "end": 39.0,
+            "text": " I think the level of the noise is ok, so I am finishing here."
+        }
+    ],
+    "quantizes": "int8",
+    "load_time": 4.527563095092773,
+    "librosa_time": 1.0290465354919434,
+    "transcribe_time": 8.284810781478882,
+    "per_audio_time": 9.313857316970825
+}
+‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
+
+show: 0.0001308917999267578s
+
+Download do snapshot (se necessário)
+
+Fetching 20 files: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 20/20 [00:00<00:00, 2456.76it/s]
+
+Download: 0.298somplete total...): 0.00B [00:00, ?B/s]
+Download complete: : 0.00B [00:00, ?B/s]                                                                                                                               | 0/20 [00:00<?, ?it/s]
+Pipe...
+
+
+Pipe: 5.602s
+
+1. Configurar para retornar timestamps
+
+config: 0.000s
+
+2. Converta para uma lista ou mantenha como array (o OpenVINO aceita a sequência)
+O WhisperPipeline do OpenVINO GenAI espera o input direto
+
+
+generate: 8.798s
+
+3. Construir o dicionário completo (estilo JSON)
+
+Verbose JSON: 7.677078247070312e-05s
+
+Exemplo de visualização
+____________________________________________________________________________________________________
+{
+    "task": "transcribe",
+    "duration": 43.6463125,
+    "text": " I'm speaking for this test and it's very sensible microphone now. I think the level of the noise is ok, so I am finishing here.",
+    "segments": [
+        {
+            "id": 0,
+            "start": 0.0,
+            "end": 23.0,
+            "text": " I'm speaking for this test and it's very sensible microphone now."
+        },
+        {
+            "id": 1,
+            "start": 23.0,
+            "end": 39.0,
+            "text": " I think the level of the noise is ok, so I am finishing here."
+        }
+    ],
+    "quantizes": "fp16",
+    "load_time": 5.602233648300171,
+    "librosa_time": 1.0290465354919434,
+    "transcribe_time": 8.798491477966309,
+    "per_audio_time": 9.827538013458252
+}
+‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
+
+show: 0.00011777877807617188s
+
+Total: 40.301s
+Download complete: : 0.00B [00:38, ?B/s]
+Download complete: : 0.00B [00:27, ?B/s]
+Download complete: : 0.00B [00:14, ?B/s]
+
+1. Carregue o áudio convertendo automaticamente para 16kHz e float32
+O librosa já normaliza o áudio entre -1.0 e 1.0 por padrão
+
+
+librosa: 1.082s
+
+Download do snapshot (se necessário)
+
+Fetching 21 files: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 21/21 [00:00<00:00, 2980.12it/s]
+Download complete: : 0.00B [00:00, ?B/s]                                                                                                                               | 0/21 [00:00<?, ?it/s]
+Download: 0.525s
+
+Pipe...
+
+Download complete: : 0.00B [00:00, ?B/s]
+
+Pipe: 5.013s
+
+1. Configurar para retornar timestamps
+
+config: 0.003s
+
+2. Converta para uma lista ou mantenha como array (o OpenVINO aceita a sequência)
+O WhisperPipeline do OpenVINO GenAI espera o input direto
+
+
+generate: 5.463s
+
+3. Construir o dicionário completo (estilo JSON)
+
+Verbose JSON: 7.724761962890625e-05s
+
+Exemplo de visualização
+____________________________________________________________________________________________________
+{
+    "task": "transcribe",
+    "duration": 26.208,
+    "text": " I'm speaking for this test and it's very sensible microphone now. Now it's ok, I think the level of the noise is ok. So, I'm finishing here.",
+    "segments": [
+        {
+            "id": 0,
+            "start": 0.0,
+            "end": 13.0,
+            "text": " I'm speaking for this test and it's very sensible microphone now."
+        },
+        {
+            "id": 1,
+            "start": 13.0,
+            "end": 21.0,
+            "text": " Now it's ok, I think the level of the noise is ok."
+        },
+        {
+            "id": 2,
+            "start": 21.0,
+            "end": 26.19999885559082,
+            "text": " So, I'm finishing here."
+        }
+    ],
+    "quantizes": "int4",
+    "load_time": 5.013201713562012,
+    "librosa_time": 1.0823426246643066,
+    "transcribe_time": 5.4625020027160645,
+    "per_audio_time": 6.544844627380371
+}
+‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
+
+show: 0.00016927719116210938s
+
+Download do snapshot (se necessário)
+
+Fetching 21 files: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 21/21 [00:00<00:00, 2436.26it/s]
+Download complete: : 0.00B [00:00, ?B/s]                                                                                                                               | 0/21 [00:00<?, ?it/s]
+Download: 0.274s
+
+Pipe...
+
+
+Pipe: 4.786s
+
+1. Configurar para retornar timestamps
+
+config: 0.000s
+
+2. Converta para uma lista ou mantenha como array (o OpenVINO aceita a sequência)
+O WhisperPipeline do OpenVINO GenAI espera o input direto
+
+
+generate: 6.152s
+
+3. Construir o dicionário completo (estilo JSON)
+
+Verbose JSON: 7.43865966796875e-05s
+
+Exemplo de visualização
+____________________________________________________________________________________________________
+{
+    "task": "transcribe",
+    "duration": 26.208,
+    "text": " I'm speaking for this test and it's very sensible microphone now. Now it's ok, I think the level of the noise is ok, so I'm finishing here.",
+    "segments": [
+        {
+            "id": 0,
+            "start": 0.0,
+            "end": 12.0,
+            "text": " I'm speaking for this test and it's very sensible microphone now."
+        },
+        {
+            "id": 1,
+            "start": 12.0,
+            "end": 26.19999885559082,
+            "text": " Now it's ok, I think the level of the noise is ok, so I'm finishing here."
+        }
+    ],
+    "quantizes": "int8",
+    "load_time": 4.7863075733184814,
+    "librosa_time": 1.0823426246643066,
+    "transcribe_time": 6.151967525482178,
+    "per_audio_time": 7.234310150146484
+}
+‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
+
+show: 0.00011944770812988281s
+
+Download do snapshot (se necessário)
+
+Fetching 20 files: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 20/20 [00:00<00:00, 2185.10it/s]
+Downloading (incomplete total...): 0.00B [00:00, ?B/s]
+Download: 0.224se: : 0.00B [00:00, ?B/s]                                                                                                                               | 0/20 [00:00<?, ?it/s]
+
+Pipe...
+
+
+Pipe: 5.927s
+
+1. Configurar para retornar timestamps
+
+config: 0.000s
+
+2. Converta para uma lista ou mantenha como array (o OpenVINO aceita a sequência)
+O WhisperPipeline do OpenVINO GenAI espera o input direto
+
+
+generate: 6.675s
+
+3. Construir o dicionário completo (estilo JSON)
+
+Verbose JSON: 7.796287536621094e-05s
+
+Exemplo de visualização
+____________________________________________________________________________________________________
+{
+    "task": "transcribe",
+    "duration": 26.208,
+    "text": " I'm speaking for this test and it's very sensible microphone now. Now it's ok, I think the level of the noise is ok, so I'm finishing here.",
+    "segments": [
+        {
+            "id": 0,
+            "start": 0.0,
+            "end": 12.0,
+            "text": " I'm speaking for this test and it's very sensible microphone now."
+        },
+        {
+            "id": 1,
+            "start": 12.0,
+            "end": 26.19999885559082,
+            "text": " Now it's ok, I think the level of the noise is ok, so I'm finishing here."
+        }
+    ],
+    "quantizes": "fp16",
+    "load_time": 5.926698684692383,
+    "librosa_time": 1.0823426246643066,
+    "transcribe_time": 6.67462420463562,
+    "per_audio_time": 7.756966829299927
+}
+‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
+
+show: 0.00011467933654785156s
+
+Total: 36.124s
