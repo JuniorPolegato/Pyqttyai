@@ -1,0 +1,427 @@
+{
+  "rules": [
+    {
+      "name": "Lower command",
+      "enabled": true,
+      "fragments": {},
+      "pattern_template": ".+",
+      "pattern": "",
+      "flags": [
+        "IGNORECASE"
+      ],
+      "handler": "compose_replace",
+      "handler_config": {
+        "post_process": "lower",
+        "replacements": [
+          {
+            "pattern": "\\.$",
+            "with": ""
+          }
+        ]
+      },
+      "tests": [
+        {
+          "input": "IPv6",
+          "expected": "ipv6"
+        },
+        {
+          "input": "Enable.",
+          "expected": "enable"
+        },
+        {
+          "input": "Configure Terminal.",
+          "expected": "configure terminal"
+        }
+      ]
+    },
+    {
+      "name": "Enter",
+      "enabled": true,
+      "fragments": {
+        "key_word": "[,\\.\\s]*enter[,\\.\\s]*$"
+      },
+      "pattern_template": "{key_word}",
+      "pattern": "",
+      "flags": [
+        "IGNORECASE"
+      ],
+      "handler": "compose_replace",
+      "handler_config": {
+        "replacements": [
+          {
+            "fragment": "key_word",
+            "with": "\\n"
+          }
+        ]
+      },
+      "tests": [
+        {
+          "input": ", enter.",
+          "expected": "\n"
+        },
+        {
+          "input": "ip address 192.168.11.1 255.255.255.255, enter",
+          "expected": "ip address 192.168.11.1 255.255.255.255\n"
+        }
+      ]
+    },
+    {
+      "name": "IPv6 with CIDR",
+      "enabled": false,
+      "fragments": {
+        "key_word": "[,\\.\\s-]*ipv6[,\\s-]*",
+        "word_sep": "[,\\s-]",
+        "bar": "barra|bar|slash|\\\\|\\||/",
+        "colon": "colon|column|dot|dois\\s+pontos?|\\b2\\s+pontos?|\\b2\\.|\\.(?!\\Z)|:",
+        "hex": "[0-9a-f]+",
+        ",+space": "(?<=\\w)\\s*,\\s*(?=\\w)",
+        "hyphen": "-",
+        "hex4": "([0-9a-f]{4})(?!:)(?!\\Z)",
+        "sentinel": "_"
+      },
+      "pattern_template": "{key_word}(?:{word_sep}*(?:{bar}|{colon}|{hex}))+",
+      "pattern": "",
+      "flags": [
+        "IGNORECASE"
+      ],
+      "handler": "compose_replace",
+      "handler_config": {
+        "replacements": [
+          {
+            "fragment": "key_word",
+            "with": "_"
+          },
+          {
+            "fragment": "hyphen",
+            "with": ""
+          },
+          {
+            "fragment": "bar",
+            "with": "/"
+          },
+          {
+            "fragment": "colon",
+            "with": ":"
+          },
+          {
+            "fragment": ",+space",
+            "with": ":"
+          },
+          {
+            "fragment": "word_sep",
+            "with": ""
+          },
+          {
+            "fragment": "hex4",
+            "with": "\\1:"
+          },
+          {
+            "fragment": "sentinel",
+            "with": " "
+          }
+        ],
+        "post_process": "upper"
+      },
+      "tests": [
+        {
+          "input": "O servidor é ipv6 2002 2 pontos, CAFE, 2 pontos, A B C 2. 2. 1, barra, 64 ok",
+          "expected": "O servidor é 2002:CAFE:ABC::1/64 ok"
+        },
+        {
+          "input": "Local is ipv6 fe80 colon, Column 1",
+          "expected": "Local is FE80::1"
+        },
+        {
+          "input": "The network is ipv6 2002 colon, ACAD: CAFE, colon, A B C 2. 2. slash 64, okay?",
+          "expected": "The network is 2002:ACAD:CAFE:ABC::/64, okay?"
+        },
+        {
+          "input": "O IPv6 é IPv6 2008, ACAD, CAFE, DB8, 2.2.1.64",
+          "expected": "O IPv6 é 2008:ACAD:CAFE:DB8::1:64"
+        },
+        {
+          "input": "My IPv6 is IPv6 202. ACAD C-A-F-E 1, 10, 20.",
+          "expected": "My IPv6 is 202:ACAD:CAFE:1:10:20."
+        },
+        {
+          "input": "IPv6, IPv6, 2008, ACAD, CAFE 10, 20, 2.2.1.",
+          "expected": "IPv6 2008:ACAD:CAFE:10:20::1."
+        },
+        {
+          "input": "O IPv6 é ipv62008, ACAD, CAFE, DB8, 2.2.1.64",
+          "expected": "O IPv6 é 2008:ACAD:CAFE:DB8::1/64"
+        }
+      ]
+    },
+    {
+      "name": "IPv6 with CIDR (new)",
+      "enabled": true,
+      "fragments": {
+        "key_word": "[,\\.\\s-]*ipv6[,\\s-]*",
+        "word_sep": "[,\\s-]",
+        "bar": "barra|bar|slash|\\\\|\\||/",
+        "colon": "colon|column|dot|dois\\s+pontos?|\\b2\\s+pontos?|\\b2\\.|\\.(?!\\Z)|:",
+        "hex": "[0-9a-f]+",
+        ",+space": "(?<=\\w)\\s*,\\s*(?=\\w)",
+        "hyphen": "-",
+        "hex4": "([0-9a-f]{4})(?!:)(?!\\Z)",
+        "sentinel": "_"
+      },
+      "pattern_template": "{key_word}(?:{word_sep}*(?:{bar}|{colon}|{hex}))+",
+      "pattern": "",
+      "flags": [
+        "IGNORECASE"
+      ],
+      "handler": "compose_replace",
+      "handler_config": {
+        "replacements": [
+          {
+            "fragment": "key_word",
+            "with": ""
+          },
+          {
+            "pattern": ",",
+            "with": ""
+          },
+          {
+            "fragment": "bar",
+            "with": "/"
+          },
+          {
+            "fragment": "colon",
+            "with": ":"
+          },
+          {
+            "pattern": "(\\w)\\s+(\\w)",
+            "with": "\\1:\\2"
+          },
+          {
+            "pattern": "[^\\w\\s:/]",
+            "with": ":"
+          },
+          {
+            "pattern": "\\s|(?<=/):+|[^\\da-fA-F:/]",
+            "with": ""
+          },
+          {
+            "pattern": "::+",
+            "with": "::"
+          },
+          {
+            "pattern": "([^:]):/",
+            "with": "\\1::/"
+          },
+          {
+            "pattern": "^",
+            "with": " "
+          }
+        ],
+        "post_process": "upper"
+      },
+      "tests": [
+        {
+          "input": "O servidor é ipv6 2002 2 pontos, CAFE, 2 pontos, A B C 2. 2. 1, barra, 64 ok",
+          "expected": "O servidor é 2002:CAFE:ABC::1/64 ok"
+        },
+        {
+          "input": "Local is ipv6 fe80 colon, Column 1",
+          "expected": "Local is FE80::1"
+        },
+        {
+          "input": "The network is ipv6 2002 colon, ACAD: CAFE, colon, A B C 2. 2. slash 64, okay?",
+          "expected": "The network is 2002:ACAD:CAFE:ABC::/64, okay?"
+        },
+        {
+          "input": "O IPv6 é IPv6 2008, ACAD, CAFE, DB8, 2.2.1.64",
+          "expected": "O IPv6 é 2008:ACAD:CAFE:DB8::1:64"
+        },
+        {
+          "input": "My IPv6 is IPv6 202. ACAD C-A-F-E 1, 10, 20.",
+          "expected": "My IPv6 is 202:ACAD:CAFE:1:10:20."
+        },
+        {
+          "input": "IPv6, IPv6, 2008, ACAD, CAFE 10, 20, 2.2.1.",
+          "expected": "IPv6 2008:ACAD:CAFE:10:20::1."
+        },
+        {
+          "input": "O IPv6 é ipv62008, ACAD, CAFE, DB8, 2.2.1.64",
+          "expected": "O IPv6 é 2008:ACAD:CAFE:DB8::1/64"
+        }
+      ]
+    },
+    {
+      "name": "Net6 with CIDR/mask",
+      "enabled": true,
+      "fragments": {
+        "key_word": "[,\\.\\s-]*net\\s*6[,\\s-]*",
+        "word_sep": "[,\\s-]",
+        "bar": "barra|bar|slash|\\\\|\\||/",
+        "colon": "colon|column|dot|dois\\s+pontos?|\\b2\\s+pontos?|\\b2\\.|\\.(?!\\Z)|:",
+        "hex": "[0-9a-f]+",
+        ",+space": "(?<=\\w)\\s*,\\s*(?=\\w)",
+        "hyphen": "-",
+        "hex4": "([0-9a-f]{4})(?!:)(?!\\Z)",
+        "sentinel": "_",
+        "last_hex_mask": ":([^:/]+)$"
+      },
+      "pattern_template": "{key_word}(?:{word_sep}*(?:{bar}|{colon}|{hex}))+",
+      "pattern": "",
+      "flags": [
+        "IGNORECASE"
+      ],
+      "handler": "compose_replace",
+      "handler_config": {
+        "replacements": [
+          {
+            "fragment": "key_word",
+            "with": "_"
+          },
+          {
+            "fragment": "hyphen",
+            "with": ""
+          },
+          {
+            "fragment": "bar",
+            "with": "/"
+          },
+          {
+            "fragment": "colon",
+            "with": ":"
+          },
+          {
+            "fragment": ",+space",
+            "with": ":"
+          },
+          {
+            "fragment": "word_sep",
+            "with": ""
+          },
+          {
+            "fragment": "hex4",
+            "with": "\\1:"
+          },
+          {
+            "fragment": "sentinel",
+            "with": " "
+          },
+          {
+            "fragment": "last_hex_mask",
+            "with": "/\\1"
+          }
+        ],
+        "post_process": "upper"
+      },
+      "tests": [
+        {
+          "input": "O IPv6 da rede é net62008, ACAD, CAFE, DB8, 2.2.1.64",
+          "expected": "O IPv6 da rede é 2008:ACAD:CAFE:DB8::1/64"
+        },
+        {
+          "input": "O IPv6 da rede é net62008, ACAD, CAFE, DB8, 2.2.1, barra 64",
+          "expected": "O IPv6 da rede é 2008:ACAD:CAFE:DB8::1/64"
+        }
+      ]
+    },
+    {
+      "name": "Cisco initial configuration",
+      "enabled": true,
+      "fragments": {
+        "init_cfg": "(?P<all>.*(?:Cisco initial configuration|configuração inicial Cisco).+?(?:hostname|name|nome)\\W+(?P<host>.+?)(?:user|username|usuário)(?P<user>.+?)(?:password|senha)(?P<passwd>.+))",
+        "host_cleaner": "[^A-Za-z0-9-ð](?=([^ð]*ð){2})",
+        "spaces+,": "[\\s,](?=([^Ð]*Ð))",
+        "dot_at_end": "\\.(?=ð)|\\.$",
+        "groups": "(?P<host>.+?)ð(?P<user>.+?)ð(?P<passwd>.+?)Ð(?P<all>.+)"
+      },
+      "pattern_template": "{init_cfg}",
+      "pattern": "",
+      "flags": [
+        "IGNORECASE"
+      ],
+      "handler": "compose_replace",
+      "handler_config": {
+        "replacements": [
+          {
+            "fragment": "init_cfg",
+            "with": "\\T<host>ð\\L<user>ð\\U<passwd>Ð\\g<all>"
+          },
+          {
+            "fragment": "host_cleaner",
+            "with": ""
+          },
+          {
+            "fragment": "spaces+,",
+            "with": ""
+          },
+          {
+            "fragment": "dot_at_end",
+            "with": ""
+          },
+          {
+            "fragment": "groups",
+            "with": "!# \\g<all>\\n\\nenable\\nconfigure terminal\\n\\n!# Disable DNS lookup on \\T<host>.\\nno ip domain-lookup\\n\\n!# Configure router hostname using the name \\T<host>.\\nhostname \\T<host>\\n\\n!# Configure an appropriate banner on \\T<host>.\\nbanner motd _Access not allowed_\\n\\n!# Set minimum password length to 10 on \\T<host>.\\nsecurity passwords min-length 10\\n\\n!# Allow console logins with the password \\U<passwd>\\nline console 0\\npassword \\U<passwd>\\nlogin\\nexit\\n\\n!# Configure #\\U<passwd>! as the encrypted privileged EXEC password.\\nenable secret #\\U<passwd>!\\n\\n!# Encrypt all plaintext passwords.\\nservice password-encryption\\n\\n!# Configure netsec.com as the domain name.\\nip domain-name netsec.com\\n\\n!# Configure a local user \\L<user> with the secret password @\\U<passwd>%\\nusername \\L<user> secret @\\U<passwd>%\\n\\n!# Set login on vty lines to use local database.\\nline vty 0 4\\nlogin local\\nexit\\n\\n!# Configure the vty lines to accept SSH access only.\\nline vty 0 4\\ntransport input none\\ntransport input ssh\\nexit\\n\\n!# Generate an RSA crypto key using 1024 bits modulus.\\ncrypto key generate rsa general-keys modulus 1024\\n\\nexit\\ncopy running-config startup-config\\n"
+          }
+        ]
+      },
+      "tests": [
+        {
+          "input": "configuração inicial cisco. nome roteador 1. usuário teste. senha cisco.",
+          "expected": "!# configuração inicial cisco. nome roteador 1. usuário teste. senha cisco\n\nenable\nconfigure terminal\n\n!# Disable DNS lookup on Roteador1.\nno ip domain-lookup\n\n!# Configure router hostname using the name Roteador1.\nhostname Roteador1\n\n!# Configure an appropriate banner on Roteador1.\nbanner motd _Acess not allowed_\n\n!# Allow console logins with the password CISCO\nline console 0\npassword CISCO\nlogin\nexit\n\n!# Configure #CISCO! as the encrypted privileged EXEC password.\nenable secret #CISCO!\n\n!# Encrypt all plaintext passwords.\nservice password-encryption\n\n!# Set minimum password length to 10 on Roteador1.\nsecurity passwords min-length 10\n\n!# Configure netsec.com as the domain name.\nip domain-name netsec.com\n\n!# Configure a local user teste with the secret password @CISCO%\nusername netadmin secret @CISCO%\n\n!# Set login on vty lines to use local database.\nline vty 0 15\nlogin local\nexit\n\n!# Configure the vty lines to accept SSH access only.\nline vty 0 15\ntransport input none\ntransport input ssh\nexit\n\n!# Generate an RSA crypto key using 1024 bits modulus.\ncrypto key generate rsa general-keys modulus 1024\n\nexit\ncopy running-config startup-config\n"
+        }
+      ]
+    },
+    {
+      "name": "upper lower title group number",
+      "enabled": true,
+      "fragments": {
+        "test": ".*name\\s+(?:is\\s+)?(\\S+).*username\\s+(?:is\\s+)?(\\S+).*password\\s+(?:is\\s+)?(\\S+).*"
+      },
+      "pattern_template": "{test}",
+      "pattern": "",
+      "flags": [
+        "IGNORECASE"
+      ],
+      "handler": "compose_replace",
+      "handler_config": {
+        "replacements": [
+          {
+            "fragment": "test",
+            "with": "hostname \\T1\\nenable secret @\\U3!\\nusername \\L2 secret @\\U3%\\n"
+          }
+        ]
+      },
+      "tests": [
+        {
+          "input": "The name is Route1 with username junior and the password is Amora",
+          "expected": "hostname Route1\nenable secret @AMORA!\n"
+        }
+      ]
+    },
+    {
+      "name": "upper lower title group name",
+      "enabled": true,
+      "fragments": {
+        "test": ".*name\\s+(?:is\\s+)?(?P<host>\\S+).*username\\s+(?:is\\s+)?(?P<user>\\S+).*password\\s+(?:is\\s+)?(?P<passwd>\\S+).*"
+      },
+      "pattern_template": "{test}",
+      "pattern": "",
+      "flags": [
+        "IGNORECASE"
+      ],
+      "handler": "compose_replace",
+      "handler_config": {
+        "replacements": [
+          {
+            "fragment": "test",
+            "with": "hostname \\T<host>\\nenable secret @\\U<passwd>!\\nusername \\L<user> secret @\\U<passwd>%\\n"
+          }
+        ]
+      },
+      "tests": [
+        {
+          "input": "The name is Route1 with username junior and the password is Amora",
+          "expected": "hostname Route1\nenable secret @AMORA!\n"
+        }
+      ]
+    }
+  ]
+}
