@@ -1162,7 +1162,7 @@ decision backed by measurable evidence. v0.5 is where Pyqttyai earned the
 >
 > 🇧🇷 Para a versão em Português, clique aqui: `https://youtu.be/PcNRyb3V6K8`
 >
-> 🇺🇸 For the English version, click here: `https://youtu.be/PcNRyb3V6K8`
+> 🇺🇸 For the English version, click here: `https://youtu.be/pj4SVg9eOAY`
 
 This release closes [the v0.4 → v0.5 gap](#-the-v04--v05-gap--from-multi-tab-terminal-to-intelligent-workspace)
 — turning Pyqttyai from a multi-tab terminal orchestrator into an **intelligent,
@@ -1451,7 +1451,7 @@ The status bar always shows the active transcription backend:
 
 🇧🇷 Para a versão em Português, clique aqui: `https://youtu.be/PcNRyb3V6K8`
 
-🇺🇸 For the English version, click here: `https://youtu.be/PcNRyb3V6K8`
+🇺🇸 For the English version, click here: `https://youtu.be/pj4SVg9eOAY`
 
 Subtitles available in **Portuguese (BR)** 🇧🇷 and **English** 🇺🇸.
 
