@@ -1,0 +1,305 @@
+0:00:01.040,0:00:02.440
+Hey guys, how's it going?
+
+0:00:02.440,0:00:13.500
+We are now on version 0.5 of Pyqttyai and I'll try to be really quick here so as not to extend this video too much.
+
+0:00:13.500,0:00:28.260
+I made documentation for it explaining that it stands for Python, QT, TTY, and AI, the latter being artificial intelligence, and this version 0.5 is bringing a first model which is to perform audio transcription.
+
+0:00:29.000,0:00:50.400
+So here I made a brief summary of how the idea started, then a roadmap here of how the versions evolved, a description of all these versions, there are the videos here, each version has its video in English, Portuguese, and it has subtitles too.
+
+0:00:50.440,0:01:11.478
+and here later between version 0.4 and 0.5, I made a gap here, I called it, of several studies, of various AI models, what can run on the machine, what cannot, what has to be in the cloud, what can be done right now,
+
+0:01:11.478,0:01:14.400
+what I had to leave for later.
+
+0:01:14.440,0:01:31.520
+So, for later ended up being now an intelligence using NLP, Natural Language Processing, and an AI model to perform audio transcription.
+
+0:01:31.720,0:01:47.940
+And in version 0.6, I have already done some tests, an AI model that can read the image, interpret what you request based on that image, and deliver the code ready for you to drop into a switch or a router. Ready?
+
+0:01:47.940,0:01:51.765
+Of course you have to review it first, right?
+
+0:01:51.765,0:01:56.100
+But in the next version, that is what is coming up.
+
+0:01:56.140,0:02:06.100
+I'm going to put this documentation and the software on my GitHub, then I will put it here and you will be able to access, download, test...
+
+0:02:06.100,0:02:21.070
+Going back here to EVE, I will click here on router 20, it will call the software, and it will open Pyqttyai here and will load this Whisper model that does the transcription.
+
+0:02:21.070,0:02:26.580
+It loaded here the model version 3 turbo on my video card.
+
+0:02:26.580,0:02:36.560
+It is a modest video card, it has 2GB, the model took up practically 1.5GB.
+
+0:02:36.980,0:02:47.260
+and here is the Intel video card, which is built into the processor.
+
+0:02:47.260,0:02:55.213
+So here I am going to do the audio transcription using the NVIDIA video card.
+
+0:02:55.213,0:03:05.220
+Now the button bar here, the taskbar here got a microphone.
+
+0:03:05.220,0:03:11.200
+Just to give you an idea of what can be done, I'll click here to show you.
+
+0:03:11.220,0:03:23.220
+Cisco initial configuration, Hostname router20, Username Cisco, Password, Class.
+
+0:03:23.220,0:03:28.220
+Now it will do the transcription, using my video card.
+
+0:03:28.220,0:03:40.000
+So if I look here, it was here at 100 percent processing, it did the processing and delivered a ready code here, which is the initial Cisco configuration.
+
+0:03:40.000,0:03:50.760
+So here it does a natural language processing, where it will take through regular expressions, I put it here.
+
+0:03:51.220,0:04:11.220
+so here is where it will pick up a word or keywords and from them capture in your speech or in the text that is there, capture some information and generate a new text, in this case it generated an initial code for a Cisco router.
+
+0:04:11.220,0:04:23.520
+So if I am to analyze here, this generated code, it got router 20, the router 20, Cisco and class as password.
+
+0:04:23.520,0:04:29.760
+So if I search here in this generated code, I will see router 20 here in a few places.
+
+0:04:31.220,0:04:46.280
+I will see the password class, here, here, here too, and I will see the user, here it put "namecisco", why?
+
+0:04:46.280,0:05:03.700
+It is something I will even have to fix, it will take everything between user and password, remove the characters that are not allowed and compose the username, but I only wanted "cisco", what can I do?
+
+0:05:03.700,0:05:15.680
+Select it, CTRL+SHIFT+F, I'll change the "namecisco" to just "cisco".
+
+0:05:15.680,0:05:20.760
+Ok, it changed already.
+
+0:05:20.760,0:05:37.560
+So it also has this feature of CTRL+SHIFT+F, to search, to do a replace, so if I search here, for example, the word pass, it repeats eight times here in this text.
+
+0:05:37.560,0:05:55.800
+So here I already have an initial Cisco configuration code, where it configures line, password, everything and I can send it, I will connect here to my router in EVE, it was there on router 20, I can send this script there to that router.
+
+0:05:55.840,0:06:08.400
+let me see if it is here, if it is loaded, the time here I'll speed up a bit to 100 milliseconds and send the script.
+
+0:06:08.400,0:06:16.580
+So here it is sending the entire script already, it is working, we notice that it gave some minor errors up there Let's see...
+
+0:06:16.580,0:06:31.800
+here, because here I gave the command that the password must be a minimum of 10 digits, 10 characters and the class password is less. what can I do?
+
+0:06:31.800,0:06:50.950
+I can even delete this here, come here and let's fix it right here, user is Cisco, password class with more characters, for example, and I will send this new one, I hit CTRL+SHIFT+A,
+
+0:06:50.950,0:06:58.000
+it will read this line and will generate that code again down here.
+
+0:06:58.000,0:07:15.000
+so I could be speaking again, then it will take my speech and do this, or I come to a line that has, that is already written here, hit CTRL+SHIFT+A, it will check if it matches any of these rules that are already set up here.
+
+0:07:15.000,0:07:33.080
+So here it is, I'm going to send this script again, it's all ready now, now you see that there is no error, had an error, generated SSH key, activated the SSH key, ok.
+
+0:07:33.080,0:07:42.540
+So here it already does it with a simple voice command here, it already did the entire initial Cisco configuration code here.
+
+0:07:42.540,0:07:58.700
+talking now about the AI models, here I made a playground where you can pick the Faster-Whisper models, OpenVINO, OpenVINO-GenAI and Cloud.
+
+0:07:58.700,0:08:18.493
+Here we were already using this NVIDIA CUDA language, from the GPU and here is OpenVINO, it does it will perform a transcription of the code that is for the NVIDIA GPU to the Intel GPU, it takes a long time,
+
+0:08:18.493,0:08:40.677
+it's not here because I tested it and saw how it works, it works well, but I don't advise using it because of this delay, better to use this OpenVINO-GenAI which is already a repository, if I come here, OpenVINO has this repository,
+
+0:08:40.677,0:08:59.131
+all the models are already here already transcribed from NVIDIA to Intel, so you don't have to spend memory, which is a lot of memory, minimum 16GB to perform a transcription and use the model,
+
+0:08:59.131,0:09:08.980
+while using the one already transcribed takes very little, if we go very little compared to those 16GB.
+
+0:09:09.220,0:09:32.044
+I even did a survey here of the Faster-Whisper models, for each model size it has, I did the OpenVINO one that downloads, from OpenAI and then transcribes this code, this model for Intel and here the models already coded for Intel, so and,
+
+0:09:32.044,0:09:52.577
+for you to see the sizes here, if we take the turbo here, it is at 1.6, so instead of 16GB to do all this processing of this model to get to this other one here, which I will have to have about 16GB available there,
+
+0:09:52.577,0:10:02.700
+I already grab it straight from here, so it's not worth working here, it's really just a proof of concept.
+
+0:10:02.700,0:10:22.105
+So if I use this one here, since I already downloaded it, it will just load, it will load very fast, about 3 seconds, it loads and I can click here to test, testing the transcription using the Intel GPU, it will be used,
+
+0:10:22.105,0:10:31.720
+I will see here in btop the usage of this GPU, it would be GPU 1, to perform the transcription of this audio.
+
+0:10:31.780,0:10:55.740
+So now, you see that the GPU hit 100 percent there and I see what happened this processing, it already delivered me here an audio transcription, everything that was spoken there, it transcribed, it's here, here it does a statistic,
+
+0:10:55.740,0:11:04.660
+so 18 seconds of audio, delivered to me in 7 seconds, a speed of two and a half times.
+
+0:11:04.660,0:11:17.140
+The NVIDIA GPU tends to be a little bit faster, it loads faster here, we will see, it loads faster, a little bit faster.
+
+0:11:18.980,0:11:30.795
+doing a new test now of audio transcription using the NVIDIA GPU.
+
+0:11:30.795,0:11:46.780
+Now it will do this transcription, we will see here an audio of 10, delivered in 4, resulted in two and a half times, basically the same thing, there's not much difference.
+
+0:11:46.980,0:11:56.671
+the NVIDIA one tends to be a little bit faster, but it depends on the processing and everything that's running there at the moment. And there is the cloud.
+
+0:11:56.671,0:12:04.062
+In the cloud I can test various clouds here, I can be including, I included these for me to test.
+
+0:12:04.062,0:12:15.684
+Gemini is not worth it, because Gemini doesn't transcribe it interprets what you are saying and returns it to you, it takes time, it takes a while like this:
+
+0:12:15.684,0:12:25.085
+it will basically take your time if you spoke for 10 seconds, you will wait more than 10 seconds there for it to return to you.
+
+0:12:25.085,0:12:28.600
+Fireworks and Groq return it to you within 1 or 2 seconds.
+
+0:12:28.600,0:12:52.880
+Fireworks AI, it uses GPU and Groq a company that developed a proprietary processor, an LPU, for Language Processing Unit, so it is neither CPU nor GPU, it is an LPU and it is for AI processing with natural language, very fast, very fast indeed.
+
+0:12:52.880,0:13:10.593
+So let's test Fireworks here first, load, I will connect over there on Fireworks, it is asking for the key, I will come here, Fireworks, Hugging Face which is a cloud, I could be subscribing to it too, it will give me the credits,
+
+0:13:10.593,0:13:12.980
+the prices, it doesn't pay off.
+
+0:13:12.980,0:13:30.080
+Fireworks is also paid, a tenth of a cent per minute, in Brazilian Reais it would be half a cent per minute, so one hour of audio would be around, 60 minutes, it would be around 30 cents.
+
+0:13:30.080,0:14:04.560
+it is not very cheap, it works well, very cheap, fast, however Groq is free, but let's test it here just to show that it works, I will generate a test API here, oops, later I will delete this key guys, copy here, throw it here, ok, connected to my key, great.
+
+0:14:04.560,0:14:20.818
+Now I'm going to run an audio transcription test using this cloud from Fireworks AI and really analyze the speed with which it can deliver an audio transcription to me, remembering that this audio will be recorded here,
+
+0:14:20.818,0:14:26.460
+being transmitted there to the cloud, there it will be transcribed, trans...
+
+0:14:26.460,0:14:32.160
+transcribed and... and the text returned to me.
+
+0:14:32.160,0:14:48.292
+Now we are going to see the speed here, in 2 seconds it delivered to me almost 30 seconds of audio, and the transcription is very good here, very well done, smooth, in several languages, if we look here there are 100 languages,
+
+0:14:48.292,0:14:53.480
+99 languages, I don't remember, something around 100 different languages.
+
+0:14:53.480,0:15:02.420
+and I can speak mixed, I can speak part Portuguese, part English, but you saw the Fireworks time here, now we are going to test with Groq.
+
+0:15:02.420,0:15:07.800
+Let's go generate a Groq key.
+
+0:15:09.480,0:15:59.100
+I will generate a Groq test key, copy, paste here, about the GPU here, my GPU here, here it has 2GB, on Nvidia, but the model fits within these 2GB, the driver already uses a tiny bit, but if I put it here we see...
+
+0:16:01.900,0:16:24.021
+and after doing the gpu, if I load the model here, we see that it will be using here more or less 1.5 gigabytes, it already had 0.3 gigabytes, so 1.1 gigabytes here, so, transcribes... the audio transcription,
+
+0:16:24.021,0:16:47.942
+using the gpu is also very smooth, it works well, you see here that it is not working, it's just recording, now it will process my audio, hit 100 percent, here we see that it is processing, it was very fast, processed locally,
+
+0:16:47.942,0:16:54.504
+delivered 13 seconds in 5 seconds, now on Groq, Connect to it.
+
+0:16:54.504,0:17:15.548
+Now let's do a test with Groq, to see if it really has all that speed that they say they are capable of delivering, doing now a transcription of an audio around 15 seconds and analyzing how long it takes them, not 15 right, much more,
+
+0:17:15.548,0:17:25.620
+about 25 seconds it will be, to see the time it manages to deliver to me, and the quality of this transcription.
+
+0:17:25.620,0:17:36.740
+It is very fast, Groq is very fast and the transcription is basically perfect here, hard to find a problem.
+
+0:17:36.740,0:17:45.780
+And I can speak one part in Portuguese and I can speak other other part in English too.
+
+0:17:45.780,0:17:54.914
+So it brings here one part in and one part in English.
+
+0:17:54.914,0:18:17.000
+So it works very well, very fast, and I advise, if you have internet, to use Groq, if you don't, if you have an NVIDIA video card, you can use NVIDIA's, otherwise the built-in Intel video card works too, very well, quite similar to NVIDIA.
+
+0:18:17.000,0:18:32.000
+Here saving here, ok, here I will open the workspace that was already saved here.
+
+0:18:32.000,0:18:43.280
+Here it is already mapped, just like the last video as I click here it goes to the router, I click here, it connects to all of them, here it disconnects from all of them there in EVE, connected to all.
+
+0:18:43.280,0:18:56.000
+And here for you to have an idea now that we can write the script without touching anything. Let's go?
+
+0:18:56.280,0:19:32.533
+ENTER ENABLE ENTER CONFIGURE TERMINAL, ENTER router bgp1919, enter, bgp router-id 16.16.16.16, ENTER.
+
+0:19:32.533,0:19:39.200
+I think I...
+
+0:19:39.200,0:19:43.481
+I think I said one extra 16 there, right?
+
+0:19:43.481,0:19:50.840
+Or it sometimes has this problem of, what we call hallucinating and finding things where they don't exist.
+
+0:19:53.280,0:20:43.185
+ENTER neighbor 150.150.150.150.1, remote-as 1818 Here it missed a space, ENTER And then as I had said there in the rules there is also IPv6 right so if I say here IPv6, IPv6 192.168.10.acad.café.2.2.3 So you can see that, as I said, IPv6,
+
+0:20:43.185,0:21:06.040
+it understands that after this an IPv6 will come So I said several things and it already came in this format.
+
+0:21:06.040,0:21:22.080
+If I don't say IPv6, just to give us an idea, 192.168.10.acad, cafe, colon, colon, three.
+
+0:21:25.280,0:21:42.389
+So look at what it delivers here, so if I say IPv6 first, it goes there and applies the rule, the IPv6 regex, and I also implemented here a CTRL+:(;
+
+0:21:42.389,0:21:55.220
+), it also goes there and adjusts it for us, right, if you press CTRL+., it does IPv4, CTRL+:(;), it does IPv6.
+
+0:21:55.280,0:22:07.620
+if I hit Ctrl+-(dash) it will change the colon to a dash and Ctrl+Shift+space it changes it to a space.
+
+0:22:07.620,0:22:19.180
+So we can play around here very quickly for us to ...
+
+0:22:22.280,0:22:27.180
+Be switching between IPv6 and IPv4, when we forget.
+
+0:22:27.180,0:23:09.160
+So, imagine here, that if I have this here, I can copy, paste, come here, hit Ctrl+:, and here one more colon, here IPv6 is made from that one above, and here we can play around a bit, for example, Activate, Delirium, Hallucination, OK.
+
+0:23:10.720,0:23:16.320
+Activate, now it worked.
+
+0:23:16.720,0:23:38.415
+Well then, we can write a script just by speaking, of course you need to speak with the correct pause, say the dash joined with the words, words, amount of numbers and dots, sometimes it can hallucinate a bit, but it works well,
+
+0:23:38.415,0:24:00.680
+overall it works well, we can implant several rules, we can write the rules here very flexibly, the shortcuts are here, it's all here, many shortcuts, many features that I have already implemented. And that's it.
+
+0:24:00.680,0:24:22.540
+Wrapping up the video here which ended up getting a bit long, of this version 0.5 but I think it was possible to explain here at least an introduction to the use of the microphone, to the use of AI and it turned out really cool, it's very complete.
+
+0:24:22.540,0:24:27.540
+Thanks, until the next version 0.6.

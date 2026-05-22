@@ -1,0 +1,266 @@
+0:00:00.480,0:00:07.260
+Bom, aqui é a segunda versão, na versão
+0.2, onde eu já estou fazendo o mapeamento
+
+0:00:07.260,0:00:08.400
+da imagem.
+
+0:00:08.400,0:00:16.280
+Então, se eu clicar aqui para abrir o
+software, ele vai abrir aqui, vai carregar
+
+0:00:16.280,0:00:22.140
+a primeira aba do dispositivo, mas eu vou
+carregar aquele último workspace que a
+
+0:00:22.140,0:00:23.120
+gente já tinha feito.
+
+0:00:23.120,0:00:32.380
+Aqui está o último workspace com todos os
+dispositivos desta imagem, que é
+
+0:00:32.380,0:00:42.360
+praticamente igual a que está ali, que eu
+mexi um pouco na que está no EVE, mas os
+
+0:00:42.360,0:00:44.120
+equipamentos estão aqui.
+
+0:00:44.120,0:00:53.520
+Então, o segredo aqui agora para mapear é
+um arquivo JSON com as coordenadas de cada
+
+0:00:53.520,0:00:55.980
+equipamento, largura e altura.
+
+0:00:55.980,0:01:03.020
+Para adiantar, eu joguei isto aqui na IA,
+e pedi para ela me dar este arquivo.
+
+0:01:03.120,0:01:12.900
+ela me deu este arquivo aqui, com todos
+os dispositivos e as coordenadas de cada
+
+0:01:12.900,0:01:28.040
+um. Então está aqui a lista de todos eles.
+E com esta lista, o que eu faço com ela?
+
+0:01:28.040,0:01:41.640
+Com esta lista eu venho aqui no Map,
+neste botão, ou também pode vir por aqui
+
+0:01:41.640,0:01:42.120
+né?
+
+0:01:42.120,0:01:58.800
+Load Topology Map então eu carrego aquele
+arquivo que a IA me deu esse topology JSON
+
+0:01:58.800,0:02:10.600
+que eu salvei aqui vou carregar esse
+arquivo vou ampliar aqui vou ampliar a
+
+0:02:10.600,0:02:17.489
+imagem então aqui você vê que eu já estou 
+passando o mouse em cima
+
+0:02:17.509,0:02:22.709
+e eu já vejo a referência para clicar no
+equipamento.
+
+0:02:22.709,0:02:26.169
+Porém as coordenadas que a IA me deu
+estão um pouco fora, então vou precisar
+
+0:02:26.169,0:02:33.729
+editar essas coordenadas.
+Aí eu tenho aqui este botão editor.
+
+0:02:33.729,0:02:38.509
+Na hora que eu clico aqui, ele permite eu
+editar as coordenadas.
+
+0:02:38.509,0:02:42.449
+e, então, vou acertar deste carinha aqui.
+
+0:02:42.449,0:02:51.989
+Venho aqui, coloco aqui, acerto a largura
+e altura que eu quiser, ok, e vou fazendo
+
+0:02:51.989,0:03:01.949
+assim para os demais, vou fazendo assim
+para os demais.
+
+0:03:01.949,0:03:08.509
+Então, vou fazendo isso, aí venho aqui e 
+salvo
+
+0:03:08.509,0:03:18.589
+e depois de fazer o arquivo que eu fiz
+aqui, vou sobre escrever, ok, feito, vou
+
+0:03:18.589,0:03:28.009
+voltar aqui nas abas, então lá eu mapeei
+este aqui, eu venho aqui e clico nele, no
+
+0:03:28.009,0:03:36.129
+SW4, ele foi lá para a aba do SW4, no R8,
+ele vai lá para a aba do R8, aqui no S7,
+
+0:03:36.129,0:03:37.849
+está fora, eu não mapeei ainda,
+
+0:03:38.509,0:03:45.800
+ele vai lá para a aba do S7. E aqui a gente
+tem um outro porém aqui que tem um S7 lower
+
+0:03:45.800,0:03:53.300
+aqui então tem um S7 aqui em cima um SW7 em
+cima e um SW7 embaixo um lower aqui
+
+0:03:53.300,0:03:58.800
+Na hora que eu aperto aqui neste n vai fazer
+nada este aqui vai l para o SW7.
+
+0:03:58.800,0:04:06.019
+Se eu olhar aqui na lista eu tenho dois SW7,
+mas por que isso?
+
+0:04:06.019,0:04:10.859
+Porque aqui no EVE, quando eu mandei ele
+importar, ele importou exatamente o nome
+
+0:04:10.859,0:04:12.479
+que está aqui.
+
+0:04:12.479,0:04:16.479
+Porém, se eu clico aqui no primeiro, ele
+foi lá para o primeiro SW7.
+
+0:04:16.479,0:04:19.799
+Se eu clico no segundo, ele vai para o
+segundo.
+
+0:04:19.799,0:04:20.359
+Por que?
+
+0:04:20.359,0:04:26.559
+Porque aqui ele vai pelo IP e porta, em
+vez de mapear pelo nome.
+
+0:04:27.019,0:04:32.579
+Então se eu olhar aqui neste primeiro,
+ele está com a porta final 85, e neste
+
+0:04:32.579,0:04:35.899
+segundo, ele está com a porta final 90.
+
+0:04:36.019,0:04:41.339
+Então do EVE para cá, fica mapeado
+certinho, mas aqui como ele é pelo nome, e
+
+0:04:41.339,0:04:48.799
+aí para não repetir o nome, ela jogou SW7
+aqui e SW7Lower aqui.
+
+0:04:49.019,0:04:56.659
+para não repetir o nome, ela jogou este
+lower aqui, mas ele não vai fazer nada,
+
+0:04:56.659,0:05:00.899
+então se eu estiver aqui no 5 e clicar no
+lower, não vai para ele.
+
+0:05:00.899,0:05:02.039
+O que eu posso fazer?
+
+0:05:02.039,0:05:03.939
+Mudar aqui para o mesmo nome.
+
+0:05:03.939,0:05:07.059
+Em vez de lower eu vou pôr o traço 2
+aqui.
+
+0:05:07.059,0:05:15.900
+Ok, vou vir aqui no meu editor, vou vir
+aqui no meu editor,
+
+0:05:15.900,0:05:18.659
+vim aqui nesse carinha,
+
+0:05:18.659,0:05:30.500
+e vou renomear ele traço 2, ok está
+com traço 2, feito. Agora se eu clico aqui no
+
+0:05:30.500,0:05:38.000
+de cá está aqui, se eu clico nesse aqui está
+aqui, está indo certinho nas abas, está tudo
+
+0:05:38.000,0:05:43.500
+certinho a aqui se eu habilitar o editor
+
+0:05:43.500,0:05:48.500
+eu vou acertando estes carinhas, né?
+
+0:05:48.500,0:05:56.500
+ Eu já fiz isso em todos eles, já dei uma ajeitada aí,
+algumas coisas eu fiz em lote,
+
+0:05:58.000,0:06:00.528
+fiz manual, uma boa ajeitada aqui mais rápida
+
+0:06:00.528,0:06:05.168
+e vou carregar então esse mapa que eu já
+arrumei aqui, então se eu vier aqui em
+
+0:06:05.168,0:06:09.428
+topologia, tem esse mapa aqui dessa...
+
+0:06:09.428,0:06:11.168
+aí vocês...
+
+0:06:11.168,0:06:21.948
+carregar o mapa, aí agora vocês veem que
+está tudo certinho.
+
+0:06:22.528,0:06:29.928
+Se eu apertar aqui, você vê que ele está
+aqui com SW11, eu acabei colocando SW11 e
+
+0:06:29.928,0:06:31.708
+não tem efeito nenhum lá em cima.
+
+0:06:31.708,0:06:42.368
+Se eu vier aqui e trocar para SW11, na
+hora que eu clico aqui ele já está lá.
+
+0:06:42.528,0:06:50.268
+clico no roteador, clico aqui, então aqui
+eu consigo já pegar um mapeamento pronto,
+
+0:06:50.268,0:07:00.988
+ou eu peço para IA adiantar um lado e vou
+depois ajeitando aqui, dá para editar o
+
+0:07:00.988,0:07:06.268
+arquivo lá com as coordenadas na mão, se
+for mais rápido, quando eu peguei a
+
+0:07:06.268,0:07:11.768
+primeira vez, percebi que tinha um
+deslocamento padrão, tamanho padrão, eu
+
+0:07:11.768,0:07:12.508
+fui lá e fiz em
+
+0:07:12.508,0:07:16.408
+um lote, um ajuste, depois eu vim aqui e
+fiz um ajuste fino só.
+
+0:07:16.408,0:07:19.248
+Ficou perfeito, muito bom.
+
+0:07:19.248,0:07:27.028
+Aqui a versão 0.2 com o mapeamento dos
+dispositivos da imagem para as abas.

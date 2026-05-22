@@ -1,0 +1,608 @@
+0:00:02.060,0:00:09.360
+Aqui nós temos um laboratório no EVE,
+estou mostrando aqui este laboratório do
+
+0:00:09.360,0:00:17.000
+CCNP do ENARSI, quando você clica em um
+dispositivo ele vai chamar o software que
+
+0:00:17.000,0:00:20.780
+eu fiz para ajudar a programação deste
+dispositivo.
+
+0:00:20.780,0:00:29.260
+Ele já abre o software com uma aba com os
+dados do dispositivo, olhando ali embaixo
+
+0:00:29.260,0:00:29.980
+tem telnet,
+
+0:00:29.980,0:00:32.180
+o IP e a porta.
+
+0:00:32.180,0:00:38.040
+Então eu clico duas vezes aqui na aba e
+vou ver aqui os dados dos dispositivos que
+
+0:00:38.040,0:00:42.960
+vieram ali da chamada quando clica no
+dispositivo ali.
+
+0:00:42.960,0:00:48.440
+Posso renomear ele e está adicionado aqui
+este dispositivo no meu software.
+
+0:00:48.440,0:00:54.020
+Se eu clico aqui na nossa bola vermelha,
+ela fica verde que conectou ou fica
+
+0:00:54.020,0:00:55.900
+vermelha que não está conectada.
+
+0:00:55.900,0:00:59.780
+Aqui na área de script eu posso escrever 
+o script, né,
+
+0:00:59.780,0:01:11.340
+eu dou um ENTER, ENABLE e dá um SHOW no
+running-config, envio este meu script,
+
+0:01:11.340,0:01:18.840
+percebe ali em baixo que ele deu um ENTER,
+deu 500ms, escreveu EN de ENABLE e depois
+
+0:01:18.840,0:01:24.580
+de 500ms o SHOW RUN mostrou aqui o running
+config, eu clico aqui em baixo e uso como
+
+0:01:24.580,0:01:25.780
+se fosse um terminal normal
+
+0:01:25.780,0:01:32.720
+posso escrever, posso dar o tab aqui para
+completar, a interrogação também se eu
+
+0:01:32.720,0:01:40.280
+quiser para poder ver, e eu consigo
+selecionar e arrastar o texto que eu
+
+0:01:40.280,0:01:45.360
+quiser, então eu posso ir trabalhando ali
+embaixo, selecionando o texto, arrastando
+
+0:01:45.360,0:01:51.060
+para cima e vou montando o script, e posso
+executar o script, ele vai jogando para
+
+0:01:51.060,0:01:54.460
+baixo ali com aquele delay ali entre cada
+linha.
+
+0:01:55.780,0:02:11.520
+Agora fazendo um novo teste, aí ele deu
+exit ali e voltou para a estaca zero, se eu
+
+0:02:11.520,0:02:15.540
+mandar o script de novo, aí começa do zero,
+ele dá o ENTER, dá o ENABLE, dá o
+
+0:02:15.540,0:02:22.480
+show running-config, e ali o show running-config,
+ele acabou dando o C do configure terminal, acabou
+
+0:02:22.480,0:02:23.780
+indo para o
+
+0:02:23.780,0:02:34.060
+acabou indo para o running-config, aí
+rodando de novo, aí aqui já deu aquela
+
+0:02:34.060,0:02:44.400
+zica do procurar o nome lá, aí eu posso
+salvar, aí salvo aqui, dou o nome,
+
+0:02:44.400,0:02:51.800
+workspace 3 aqui, que eu já tinha os
+outros, e posso aqui vir carregar o
+
+0:02:51.800,0:02:53.060
+workspace 2,
+
+0:02:53.060,0:02:59.080
+onde eu tenho duas abas, uma com conexão
+SSH para um servidor Linux e outra com o
+
+0:02:59.080,0:03:01.720
+telnet para o roteador 1.
+
+0:03:01.720,0:03:08.440
+Aí funciona a mesma coisa SSH ou telnet
+com qualquer dispositivo, seja local, na
+
+0:03:08.440,0:03:13.060
+rede, no emulador, então funciona bem.
+
+0:03:13.060,0:03:19.300
+Então aqui você está vendo aqui, estou
+mandando o código do bash, está
+
+0:03:19.300,0:03:26.320
+funcionando, veja aqui os dados de
+conexão, IP, porta, usuário e senha, que
+
+0:03:26.320,0:03:33.380
+SSH precisa de usuário e senha, se tivesse a
+chave não precisaria, mas no caso aqui,
+
+0:03:33.380,0:03:34.380
+usuário e senha.
+
+0:03:35.060,0:03:44.423
+e aqui eu tenho o script do R1 então você vê
+que para cada dispositivo ele salva ali e
+
+0:03:44.423,0:03:50.922
+aqui do lado eu posso ter a topologia uma
+imagem eu posso ampliar rolando o mouse ou
+
+0:03:50.922,0:03:54.921
+ir para a esquerda e direita também rolando
+no mousepad esquerda e direita posso
+
+0:03:54.921,0:04:01.919
+ampliar e selecionar a área que eu quero
+visualizar melhor arrastar para lá  e para cá
+
+0:04:01.919,0:04:10.918
+segurando com o mouse apertado ou o shift
+rolando a rodinha ou até no mouse pad
+
+0:04:10.918,0:04:17.020
+rolando dos dois dedos de lado eu consigo 
+visualizar a imagem
+
+0:04:17.020,0:04:23.960
+e como eu tenho o EVE-NG eu não preciso
+dessa imagem, mas se fosse uma topologia
+
+0:04:23.960,0:04:29.120
+real, que eu tivesse o desenho, posso ter
+o desenho aí e ter as abas com os
+
+0:04:29.120,0:04:33.640
+equipamentos aqui, posso estar vendo a
+topologia aqui do lado e trabalhando os
+
+0:04:33.640,0:04:35.160
+equipamentos aqui do lado de cá.
+
+0:04:36.020,0:04:43.880
+Então agora com o EVE aqui, posso deixar
+a topologia aqui no EVE e posso me
+
+0:04:43.880,0:04:49.600
+conectar aqui no equipamento e estar
+trabalhando.
+
+0:04:49.600,0:04:54.360
+Aqui eu tenho dois botões, Connect All,
+ele conecta todos os dispositivos e o
+
+0:04:54.360,0:04:58.640
+Send All vai enviar um comando para todos
+os dispositivos que estiverem conectados e
+
+0:04:58.640,0:05:01.020
+selecionados aqui nessa aba aqui.
+
+0:05:01.020,0:05:06.300
+Então aqui eu posso selecionar,
+deselecionar o que eu quero enviar um
+
+0:05:06.300,0:05:08.280
+comando e mando para todos.
+
+0:05:08.280,0:05:13.280
+Então aqui se eu adicionar mais um
+roteador, um R5 aqui no caso, vou renomear
+
+0:05:13.280,0:05:20.120
+aqui para o R5, adicionado, ele está
+desconectado, se eu mandar enviar ele
+
+0:05:20.120,0:05:22.860
+aparece ali desconectado e eu não consigo
+selecionar.
+
+0:05:22.860,0:05:27.520
+Então eu só vou enviar para todos que eu
+selecionar.
+
+0:05:27.520,0:05:36.040
+Então, eu vou enviar para o Linux, enviar
+para o R1, um comando clear aqui.
+
+0:05:36.040,0:05:40.260
+Então, se eu for olhar aqui no R5, não
+enviou nada, está desconectado, no R1
+
+0:05:40.260,0:05:44.620
+enviou o clear, que não quer dizer nada
+para ele, e no Linux aqui ele deu um
+
+0:05:44.620,0:05:48.440
+clear, voltou no prompt original, vamos
+dizer assim.
+
+0:05:48.440,0:05:54.440
+Posso vir aqui, enviar outro comando
+aqui, por exemplo.
+
+0:05:57.520,0:06:06.680
+Você vê que para o Linux ele envia o
+clear, apaga o terminal e posso enviar
+
+0:06:06.680,0:06:09.520
+este script aqui que está aqui em cima
+
+0:06:09.520,0:06:17.540
+Eu tenho que selecionar aqui, eu clico
+aqui no selecionar todos, seleciona todos
+
+0:06:17.540,0:06:24.400
+os que estão conectados, os que não estão
+conectados não tem como selecionar, não
+
+0:06:24.400,0:06:25.520
+vai mandar para eles
+
+0:06:25.520,0:06:36.140
+Agora você vê que ele mandou o comando
+para o terminal linux e para o roteador 1
+
+0:06:36.140,0:06:37.360
+aqui também.
+
+0:06:39.520,0:06:43.600
+Então aqui você vê que estou em um
+terminal normal, posso dar o clear,
+
+0:06:43.600,0:06:46.520
+interrogação, ele vai mostrar vários
+comandinhos.
+
+0:06:46.520,0:06:52.380
+e eu posso selecionar o comando que eu
+quero e simplesmente arrastar e soltar,
+
+0:06:52.380,0:06:55.280
+ele já coloca o comando como se tivesse
+digitado.
+
+0:06:55.280,0:07:01.400
+Posso também arrastar, selecionar,
+arrastar e soltar ali em cima na área do
+
+0:07:01.400,0:07:03.300
+script, ele já vai para lá.
+
+0:07:03.520,0:07:14.400
+Como também posso arrastar outras coisas
+de fora, um texto que eu vi ali na
+
+0:07:14.400,0:07:19.340
+internet, ou um script que está em outro
+editor, posso catar este texto que está
+
+0:07:19.340,0:07:25.160
+lá, seleciono, arrasto, solto aqui, faço
+drag and drop, e consigo estar trabalhando
+
+0:07:25.160,0:07:26.840
+também com outro texto qualquer.
+
+0:07:27.520,0:07:32.780
+Agora aqui se eu voltar e abrir o meu
+workspace, ele volta original do jeito que
+
+0:07:32.780,0:07:37.520
+estava, e estava com um script salvo para
+cada dispositivo ali.
+
+0:07:37.520,0:07:47.100
+Então, esta parte está funcionando bem
+legal, posso clicar ali, conecta, aí
+
+0:07:47.100,0:07:52.040
+aquilo aqui que eu falei, posso selecionar
+e arrastar aqui, solto, ele já cola tudo
+
+0:07:52.040,0:07:54.520
+ali, posso editar aqui do jeito que eu 
+quiser,
+
+0:07:54.520,0:08:01.140
+e depois envia um comando ali para baixo
+um editor de texto faz um realce de cores
+
+0:08:01.140,0:08:11.637
+para alguns comandos as vezes ajuda
+Posso fechar a aba posso salvar meu
+
+0:08:11.637,0:08:16.636
+workspace como também posso importar aqui do
+EVE todos os dispositivos que estão no EVE
+
+0:08:16.636,0:08:28.033
+no caso eu tenho que pegar o IP e a porta
+o IP está ali, opa, o IP está ali, copiar e colar
+
+0:08:28.033,0:08:35.040
+a porta é a porta 80, que é http, não
+preciso mexer, admin/eve, e aqui o LAB,
+
+0:08:35.040,0:08:45.300
+no caso o LAB está ali em cima, eu vou lá,
+copio este LAB aqui e colo aqui no lugar
+
+0:08:45.300,0:08:52.140
+aqui, ou se não tiver o nome ali eu posso
+vir aqui em LAB DETAILS, vai estar o nome
+
+0:08:52.140,0:08:54.380
+aqui também, posso copiar aqui e colo lá.
+
+0:08:55.040,0:09:00.560
+na hora que eu dou um Fetch, ele vai
+conectar no EVE e vai pegar todos os
+
+0:09:00.560,0:09:05.520
+dispositivos que tem ali no EVE, coloquei
+para ordenar por começar com R, depois SW
+
+0:09:05.520,0:09:09.040
+e depois o resto, em ordem alfabética
+depois.
+
+0:09:09.040,0:09:13.920
+Legal, a ordem ficou aqui legal, posso
+selecionar e deselecionar os que eu quero
+
+0:09:13.920,0:09:18.240
+importar, lá do lado você vê que o EVE
+desconectou, porque ele só aceita uma
+
+0:09:18.240,0:09:23.600
+conexão do admin cada vez, então depois eu
+conecto de novo.
+
+0:09:24.040,0:09:26.220
+e importei todos os dispositivos aqui.
+
+0:09:26.220,0:09:31.580
+O R1 já existia, ele não sobrescreveu,
+deixou o R1 que estava, e os que não
+
+0:09:31.580,0:09:34.020
+existem ele cria.
+
+0:09:34.020,0:09:42.560
+Vou conectar aqui no EVE de novo, vamos
+aqui com a topologia, e agora na hora que
+
+0:09:42.560,0:09:47.560
+eu clico no dispositivo, ele já seleciona
+a aba deste dispositivo aqui do lado,
+
+0:09:47.560,0:09:49.920
+porque ele já existe lá.
+
+0:09:50.040,0:09:54.920
+então, se não existe, ele iria adicionar
+uma aba nova, como já existe, ele vai lá e
+
+0:09:54.920,0:10:00.340
+posiciona naquela aba, ele olha que é
+telnet, o IP e a porta, vê que tem uma aba
+
+0:10:00.340,0:10:04.440
+com telnet, IP e porta correspondente, vai
+lá e posiciona naquela aba.
+
+0:10:04.440,0:10:09.520
+Aqui eu posso estar trabalhando com
+aquele dispositivo e cada um vai ter seu
+
+0:10:09.520,0:10:14.280
+script, posso conectar todos, você vê ali
+que conectou todos, rolando aqui.
+
+0:10:14.440,0:10:20.480
+posso agora selecionar os que eu quero
+enviar um comando, vou selecionar todos
+
+0:10:20.480,0:10:27.160
+aqui, estão todos verdinho, vou mandar um
+comando aqui para todos, então mando um
+
+0:10:27.160,0:10:30.440
+script aqui para todos os dispositivos
+
+0:10:30.440,0:10:44.040
+e vamos dar um enable no cdp run, fazer
+um teste, ok, envia, para o linux aqui o
+
+0:10:44.040,0:10:50.280
+enable deu alguma sujeira aí, o no cdp run
+não deu nada, mas aqui no primeiro
+
+0:10:50.280,0:10:59.120
+roteador, ele já rodou ali, né,
+
+0:11:00.440,0:11:15.360
+faltou o configura e terminal, caramba,
+então o enable, configure terminal, e o
+
+0:11:15.360,0:11:22.280
+no cdp run, que também está com um delay 
+de 500ms, vai enviar para todos
+
+0:11:22.280,0:11:32.140
+Esqueci de selecionar todos aqui,
+caramba!
+
+0:11:32.140,0:11:41.960
+Vamos lá, um ENTER, um ENABLE, um
+CONFIGURE TERMINAL, e um no cdp run,
+
+0:11:41.960,0:11:44.320
+enviar para todos os dispositivos.
+
+0:11:44.320,0:11:49.500
+Vamos lá, enviou para todos os
+selecionados, e você vê lá, teve um ENTER,
+
+0:11:49.500,0:11:52.220
+um ENABLE, CONFIGURE TERMINAL, no cdp run.
+
+0:11:52.280,0:11:56.892
+então se eu for trocando aqui os outros
+equipamentos eu vou ver que aconteceu a
+
+0:11:56.892,0:12:02.391
+mesma coisa ela enviou isso a para todos
+enviou para o switch também e se eu for lá
+
+0:12:02.391,0:12:12.889
+rolando no final tem os PCs aqui também
+enviou para o PC também que são comandos que o
+
+0:12:12.889,0:12:16.388
+PC não reconhece né, não devia ter selecionado
+eles lá quando eu coloquei para enviar a
+
+0:12:16.388,0:12:21.060
+mesma coisa n devia ter selecionado o 
+Linux lá que dá sujeira aqui
+
+0:12:21.060,0:12:28.180
+mas é isso aí, funcionando legal, posso
+clicar em cima e renomear, visto que o
+
+0:12:28.180,0:12:35.800
+link entre o EVE e a aba é pelo protocolo
+IP e porta.
+
+0:12:35.800,0:12:47.200
+Agora eu posso salvar este workspace
+aqui, salvei, posso digitar aqui, outra
+
+0:12:47.200,0:12:50.515
+coisa aqui neste terminal,
+
+0:12:51.060,0:12:58.540
+Salvei o que eu fiz aqui, se eu abrir um
+outro workspace vou carregar as coisas
+
+0:12:58.540,0:13:04.500
+daquele workspace lá, se eu abrir esse
+último workspace que eu acabei de salvar,
+
+0:13:04.500,0:13:10.380
+ele vai restaurar exatamente o que eu
+tinha salvo ali que eu tinha digitado,
+
+0:13:10.380,0:13:17.240
+então se eu olhar aqui, cada janelinha de
+script vai ter o seu script separado um do
+
+0:13:17.240,0:13:18.060
+outro aqui
+
+0:13:18.060,0:13:24.980
+e posso adicionar manualmente, então se
+eu tiver um outro computador ou um
+
+0:13:24.980,0:13:30.460
+equipamento físico, posso vir aqui e
+adicionar este outro equipamento aqui, e
+
+0:13:30.460,0:13:35.940
+como eu disse, tem uma imagem ali da
+topologia que eu posso pôr do lado, quando
+
+0:13:35.940,0:13:41.400
+é uma topologia física, e fazer este tipo
+de ajuste aí.
+
+0:13:42.060,0:13:53.060
+Bom, é isso, o software de certa forma
+simples, mas bastante funcional.
+
+0:13:53.060,0:14:11.980
+E aí conforme eu vou clicando, ele vai
+enviando o protocolo, IP e porta e ele vai
+
+0:14:11.980,0:14:14.940
+posicionando na aba correta daquele
+equipamento.
+
+0:14:15.060,0:14:20.920
+e eu posso escrever aqui o script que eu
+quiser só para aquele equipamento, não
+
+0:14:20.920,0:14:22.820
+interfere nos outros.
+
+0:14:22.820,0:14:30.480
+Posso deixar aqui e outra coisa aqui é
+esse botão de send script, ele envia tudo
+
+0:14:30.480,0:14:38.800
+que tiver aqui no editor de script e tem o
+botão de selected, que ali o botão de selected
+
+0:14:38.800,0:14:43.040
+eu envio só o que tiver selecionado ou a
+linha que o cursor tiver posicionado.
+
+0:14:43.060,0:14:49.360
+então estava ali naquela linha
+posicionado do ENABLE, ele enviou aquele
+
+0:14:49.360,0:14:59.580
+ENABLE, aí enviou o show IP ROUTE, faltou
+o do, aí agora ele funciona perfeitamente.
+
+0:15:00.060,0:15:08.140
+então, consigo enviar uma seleção ali
+dentro do script, ou o script todo, ou só
+
+0:15:08.140,0:15:12.440
+a linha que tiver o cursor posicionado,
+como também consigo copiar algo ali,
+
+0:15:12.440,0:15:18.840
+selecionar, e arrastar para baixo, e troco
+o dispositivo aqui, conforme eu clico no
+
+0:15:18.840,0:15:21.280
+EVE, ele vai lá e troca a aba ali.
+
+0:15:22.060,0:15:39.740
+e depois de abrir a imagem, o próximo
+passo é clicar na imagem e selecionar a
+
+0:15:39.740,0:15:46.480
+aba, mapear o roteador 1, na hora que
+clicar naquela área, ele vai nas abinhas e
+
+0:15:46.480,0:15:49.980
+seleciona a aba do roteador 1.
+
+0:15:50.060,0:15:55.180
+Então seria um próximo passo, e também
+está incluindo IA no projeto.
+
+0:15:57.060,0:16:02.877
+Seria isso.

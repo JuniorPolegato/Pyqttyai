@@ -1,0 +1,305 @@
+0:00:02.060,0:00:10.670
+Here we have a lab in EVE, I'm showing this lab from CCNP ENARSI.
+
+0:00:10.670,0:00:20.780
+When you click on a device, it will call the software that I made to help with the programming of this device.
+
+0:00:20.780,0:00:27.352
+It opens the software with a tab containing the device's data.
+
+0:00:27.352,0:00:32.180
+Looking down there you can see telnet, the IP, and the port.
+
+0:00:32.180,0:00:42.960
+So I double-click here on the tab and I'll see the device data that came from the call when clicking on the device.
+
+0:00:42.960,0:00:48.440
+I can rename it, and this device is now added to my software.
+
+0:00:48.440,0:00:55.900
+If I click on our red dot, it turns green when connected, or stays red when it's not connected.
+
+0:00:55.900,0:01:15.648
+Here in the script area I can write the script, I press ENTER, ENABLE and do a SHOW running-config, I send my script, notice down there that it sent an ENTER, waited 500 milliseconds, typed EN for ENABLE,
+
+0:01:15.648,0:01:22.328
+and after 500 milliseconds the SHOW RUN displayed the running config.
+
+0:01:22.328,0:01:40.742
+I click down here and use it as if it were a normal terminal, I can type, I can press tab here to autocomplete, the question mark too if I want, to see options, and I can select and drag any text I want.
+
+0:01:40.742,0:01:47.525
+So I can work down there, selecting text, dragging it up and building the script.
+
+0:01:47.525,0:01:54.460
+And I can execute the script, it sends everything down there with that delay between each line.
+
+0:01:55.780,0:02:10.669
+Now running a new test, it did exit there and went back to square one.
+
+0:02:10.669,0:02:29.610
+If I run the script again, it starts from zero, it sends ENTER, ENABLE, sends show running-config, and the show running-config ended up sending the C of configure terminal, and went into it ended up going into running-config.
+
+0:02:29.610,0:02:38.943
+Then running again, here that pesky name lookup issue showed up.
+
+0:02:38.943,0:02:50.156
+Then I can save, I save here, name it, workspace 3 here, since I already had the others.
+
+0:02:50.156,0:03:01.720
+And I can load workspace 2, where I have two tabs, one with an SSH connection to a Linux server and the other with telnet to router 1.
+
+0:03:01.720,0:03:13.060
+It works the same way, SSH or telnet with any device, whether local, on the network, or in the emulator, so it works well.
+
+0:03:13.060,0:03:20.020
+So here you can see, I'm sending Bash code, it's working.
+
+0:03:20.020,0:03:28.987
+Look at the connection data: IP, port, username, and password, because SSH needs a username and password.
+
+0:03:28.987,0:03:34.380
+If you had a key you wouldn't need it, but in this case, username and password.
+
+0:03:35.060,0:03:48.025
+And here I have the R1 script, so you see that for each device it saves it there, and on the side I can have the topology, an image.
+
+0:03:48.025,0:03:54.643
+I can zoom by scrolling the mouse, or go left and right also by scrolling on the mousepad left and right.
+
+0:03:54.643,0:04:17.020
+I can zoom in and select the area I want to view better, drag it back and forth holding the mouse button, or Shift while scrolling the wheel, or even on the mousepad scrolling two fingers sideways, I can view the image.
+
+0:04:17.020,0:04:21.878
+And since I have EVE-NG, I don't need this image.
+
+0:04:21.878,0:04:30.147
+But if it were a real topology, where I had the drawing, I could have the drawing and the tabs with the equipment here.
+
+0:04:30.147,0:04:35.160
+I can view the topology on the side and work on the equipment over here.
+
+0:04:36.020,0:04:49.600
+So now with EVE here, I can leave the topology in EVE and I can connect to the equipment and start working.
+
+0:04:49.600,0:05:01.020
+Here I have two buttons, Connect All, which connects all devices, and Send All, which sends a command to all devices that are connected and selected here in this tab.
+
+0:05:01.020,0:05:08.280
+So here I can select, deselect what I want to send a command to, and I send it to all.
+
+0:05:08.280,0:05:14.420
+So here if I add another router, an R5 inches this case, I'll rename it to R5.
+
+0:05:14.420,0:05:17.587
+Added, it's disconnected.
+
+0:05:17.587,0:05:22.860
+If I try to send, it appears disconnected there and I can't select it.
+
+0:05:22.860,0:05:27.520
+So I'll only send to those I select.
+
+0:05:27.520,0:05:36.040
+So, I'll send to Linux, send to R1, a clear command here.
+
+0:05:36.040,0:05:39.950
+So if I look at R5, it didn't send anything, it's disconnected.
+
+0:05:39.950,0:05:48.440
+On R1 it sent clear, which means nothing to it, and on Linux here it did a clear, went back to the original prompt, so to speak.
+
+0:05:48.440,0:05:54.440
+I can come here and send another command here, for example.
+
+0:05:57.520,0:06:09.520
+You see that for Linux it sends the clear, clears the terminal, and I can send this script that's up here.
+
+0:06:09.520,0:06:19.773
+I have to select here, I click here on Select All, it selects all the ones that are connected.
+
+0:06:19.773,0:06:25.520
+The ones that aren't connected can't be selected, it won't send to them.
+
+0:06:25.520,0:06:37.360
+Now you see it sent the command to the Linux terminal and to router 1 here as well.
+
+0:06:39.520,0:06:46.520
+So here you see I'm in a normal terminal, I can type clear, question mark, and it shows several little commands.
+
+0:06:46.520,0:06:55.280
+And I can select the command I want and simply drag and drop, it places the command as if it had been typed.
+
+0:06:55.280,0:07:03.300
+I can also drag, select, drag and drop up there in the script area, it goes right there.
+
+0:07:03.520,0:07:17.538
+I can also drag other things from outside, a text I saw on the internet, or a script that's in another editor.
+
+0:07:17.538,0:07:26.840
+I can grab that text that's there, select it, drag, drop here, do drag and drop, and I can work with any other text too.
+
+0:07:27.520,0:07:37.520
+Now here if I go back and open my workspace, it returns to the way it was, with a saved script for each device.
+
+0:07:37.520,0:07:57.783
+So, this part is working really nicely, I can click there, it connects, then that thing I mentioned, I can select and drag here, drop, it pastes everything there, I can edit here however I want, and then send a command down below.
+
+0:07:57.783,0:08:06.972
+A text editor that highlights colors for some commands, sometimes helps.
+
+0:08:06.972,0:08:16.636
+I can close the tab, save my workspace, and also import from EVE all the devices that are in EVE.
+
+0:08:16.636,0:08:21.888
+In this case I need to get the IP and the port.
+
+0:08:21.888,0:08:28.033
+The IP is there, oops, the IP is there, copy and paste.
+
+0:08:28.033,0:08:35.040
+The port is port 80, which is HTTP, I don't need to change it. admin/eve, and here the LAB.
+
+0:08:35.040,0:08:45.847
+In this case the LAB is up there, I go there, copy this LAB and paste it here in the right place.
+
+0:08:45.847,0:08:54.380
+Or if the name isn't there, I can go to LAB DETAILS, the name will be here too, I can copy it and paste it there.
+
+0:08:55.040,0:09:02.364
+When I press Fetch, it connects to EVE and gets all the devices that are in EVE.
+
+0:09:02.364,0:09:09.040
+I set it to sort starting with R, then SW, and then the rest, in alphabetical order.
+
+0:09:09.040,0:09:11.095
+Nice, the order looks good here.
+
+0:09:11.095,0:09:14.313
+I can select and deselect the ones I want to import.
+
+0:09:14.313,0:09:23.600
+On the side you see that EVE disconnected, because it only accepts one admin connection at a time, so later I connect again.
+
+0:09:24.040,0:09:26.220
+And I imported all the devices here.
+
+0:09:26.220,0:09:34.020
+R1 already existed, it didn't overwrite it, it kept the R1 that was there, and the ones that don't exist, it creates.
+
+0:09:34.020,0:09:49.920
+I'll connect to EVE again, let's go with the topology, and now when I click on the device, it already selects that device's tab here on the side, because it already exists there.
+
+0:09:50.040,0:09:56.449
+So, if it doesn't exist, it would add a new tab, since it already exists, it goes and positions on that tab.
+
+0:09:56.449,0:10:04.440
+It sees it's telnet, the IP and port, sees there's a tab with telnet, matching IP and port, goes there and positions on that tab.
+
+0:10:04.440,0:10:09.947
+Here I can work with that device, and each one will have its own script.
+
+0:10:09.947,0:10:14.280
+I can connect all, you see there that it connected all, scrolling here.
+
+0:10:14.440,0:10:19.167
+I can now select the ones I want to send a command to.
+
+0:10:19.167,0:10:22.838
+I'll select all here, they're all green.
+
+0:10:22.838,0:10:30.440
+I'll send a command here to all, so I send a script here to all devices.
+
+0:10:30.440,0:10:40.861
+And let's do an enable, no cdp run, to run a test. Ok, send.
+
+0:10:40.861,0:10:48.509
+For Linux here the enable caused some noise, the no cdp run did nothing.
+
+0:10:48.509,0:11:08.215
+But here on the first router, it ran already, configure terminal was missing, darn.
+
+0:11:08.215,0:11:22.280
+So enable, configure terminal, and no cdp run, also with a 500 milliseconds delay, will send to all.
+
+0:11:22.280,0:11:32.140
+I forgot to select all here, darn!
+
+0:11:32.140,0:11:44.320
+Let's go, an ENTER, an ENABLE, a CONFIGURE TERMINAL, and a no cdp run, send to all devices.
+
+0:11:44.320,0:11:52.220
+Let's go, it sent to all the selected ones, and you see there, there was an ENTER, an ENABLE, CONFIGURE TERMINAL, no cdp run.
+
+0:11:52.280,0:12:07.331
+So if I switch between the other devices, I'll see the same thing happened, it sent that to all, sent to the switch too, and if I go scrolling, at the end there are PCs too.
+
+0:12:07.331,0:12:13.831
+It sent to the PC too, which are commands the PC doesn't recognize.
+
+0:12:13.831,0:12:21.060
+I shouldn't have selected them when I set it to send, the same thing, I shouldn't have selected Linux there, it causes noise here.
+
+0:12:21.060,0:12:24.111
+But that's it, working nicely.
+
+0:12:24.111,0:12:35.800
+I can click on top and rename, since the link between EVE and the tab is by the IP and port protocol.
+
+0:12:35.800,0:12:43.055
+Now I can save this workspace here, saved.
+
+0:12:43.055,0:12:50.515
+I can type here, another thing in this terminal.
+
+0:12:51.060,0:12:53.519
+I saved what I did here.
+
+0:12:53.519,0:13:00.293
+If I open another workspace, I'll load the things from that workspace.
+
+0:13:00.293,0:13:10.380
+If I open this last workspace that I just saved, it will restore exactly what I had saved there, what I had typed.
+
+0:13:10.380,0:13:18.060
+So if I look here, each script window will have its own script separate from the others.
+
+0:13:18.060,0:13:30.235
+And I can add manually, so if I have another computer or a physical equipment, I can come here and add this other equipment here.
+
+0:13:30.235,0:13:41.400
+And as I said, there's an image of the topology that I can put on the side, when it's a physical topology, and make this kind of adjustment.
+
+0:13:42.060,0:13:53.060
+Well, that's it, the software is in a way simple, but quite functional.
+
+0:13:53.060,0:14:14.940
+And as I keep clicking, it sends the protocol, IP, and port, and it positions on the correct tab for that equipment.
+
+0:14:15.060,0:14:24.522
+And I can write here whatever script I want only for that equipment, it doesn't interfere with the others. I can leave it here.
+
+0:14:24.522,0:14:33.497
+And another thing here is this Send Script button, it sends everything that's here in the script editor.
+
+0:14:33.497,0:14:43.040
+And there's the Selected button, where the Selected button sends only what's selected or the line where the cursor is positioned.
+
+0:14:43.060,0:14:59.580
+So it was on that line positioned on the ENABLE, it sent that ENABLE, then it sent show IP ROUTE, missing the "do", now it works perfectly.
+
+0:15:00.060,0:15:18.390
+So, I can send a selection inside the script, or the whole script, or just the line where the cursor is positioned, and I can also copy something there, select, and drag down, and switch the device here, as I click in EVE,
+
+0:15:18.390,0:15:21.280
+it goes and switches the tab there.
+
+0:15:22.060,0:15:49.980
+And after opening the image, the next step is to click on the image and select the tab, map router 1, when clicking on that area, it goes to the tabs and selects the router 1 tab.
+
+0:15:50.060,0:15:55.180
+So that would be a next step, and I'm also including AI in the project.
+
+0:15:57.060,0:16:02.877
+That's it.

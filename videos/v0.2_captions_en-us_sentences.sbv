@@ -1,0 +1,140 @@
+0:00:00.480,0:00:08.400
+Alright, here is the second version, version 0.2, where I'm already doing the mapping of the image.
+
+0:00:08.400,0:00:23.120
+So, if I click here to open the software, it will open here, will load the first tab of the device, but I'll load that last workspace that we had already made.
+
+0:00:23.120,0:00:37.305
+Here is the last workspace with all the devices from this image, which is practically the same as the one there.
+
+0:00:37.305,0:00:44.120
+I tweaked the one in EVE a bit, but the equipment is here.
+
+0:00:44.120,0:00:55.980
+So, the secret here now to do the mapping is a JSON file with the coordinates of each piece of equipment, width and height.
+
+0:00:55.980,0:01:03.020
+To save time, I dropped this into the AI, and asked it to give me this file.
+
+0:01:03.120,0:01:13.657
+It gave me this file here, with all the devices and the coordinates of each one.
+
+0:01:13.657,0:01:20.281
+So here is the list of all of them.
+
+0:01:20.281,0:01:28.040
+And with this list, what do I do with it?
+
+0:01:28.040,0:01:42.120
+With this list I come here to the Map button, or I can also come this way, right?
+
+0:01:42.120,0:02:01.558
+Load Topology Map, so I load that file the AI gave me, this topology JSON that I saved here.
+
+0:02:01.558,0:02:22.709
+I'll load this file, I'll zoom in here, I'll zoom in on the image, so here you see I'm already hovering the mouse over it, and I already see the reference to click on the equipment.
+
+0:02:22.709,0:02:29.220
+However, the coordinates the AI gave me are a bit off, so I'll need to edit those coordinates.
+
+0:02:29.220,0:02:33.729
+So I have this editor button here.
+
+0:02:33.729,0:02:38.509
+When I click here, it allows me to edit the coordinates.
+
+0:02:38.509,0:02:42.449
+And so, I'll fix this little guy here.
+
+0:02:42.449,0:03:01.949
+I come here, place it here, set the width and height however I want, ok, and I keep doing this for the others, doing the same for the others.
+
+0:03:01.949,0:03:18.021
+So, I keep doing this, then I come here and save, and after making the file I made here, I'll overwrite it, ok, done.
+
+0:03:18.021,0:03:20.974
+I'll go back to the tabs.
+
+0:03:20.974,0:03:31.353
+So there I mapped this one, I come here and click on it, on SW4, it went to the SW4 tab.
+
+0:03:31.353,0:03:34.815
+On R8, it goes to the R8 tab.
+
+0:03:34.815,0:03:40.677
+Here on S7, it's off, I haven't mapped it yet, it goes to the S7 tab.
+
+0:03:40.677,0:03:53.300
+And here we have another catch — there's an S7 lower here, so there's an S7 up here, an SW7 on top and an SW7 below, a lower here.
+
+0:03:53.300,0:03:56.738
+When I press here, it does nothing.
+
+0:03:56.738,0:03:58.800
+This one goes to SW7.
+
+0:03:58.800,0:04:06.019
+If I look at the list, I have two SW7, but why is that?
+
+0:04:06.019,0:04:12.479
+Because here in EVE, when I told it to import, it imported exactly the name that's here.
+
+0:04:12.479,0:04:16.479
+However, if I click here on the first one, it went to the first SW7.
+
+0:04:16.479,0:04:20.359
+If I click on the second, it goes to the second. Why?
+
+0:04:20.359,0:04:26.559
+Because here it goes by IP and port, instead of mapping by name.
+
+0:04:27.019,0:04:35.899
+So if I look at this first one, it has the final port 85, and on this second one, it has the final port 90.
+
+0:04:36.019,0:04:48.799
+So from EVE to here, it gets mapped correctly, but here since it's by name, and in order not to repeat the name, it placed SW7 here and SW7Lower here.
+
+0:04:49.019,0:04:56.659
+To avoid repeating the name, it placed this "lower" here, but it won't do anything.
+
+0:04:56.659,0:05:03.939
+So if I'm here on number 5 and click on "lower", it doesn't go to it. What can I do? Change it here to the same name.
+
+0:05:03.939,0:05:07.059
+Instead of "lower" I'll put dash 2 here.
+
+0:05:07.059,0:05:27.027
+Ok, I'll come here to my editor, I'll come here to my editor, came here to this little guy, and I'll rename it dash 2, ok, it's now dash 2, done.
+
+0:05:27.027,0:05:48.500
+Now if I click here on this one it's here, if I click on this one it's here, it's going correctly to the tabs, it's all correct here if I enable the editor I keep fine-tuning these little guys, right?
+
+0:05:48.500,0:05:54.017
+I already did this in all of them, gave it some adjustments.
+
+0:05:54.017,0:06:11.168
+Some things I did in batch, did manually, a nice quick adjustment here, and I'll load this map that I've already fixed here, so if I come here to topology, there's this map of this... then you...
+
+0:06:11.168,0:06:21.948
+load the map, and now you see it's all correct.
+
+0:06:22.528,0:06:31.708
+If I press here, you see it has SW11, I ended up putting SW11 and it has no effect up there.
+
+0:06:31.708,0:06:42.368
+If I come here and change it to SW11, the moment I click here it's already there.
+
+0:06:42.528,0:06:58.167
+Click on the router, click here, so here I can already get a ready-made mapping, or I ask the AI to speed up one side and then I keep fine-tuning here.
+
+0:06:58.167,0:07:05.038
+It's possible to edit the file there with the coordinates by hand, if it's faster.
+
+0:07:05.038,0:07:16.408
+When I got it the first time, I noticed there was a standard offset, standard size, I went there and did it in a batch, one adjustment, then I came here and did just a fine adjustment.
+
+0:07:16.408,0:07:19.248
+Turned out perfect, very good.
+
+0:07:19.248,0:07:27.028
+Here's version 0.2 with the mapping of the devices from the image to the tabs.

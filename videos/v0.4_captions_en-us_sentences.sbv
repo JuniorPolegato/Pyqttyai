@@ -1,0 +1,158 @@
+0:00:01.020,0:00:02.380
+Hey everyone, how's it going?
+
+0:00:02.380,0:00:05.300
+We're now on version 0.4.
+
+0:00:05.300,0:00:22.420
+I've already made videos for 0.1 and 0.2, version 0.3 was just some adjustments to run well on Windows, and now we're on version 0.4 where I implemented the Send All feature.
+
+0:00:23.000,0:00:26.122
+So, this here is today's lab.
+
+0:00:26.122,0:00:28.922
+I'll use it as an example.
+
+0:00:28.922,0:00:36.000
+I'm going to click here on the router to open the application.
+
+0:00:36.000,0:00:46.291
+And, in this case, I'll click here to connect to it.
+
+0:00:46.291,0:00:53.320
+I'm here on that R2 that I clicked over there.
+
+0:00:53.320,0:01:01.000
+Send All allows me to send a script to all devices that are connected.
+
+0:01:01.000,0:01:28.060
+And, if I click on R1 now, for example, I can check the box here to always choose this application, and it has already opened the other one here — that was R1, no, R2, and here R1.
+
+0:01:31.000,0:01:37.132
+This tab will come over here, connect, that's it.
+
+0:01:37.132,0:01:39.385
+We have R1 and R2.
+
+0:01:39.385,0:01:51.378
+When I press Send All, I can write the script here — an `enable`, for example, in this first script.
+
+0:01:51.378,0:02:04.100
+I add another script, I'll put a `show ip route` here.
+
+0:02:04.100,0:02:14.600
+Then I can send this `enable` to all of them — so it sent to both.
+
+0:02:14.600,0:02:23.739
+I can come here on Send All, Script 2, the `show ip` — here it sent, here it sent.
+
+0:02:23.759,0:02:27.140
+Let me finish up here. OK.
+
+0:02:27.140,0:02:38.759
+I'm going to load all the routers that are already in today's workspace, I'll load it to explain better.
+
+0:02:38.759,0:02:53.824
+So here in today's workspace, I'll double-click to maximize, adjust here, double-click here, alright. So here I already have all the routers.
+
+0:02:53.824,0:02:58.559
+If I scroll the mouse wheel I can see that each one has its own script, right.
+
+0:02:58.759,0:03:06.339
+And if I click on it here, it links me to the corresponding router, right?
+
+0:03:06.339,0:03:10.139
+So, alright?
+
+0:03:10.139,0:03:25.759
+Now here on Send All, since each one has its own script, I want to send — I created this new option here, where I send that script that's there, exclusive to each one, to each device.
+
+0:03:25.759,0:03:31.235
+So each one will have its own script there and that's what will be sent.
+
+0:03:31.235,0:03:33.676
+Let me connect everyone first. OK.
+
+0:03:33.676,0:03:42.874
+Look there, they're all connected, on Send All they're all selected and I'll send each one's script to each one.
+
+0:03:42.874,0:03:50.905
+I press here and here we can see it's progressing — each one sending its own.
+
+0:03:50.905,0:03:54.800
+All of them working at the same time.
+
+0:03:54.800,0:04:11.518
+And we'll see the adjacencies forming here, on script 1 there's already a summary here, on 2 also, on 3 there isn't yet, right?
+
+0:04:11.518,0:04:18.358
+But now comes Send All...
+
+0:04:18.358,0:04:26.358
+So you saw there that if I click here, it will send what's there, the device's own script.
+
+0:04:26.358,0:04:30.418
+If I want to send a global script, I can grab a global script here.
+
+0:04:30.418,0:04:40.518
+I made several here, I can have multiple pre-made scripts, they're saved in the workspace, so I can have scripts for each workspace.
+
+0:04:40.518,0:04:46.938
+For example, here I have a little tab for save, I can double- click here and rename it, OK?
+
+0:04:46.938,0:04:50.618
+So here I have a save tab and I'll send a save to all of them.
+
+0:04:50.618,0:04:58.258
+If I press send here, you can see it sent — look, a save to all of them.
+
+0:04:58.258,0:05:00.938
+So all of them have a save there.
+
+0:05:00.938,0:05:07.518
+If I scroll here, the mouse wheel, I navigate through all of them and I see that all of them received a save.
+
+0:05:07.518,0:05:22.458
+I can throw in an exit script here, it will end the session, if I scroll between them here, I'll see the session ended on all of them here.
+
+0:05:22.458,0:05:26.898
+Now I can, for example, send save to all of them again here.
+
+0:05:29.518,0:05:40.894
+So it sent to one, to another, to another, so I can see here that it's sending to all of them. OK.
+
+0:05:40.894,0:05:53.091
+Now, for example, we have ready `disable cdp run`, so there it sent `no cdp run` to all of them.
+
+0:05:53.091,0:06:03.800
+If I want to see the BGP Summary here, for example, I can come here and send it to all of them.
+
+0:06:03.800,0:06:28.038
+So here, if I navigate between them and pick router 3, I'll see here the BGP Summary for them, if I pick 14 from 14, from 8, from 8, from 13, from 17, so I see all of them, if I scroll here, the wheel, I cruise through all of them, right?
+
+0:06:28.078,0:06:31.998
+Let's go, neat and tidy here...
+
+0:06:33.078,0:06:36.078
+So if I scroll here, I cruise through all of them.
+
+0:06:36.078,0:06:48.078
+So that's it, Send All keeps the scripts ready here, so whenever you write scripts here or write in Send All, come here and press save, so you don't lose what you did.
+
+0:06:48.078,0:07:05.598
+And that's it, another feature here, very practical, very nice, to be using in programming, in studying routers and also in real-world cases. And the real-world case.
+
+0:07:05.598,0:07:09.998
+Here I'm simulating in EVE, but it could be a real case.
+
+0:07:09.998,0:07:29.838
+Here it's an image, I'm not depending on a browser, on anything, but if I go back to the browser and also click here in EVE on some router, on 18 for example, it already opens it on 18 here.
+
+0:07:30.078,0:07:44.731
+Another thing I added here was to make it bring the window to the front, so you can see it just brings a notice, but if I'm here, it brings the window to the front.
+
+0:07:44.731,0:07:52.038
+The problem is it loses some little configuration, but you don't have to keep pressing Alt+Tab to find the window.
+
+0:07:52.038,0:07:54.338
+So that's it.

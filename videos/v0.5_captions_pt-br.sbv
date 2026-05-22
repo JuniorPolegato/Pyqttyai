@@ -1,0 +1,813 @@
+0:00:01.040,0:00:02.440
+Fala pessoal, tudo bem?
+
+0:00:02.440,0:00:12.060
+Estamos agora na versão 0.5 do Pyqttyai e
+vou tentar ser bem rápido aqui para não
+
+0:00:12.060,0:00:13.500
+estender muito este vídeo.
+
+0:00:13.500,0:00:21.600
+Eu fiz uma documentação dele explicando
+que é Python, QT, TTY e AI, o último é
+
+0:00:21.600,0:00:26.700
+inteligência artificial e essa versão 0.5
+está trazendo um primeiro modelo que é
+
+0:00:26.700,0:00:28.260
+para fazer a transcrição do áudio.
+
+0:00:29.000,0:00:36.260
+Então aqui eu fiz um resuminho de como
+começou a ideia, depois um roadmap aqui de
+
+0:00:36.260,0:00:42.520
+como as versões foram evoluindo, uma
+descrição de todas essas versões, tem os
+
+0:00:42.520,0:00:50.400
+vídeos aqui, cada versão tem seu vídeo em
+inglês, português, e tem as legendas também.
+
+0:00:50.440,0:01:01.720
+e aqui depois entre a versão 0.4 e 0.5,
+fiz um gap aqui, eu chamei, de vários
+
+0:01:01.720,0:01:09.240
+estudos, de vários modelos de IA, o que dá
+para rodar na máquina, o que não dá, o que
+
+0:01:09.240,0:01:14.400
+tem que ser na nuvem, o que dá para fazer
+agora, o que eu tive que deixar para depois.
+
+0:01:14.440,0:01:23.380
+Então, para depois acabou ficando agora
+uma inteligência usando NLP, Natural
+
+0:01:23.380,0:01:31.520
+Language Processing, e um modelo de IA
+para fazer a transcrição do áudio.
+
+0:01:31.720,0:01:37.120
+E na versão 0.6, eu já fiz alguns testes,
+um modelo de IA que consegue ler a imagem,
+
+0:01:37.120,0:01:41.900
+interpretar o que você solicita a partir
+dessa imagem, e ele entregar o código
+
+0:01:41.900,0:01:47.360
+pronto para você jogar
+num switch ou num roteador.
+
+0:01:47.360,0:01:47.940
+Pronto?
+
+0:01:47.940,0:01:56.100
+Claro que você tem que revisar antes, né?
+Mas na próxima na versão é o que está por vir aí.
+
+0:01:56.140,0:02:02.360
+Eu vou jogar essa documentação e o
+software lá no meu GitHub, depois eu vou
+
+0:02:02.360,0:02:06.100
+jogar aqui e vocês vão conseguir
+acessar, baixar, testar...
+
+0:02:06.100,0:02:12.980
+Voltando aqui no EVE, vou clicar aqui no 
+roteador 20, ele vai chamar o software,
+
+0:02:12.980,0:02:19.740
+e vai abrir aqui o Pyqttyai e vai carregar
+este modelo do Whisper que faz a
+
+0:02:19.740,0:02:26.580
+transcrição. Ele carregou aqui o modelo
+versão 3 turbo na minha placa de vídeo.
+
+0:02:26.580,0:02:36.560
+É uma placa de vídeo modesta, tem 2GB, o
+modelo ocupou praticamente 1,5GB.
+
+0:02:36.980,0:02:47.260
+e aqui tem a placa de vídeo da Intel, que
+é incorporada no processador.
+
+0:02:47.260,0:02:52.160
+Então aqui eu vou fazer a transcrição do
+áudio utilizando a placa de vídeo da
+
+0:02:52.160,0:03:05.220
+NVIDIA. Agora a barra de botões aqui, a
+barra de tarefas aqui ganhou um microfone.
+
+0:03:05.220,0:03:11.200
+Só para vocês terem ideia do que dá para
+fazer, vou clicar aqui para mostrar para vocês.
+
+0:03:11.220,0:03:23.220
+Configuração inicial Cisco, Hostname
+router20, Username Cisco, Senha, Class.
+
+0:03:23.220,0:03:28.220
+Agora ele vai fazer a transcrição, usando
+minha placa de vídeo.
+
+0:03:28.220,0:03:33.580
+Então se eu olhar aqui, ela estava aqui
+com processamento 100%, fez aqui o
+
+0:03:33.580,0:03:40.000
+processamento e entregou aqui um código já
+pronto, que é da configuração inicial Cisco.
+
+0:03:40.000,0:03:46.520
+Então aqui faz um processamento
+natural da linguagem, onde ele vai pegar
+
+0:03:46.520,0:03:50.760
+através de expressões regulares, eu
+coloquei aqui.
+
+0:03:51.220,0:03:58.980
+então aqui é onde ele vai pegar uma
+palavra ou palavras-chave e a partir delas
+
+0:03:58.980,0:04:05.960
+capturar na sua fala ou no texto que estiver
+ali, capturar algumas informações e gerar
+
+0:04:05.960,0:04:11.220
+um novo texto, no caso aqui gerou um
+código inicial para um roteador Cisco.
+
+0:04:11.220,0:04:18.720
+Então se eu for analisar aqui, este
+código gerado, ele pegou o router 20, o
+
+0:04:18.720,0:04:23.520
+router 20, Cisco e class como senha.
+
+0:04:23.520,0:04:27.780
+Então se eu for procurar aqui neste
+código gerado, eu vou ver router 20 aqui
+
+0:04:27.780,0:04:29.760
+em alguns lugares.
+
+0:04:31.220,0:04:43.500
+vou ver a senha class, aqui, aqui, aqui
+também, e vou ver o usuário, aqui ele pôs
+
+0:04:43.500,0:04:46.280
+"namecisco", por que?
+
+0:04:46.280,0:04:51.520
+É algo até que vou ter que corrigir, ele
+vai pegar tudo que tiver entre user e
+
+0:04:51.520,0:05:00.860
+senha, tirar os caracteres que não são 
+permitidos e compor o nome do usuário,
+
+0:05:00.860,0:05:03.700
+mas eu queria só "cisco", o que eu posso
+fazer?
+
+0:05:03.700,0:05:15.680
+Seleciono, CTRL+SHIFT+F, vou trocar o
+"namecisco" por "cisco" apenas.
+
+0:05:15.680,0:05:20.760
+Ok, trocou já.
+
+0:05:20.760,0:05:27.980
+Então também tem essa funcionalidade do
+CTRL+SHIFT+F, de ele procurar, de ele fazer um
+
+0:05:27.980,0:05:30.840
+replace, então se eu procurar aqui,
+
+0:05:30.840,0:05:37.560
+por exemplo, a palavra pass, ela se repete
+aqui oito vezes neste texto aqui.
+
+0:05:37.560,0:05:46.240
+Então aqui eu já tenho um código de
+configuração inicial da Cisco, onde ele
+
+0:05:46.240,0:05:50.480
+configura linha, senha, tudo e eu posso
+enviar, vou conectar aqui no meu roteador
+
+0:05:50.480,0:05:55.800
+no EVE, estava lá no roteador 20, eu posso
+enviar esse script lá para aquele roteador.
+
+0:05:55.840,0:06:05.900
+deixa eu ver se ele está aqui, se está carregado, o
+tempo aqui vou acelerar um pouquinho para 100 ms
+
+0:06:05.900,0:06:08.400
+e mandar o script. Então aqui ele
+está mandando já todo o script, está
+
+0:06:08.400,0:06:14.000
+funcionando, a gente percebe que 
+ele deu alguns errinhos ali em cima
+
+0:06:14.000,0:06:16.580
+Vamos ver...
+
+0:06:16.580,0:06:24.560
+aqui, porque aqui eu dei o comando que a
+senha tem que ser no mínimo de 10 dígitos,
+
+0:06:24.560,0:06:29.820
+10 caracteres e a senha class é menos.
+
+0:06:30.000,0:06:31.800
+o que eu posso fazer?
+
+0:06:31.800,0:06:41.640
+Posso até apagar isto aqui, vir aqui e
+vamos consertar aqui ó, user é Cisco,
+
+0:06:41.640,0:06:52.500
+senha class com mais caracteres, por
+exemplo, e vou enviar este novo, dou o
+
+0:06:52.500,0:06:58.000
+CTRL+SHIFT+A, ele vai ler esta linha e vai
+gerar aquele código de novo aqui em baixo.
+
+0:06:58.000,0:07:02.640
+então eu poderia estar falando de novo,
+que aí ele vai pegar minha fala e fazer
+
+0:07:02.640,0:07:09.500
+isso, ou eu venho numa linha que tem, que
+já está escrita aqui, dou CTRL+SHIFT+A,
+
+0:07:09.500,0:07:15.000
+ele vai ver se casa com alguma dessas
+regras que estão aqui já prontas aqui.
+
+0:07:15.000,0:07:23.280
+Então aqui é isso, vou mandar de novo
+este script, está prontinho já, agora
+
+0:07:23.280,0:07:33.080
+vocês verem que não tem erro, teve erro,
+gerou chave SSH, ativou a chave SSH, ok.
+
+0:07:33.080,0:07:39.960
+Então aqui ele já faz com um simples
+comandinho de voz aqui, ele já fez todo o
+
+0:07:39.960,0:07:42.540
+código inicial da configuração Cisco aqui.
+
+0:07:42.540,0:07:50.260
+falando agora dos modelos de IA, aqui eu
+fiz um playground onde você pode pegar os
+
+0:07:50.260,0:07:58.700
+modelos da Faster-Whisper, da OpenVINO,
+OpenVINO-GenAI e da Cloud.
+
+0:07:58.700,0:08:09.420
+Aqui a gente estava usando já essa
+linguagem CUDA da NVIDIA, da GPU e aqui
+
+0:08:09.420,0:08:12.540
+tem o OpenVINO, ele faz
+
+0:08:12.540,0:08:18.780
+ele vai fazer uma transcodificação do
+código que está para GPU da NVIDIA para
+
+0:08:18.780,0:08:26.760
+GPU da Intel, demora muito, não está aqui
+porque eu testei e vi como funciona,
+
+0:08:26.760,0:08:33.520
+funciona bem, mas não aconselho usar por
+causa dessa demora, melhor usar este
+
+0:08:33.520,0:08:40.220
+OpenVINO-GenAI que ele já é um repositório, se 
+eu vier aqui,
+
+0:08:40.220,0:08:47.740
+o OpenVINO tem esse repositório, já estão
+todos os modelos aqui já transcodificado
+
+0:08:47.740,0:08:53.280
+da NVIDIA para a Intel, então você não tem
+que dispender memória, que é bastante
+
+0:08:53.280,0:09:00.000
+memória, mínimo 16GB para fazer uma
+transcodificação e uso do modelo, enquanto
+
+0:09:00.000,0:09:07.860
+usando o já transcodificado é bem pouco,
+se a gente for bem pouco comparado com
+
+0:09:07.860,0:09:08.980
+esses 16GB.
+
+0:09:09.220,0:09:14.180
+eu fiz aqui até um levantamento dos
+modelos da Faster-Whisper, para cada modelo
+
+0:09:14.180,0:09:22.340
+tamanho que tem, fiz o do OpenVINO que ele
+baixa, da OpenAI e depois transcodifica
+
+0:09:22.340,0:09:31.020
+esse código, esse modelo para Intel e aqui
+os modelos já codificados para Intel,
+
+0:09:31.020,0:09:31.780
+então
+
+0:09:31.780,0:09:38.400
+e, para vocês verem aqui os tamanhos, se
+a gente pegar aqui o turbo, ele está com
+
+0:09:38.400,0:09:44.680
+1.6, então em vez de 16GB para fazer todo
+esse processamento desse modelo para
+
+0:09:44.680,0:09:54.020
+chegar nesse outro aqui, que eu vou ter
+que ter disponível ali uns 16GB, eu já
+
+0:09:54.020,0:10:01.280
+pego direto aqui, então não vale a pena
+estar trabalhando aqui, só é realmente uma
+
+0:10:01.280,0:10:02.700
+prova de conceito.
+
+0:10:02.700,0:10:06.960
+Então se eu usar este aqui,
+como eu já baixei ele só vai carregar, vai
+
+0:10:06.960,0:10:12.580
+carregar bem rápido, uns 3 segundos, ele
+carrega e eu posso clicar aqui para
+
+0:10:12.580,0:10:19.620
+testar, testando a transcodificação
+utilizando a GPU da Intel, ela vai ser
+
+0:10:19.620,0:10:28.920
+usada, eu vou ver aqui no btop o uso dessa
+GPU, seria a GPU 1, para fazer a
+
+0:10:28.920,0:10:31.720
+transcodificação desse áudio.
+
+0:10:31.780,0:10:43.580
+Então agora, está vendo que a GPU ficou
+ali no 100% e eu vejo o que houve este
+
+0:10:43.580,0:10:49.060
+processamento, ela já me entregou aqui uma
+transcodificação do áudio, tudo que foi
+
+0:10:49.060,0:10:57.280
+falado ali, transcodificou, está aqui,
+aqui ela faz uma estatística, então 18
+
+0:10:57.280,0:11:00.980
+segundos de áudio, me entregou em 7 
+segundos,
+
+0:11:00.980,0:11:04.660
+uma velocidade de duas vezes e meia.
+
+0:11:04.660,0:11:11.520
+A GPU da NVIDIA tende a ser um pouquinho
+mais rápida, ela carrega mais rápido aqui,
+
+0:11:11.520,0:11:17.140
+a gente vai ver, carrega mais rápido, um
+pouquinho mais rápido.
+
+0:11:18.980,0:11:29.240
+fazendo agora um novo teste de
+transcrição de áudio utilizando a GPU da
+
+0:11:29.240,0:11:39.280
+NVIDIA. Agora ela vai fazer esta
+transcrição, a gente vai ver aqui um áudio
+
+0:11:39.280,0:11:45.500
+de 10, entregou em 4, deu duas vezes e
+meia, basicamente a mesma coisa, não tem
+
+0:11:45.500,0:11:46.780
+muita diferença.
+
+0:11:46.980,0:11:51.900
+a da NVIDIA tende a ser um pouquinho mais
+rápido, mas depende do processamento e
+
+0:11:51.900,0:11:54.900
+tudo que tiver ali no momento.
+
+0:11:54.900,0:12:01.600
+ E tem a nuvem. Na nuvem eu posso testar
+aqui várias nuvens, posso estar incluindo,
+
+0:12:01.600,0:12:07.600
+eu inclui essas para eu testar. A Gemini
+não compensa, porque a Gemini não
+
+0:12:07.600,0:12:15.600
+transcodifica ela interpreta o que você está
+falando e te devolve, demora, demora assim:
+
+0:12:15.600,0:12:22.600
+vai demorar basicamente o tempo do seu se
+você falou 10 segundos, vai esperar mais de
+
+0:12:22.600,0:12:28.600
+10 segundos ali para te devolver. O Fireworks
+e o Groq te retorna dentro de 1 ou 2 segundos.
+
+0:12:28.600,0:12:36.840
+O Fireworks AI, ele usa GPU e a 
+Groq uma empresa que desenvolveu
+
+0:12:36.840,0:12:45.000
+um processador próprio, uma LPU, de
+Language Processing Unit, então não é nem CPU
+
+0:12:45.000,0:12:51.720
+nem GPU, é uma LPU e é para processamento de
+IA com linguagem natural, muito rápido,
+
+0:12:51.720,0:12:52.880
+muito rápido mesmo.
+
+0:12:52.880,0:12:57.420
+Então vamos testar aqui primeiro a
+Fireworks, carregar, vou conectar lá na
+
+0:12:57.420,0:13:01.080
+Fireworks, está pedindo a chave, vou vir 
+aqui,
+
+0:13:01.080,0:13:08.700
+A Fireworks, a Hug Face que é uma cloud,
+eu posso estar assinando ela também, ela
+
+0:13:08.700,0:13:12.980
+vai me dar os créditos, os valores, não
+compensa.
+
+0:13:12.980,0:13:20.660
+A Fireworks também é paga, um décimo de
+centavo por minuto, em real seria meio
+
+0:13:20.660,0:13:27.520
+centavo por minuto, então uma hora de
+áudio ficaria ali, 60 minutos, ficaria ali
+
+0:13:27.520,0:13:30.080
+em torno de 30 centavos.
+
+0:13:30.080,0:13:37.440
+não é muito barato, funciona bem, muito
+barato, rápido, porém a Groq é gratuita,
+
+0:13:37.440,0:13:46.860
+mas vamos testar aqui só para mostrar que
+funciona, vou gerar uma API de teste aqui,
+
+0:13:46.860,0:14:00.060
+opa, depois vou apagar essa chave viu 
+galera, copiar aqui, jogar aqui, ok,
+
+0:14:00.080,0:14:04.560
+conectou na minha chave, beleza.
+
+0:14:04.560,0:14:11.340
+Agora vou fazer um teste de transcrição
+de áudio utilizando essa cloud da
+
+0:14:11.340,0:14:16.700
+Fireworks AI e analisar realmente a
+velocidade com que ela consegue me
+
+0:14:16.700,0:14:21.440
+entregar a transcrição de um áudio,
+lembrando que esse áudio vai ser gravado
+
+0:14:21.440,0:14:26.460
+aqui, sendo transmitido lá na nuvem, lá
+vai ser transcodificado, trans...
+
+0:14:26.460,0:14:32.160
+transcrito e...
+e me devolvido o texto.
+
+0:14:32.160,0:14:38.140
+Agora a gente vai ver aqui a velocidade,
+em 2 segundos ele me entregou quase 30
+
+0:14:38.140,0:14:45.260
+segundos de áudio, e a transcrição é muito
+boa aqui, muito bem feita, tranquilo, em
+
+0:14:45.260,0:14:50.620
+várias línguas, se a gente for ver aqui
+são 100 línguas, 99 línguas, não lembro,
+
+0:14:50.620,0:14:53.480
+alguma coisa em torno de 100 línguas
+diferentes.
+
+0:14:53.480,0:14:58.880
+e eu posso falar mixado, posso falar
+parte português, parte inglês, mas vocês
+
+0:14:58.880,0:15:02.420
+viram aqui o tempo da Fireworks, agora a
+gente vai testar com a Groq.
+
+0:15:02.420,0:15:07.800
+Vamos lá gerar uma chave da Groq.
+
+0:15:09.480,0:15:37.800
+Vou gerar uma chave de teste da Groq,
+copiar, colar aqui, sobre a GPU aqui, a
+
+0:15:37.800,0:15:39.480
+minha GPU aqui,
+
+0:15:39.480,0:15:46.680
+aqui tem 2GB, na Nvidia, mas o modelo
+cabe dentro destes 2GB, o drive que já usa
+
+0:15:46.680,0:15:59.100
+um tiquinho, mas se eu colocar aqui a
+gente vê...
+
+0:16:01.900,0:16:11.300
+e depois de fazer o gpu, se eu carregar o
+modelo aqui, a gente vê que ele vai estar
+
+0:16:11.300,0:16:19.760
+usando aqui mais ou menos 1,5 GB, já tinha
+0.3 GB, então 1.1 GB aqui, então,
+
+0:16:19.760,0:16:25.380
+transcodifica... a transcrição do áudio,
+
+0:16:25.380,0:16:31.860
+utilizando o gpu também é bem tranquilo,
+funciona bem, vocês veem aqui que não está
+
+0:16:31.860,0:16:39.560
+funcionando, está só gravando, agora ela
+vai processar meu áudio, deu 100%, aqui a
+
+0:16:39.560,0:16:46.840
+gente vê que está processando, foi muito
+rápido, processou local, entregou 13
+
+0:16:46.840,0:16:52.380
+segundos em 5 segundos, agora no Groq,
+
+0:16:52.380,0:17:04.060
+Conectar nele. Agora vamos fazer um teste com o Groq,
+para ver se realmente tem toda essa
+
+0:17:04.060,0:17:09.600
+velocidade que eles dizem que são capazes
+de entregar, fazendo agora uma transcrição
+
+0:17:09.600,0:17:15.960
+de um áudio em torno de 15 segundos e
+analisando em quanto tempo eles conseguem,
+
+0:17:15.960,0:17:22.240
+15 não né, bem mais, uns 25 segundos vai
+dar, para ver o tempo que ele consegue me
+
+0:17:22.240,0:17:25.620
+entregar,
+e a qualidade dessa transcrição.
+
+0:17:25.620,0:17:34.200
+É muito rápido, o Groq é muito rápido e a
+transcrição basicamente perfeita aqui,
+
+0:17:34.200,0:17:36.740
+dificilmente encontrar um problema.
+
+0:17:36.740,0:17:45.780
+E eu posso falar uma parte em português e
+I can speak other other part in English too.
+
+0:17:45.780,0:17:52.380
+Então ele traz aqui uma parte em
+
+0:17:52.380,0:18:02.200
+e uma parte em inglês. Então funciona muito
+bem, muito rápido, e aconselho, se tiver internet,
+
+0:18:02.200,0:18:09.000
+utilizar o Groq, se não tiver, se tiver uma
+placa de vídeo da NVIDIA, pode usar da NVIDIA,
+
+0:18:09.000,0:18:17.000
+senão a placa de vídeo já incorporada da Intel
+funciona também, muito bem, bem semelhante a NVIDIA.
+
+0:18:17.000,0:18:32.000
+Aqui salvando aqui, ok, aqui eu vou
+abrir o workspace que já estava salvo aqui.
+
+0:18:32.000,0:18:37.000
+Aqui já está mapeado, igual do vídeo passado
+conforme eu clico aqui ele vai no roteador,
+
+0:18:37.000,0:18:43.280
+clico aqui, ele conecta em todos, aqui ele desconecta 
+de todos lá do EVE, conectou em todos.
+
+0:18:43.280,0:18:53.620
+E aqui para vocês terem agora uma ideia
+de que dá para gente escrever o script sem
+
+0:18:53.620,0:18:55.500
+pôr a mão.
+
+0:18:55.500,0:18:56.000
+Vamos lá?
+
+0:18:56.280,0:18:59.200
+ENTER
+
+0:18:59.200,0:19:02.200
+ENABLE
+
+0:19:02.200,0:19:05.200
+ENTER
+
+0:19:05.200,0:19:12.200
+CONFIGURE TERMINAL, ENTER
+
+0:19:13.200,0:19:29.000
+router bgp1919, enter, bgp router-id 16.16.16.16,
+
+0:19:29.200,0:19:39.200
+ENTER.
+I think I...
+
+0:19:39.200,0:19:47.240
+eu acho que eu falei um 16 a mais ali né?
+Ou ele as vezes tem esse problema de, o
+
+0:19:47.240,0:19:50.840
+que a gente chama de alucinar e encontrar
+coisa onde não existe.
+
+0:19:53.280,0:19:55.280
+ENTER
+
+0:19:55.280,0:20:13.280
+neighbor 150.150.150.150.1, remote-as 1818
+
+0:20:13.280,0:20:19.280
+Aqui faltou espaço, ENTER
+
+0:20:25.280,0:20:32.780
+E aí como eu tinha falado lá nas regras
+também tem o IPv6 né então se eu falar
+
+0:20:32.780,0:20:50.280
+aqui IPv6, IPv6 192.168.10.acad.café.2.2.3
+
+0:20:55.280,0:21:02.000
+Então pra vocês verem que, como eu falei, o
+IPv6, ele entende que depois disso vai vir um IPv6
+
+0:21:02.040,0:21:06.040
+Então eu falei várias coisas e ele veio
+já nesse formato.
+
+0:21:06.040,0:21:20.100
+Se eu não falar o IPv6, para a gente ter
+uma ideia, 192.168.10.acad, café, dois
+
+0:21:20.100,0:21:22.080
+pontos, dois pontos, três.
+
+0:21:25.280,0:21:38.780
+Então olha o que ele entrega aqui, então
+se eu falar o IPv6 antes, ele vai lá
+
+0:21:38.780,0:21:45.520
+aplicar a regra, a regex do IPv6, e eu
+também implementei aqui um CTRL+:(;),
+
+0:21:45.520,0:21:51.700
+também ele vai lá e ajusta para a gente,
+né, se der CTRL+., ele faz o IPv4,
+
+0:21:51.700,0:21:55.220
+CTRL+:(;), ele faz o IPv6.
+
+0:21:55.280,0:22:04.940
+se eu der Ctrl+-(traço) ele vai trocar os
+dois pontinhos pelo traço e Ctrl+Shift+espaço
+
+0:22:04.940,0:22:07.620
+ele troca por espaço.
+
+0:22:07.620,0:22:15.280
+Então dá para a gente brincar aqui de 
+forma bem rápida para a gente
+
+0:22:15.280,0:22:19.180
+...
+
+0:22:22.280,0:22:27.180
+Estar trocando de IPv6 e IPv4, quando a
+gente esquece.
+
+0:22:27.180,0:22:38.580
+Então, imagina aqui, que se eu tiver isto
+aqui, dá para copiar, colar, venho aqui,
+
+0:22:38.580,0:22:41.280
+dou um Ctrl+:,
+
+0:22:41.280,0:22:48.320
+e aqui mais um dois pontos, aqui está
+feito IPv6 a partir daquele de cima, e
+
+0:22:48.320,0:23:04.600
+aqui dá para a gente brincar um pouco, por 
+exemplo, Activate, Delirio, Alucinação,
+
+0:23:04.600,0:23:09.160
+OK.
+
+0:23:10.720,0:23:16.320
+Activate, agora deu certo.
+
+0:23:16.720,0:23:22.300
+Bom então, dá para a gente escrever um
+script só falando, é claro que você
+
+0:23:22.300,0:23:29.320
+precisa falar com a pausa correta, falar o 
+dash emendado com as palavras,
+
+0:23:29.320,0:23:38.380
+palavras, quantidade de números e pontos,
+as vezes pode dar uma alucinada, mas
+
+0:23:38.380,0:23:46.460
+funciona bem, no geral funciona bem, dá
+para a gente plantar várias regras, dá
+
+0:23:46.460,0:23:52.560
+para escrever as regras aqui de forma bem
+flexível, os atalhos estão aqui, está tudo
+
+0:23:52.560,0:23:57.160
+aqui, muitos atalhos, muitas
+funcionalidades que eu já implementei.
+
+0:23:59.320,0:24:00.680
+E é isso.
+
+0:24:00.680,0:24:08.220
+Finalizando aqui o vídeo que acabou
+ficando um pouco longo, dessa versão 0.5
+
+0:24:08.220,0:24:15.740
+mas acho que deu para explicar aqui pelo
+menos uma introdução ao uso do microfone,
+
+0:24:15.740,0:24:22.540
+ao uso de IA e ficou bem legal, está bem
+completo.
+
+0:24:22.540,0:24:27.540
+Valeu, até a próxima versão 0.6.

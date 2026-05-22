@@ -1,0 +1,266 @@
+0:00:00.480,0:00:07.260
+Alright, here is the second version, version
+0.2, where I'm already doing the mapping
+
+0:00:07.260,0:00:08.400
+of the image.
+
+0:00:08.400,0:00:16.280
+So, if I click here to open the
+software, it will open here, will load
+
+0:00:16.280,0:00:22.140
+the first tab of the device, but I'll
+load that last workspace that we
+
+0:00:22.140,0:00:23.120
+had already made.
+
+0:00:23.120,0:00:32.380
+Here is the last workspace with all the
+devices from this image, which is
+
+0:00:32.380,0:00:42.360
+practically the same as the one there. I
+tweaked the one in EVE a bit, but the
+
+0:00:42.360,0:00:44.120
+equipment is here.
+
+0:00:44.120,0:00:53.520
+So, the secret here now to do the mapping is
+a JSON file with the coordinates of each
+
+0:00:53.520,0:00:55.980
+piece of equipment, width and height.
+
+0:00:55.980,0:01:03.020
+To save time, I dropped this into the AI,
+and asked it to give me this file.
+
+0:01:03.120,0:01:12.900
+It gave me this file here, with all
+the devices and the coordinates of each
+
+0:01:12.900,0:01:28.040
+one. So here is the list of all of them.
+And with this list, what do I do with it?
+
+0:01:28.040,0:01:41.640
+With this list I come here to the Map
+button, or I can also come this way,
+
+0:01:41.640,0:01:42.120
+right?
+
+0:01:42.120,0:01:58.800
+Load Topology Map, so I load that
+file the AI gave me, this topology JSON
+
+0:01:58.800,0:02:10.600
+that I saved here. I'll load this
+file, I'll zoom in here, I'll zoom in on the
+
+0:02:10.600,0:02:17.489
+image, so here you see I'm already
+hovering the mouse over it,
+
+0:02:17.509,0:02:22.709
+and I already see the reference to click on the
+equipment.
+
+0:02:22.709,0:02:26.169
+However, the coordinates the AI gave me
+are a bit off, so I'll need to
+
+0:02:26.169,0:02:33.729
+edit those coordinates.
+So I have this editor button here.
+
+0:02:33.729,0:02:38.509
+When I click here, it allows me to
+edit the coordinates.
+
+0:02:38.509,0:02:42.449
+And so, I'll fix this little guy here.
+
+0:02:42.449,0:02:51.989
+I come here, place it here, set the width
+and height however I want, ok, and I keep doing
+
+0:02:51.989,0:03:01.949
+this for the others, doing the same for
+the others.
+
+0:03:01.949,0:03:08.509
+So, I keep doing this, then I come here and
+save,
+
+0:03:08.509,0:03:18.589
+and after making the file I made
+here, I'll overwrite it, ok, done. I'll
+
+0:03:18.589,0:03:28.009
+go back to the tabs. So there I mapped
+this one, I come here and click on it, on
+
+0:03:28.009,0:03:36.129
+SW4, it went to the SW4 tab. On R8,
+it goes to the R8 tab. Here on S7,
+
+0:03:36.129,0:03:37.849
+it's off, I haven't mapped it yet,
+
+0:03:38.509,0:03:45.800
+it goes to the S7 tab. And here we
+have another catch — there's an S7 lower
+
+0:03:45.800,0:03:53.300
+here, so there's an S7 up here, an SW7 on
+top and an SW7 below, a lower here.
+
+0:03:53.300,0:03:58.800
+When I press here, it does nothing.
+This one goes to SW7.
+
+0:03:58.800,0:04:06.019
+If I look at the list, I have two SW7,
+but why is that?
+
+0:04:06.019,0:04:10.859
+Because here in EVE, when I told it
+to import, it imported exactly the name
+
+0:04:10.859,0:04:12.479
+that's here.
+
+0:04:12.479,0:04:16.479
+However, if I click here on the first one, it
+went to the first SW7.
+
+0:04:16.479,0:04:19.799
+If I click on the second, it goes to the
+second.
+
+0:04:19.799,0:04:20.359
+Why?
+
+0:04:20.359,0:04:26.559
+Because here it goes by IP and port,
+instead of mapping by name.
+
+0:04:27.019,0:04:32.579
+So if I look at this first one,
+it has the final port 85, and on this
+
+0:04:32.579,0:04:35.899
+second one, it has the final port 90.
+
+0:04:36.019,0:04:41.339
+So from EVE to here, it gets mapped
+correctly, but here since it's by name, and
+
+0:04:41.339,0:04:48.799
+in order not to repeat the name, it placed SW7
+here and SW7Lower here.
+
+0:04:49.019,0:04:56.659
+To avoid repeating the name, it placed this
+"lower" here, but it won't do anything.
+
+0:04:56.659,0:05:00.899
+So if I'm here on number 5 and click on
+"lower", it doesn't go to it.
+
+0:05:00.899,0:05:02.039
+What can I do?
+
+0:05:02.039,0:05:03.939
+Change it here to the same name.
+
+0:05:03.939,0:05:07.059
+Instead of "lower" I'll put dash 2
+here.
+
+0:05:07.059,0:05:15.900
+Ok, I'll come here to my editor, I'll come
+here to my editor,
+
+0:05:15.900,0:05:18.659
+came here to this little guy,
+
+0:05:18.659,0:05:30.500
+and I'll rename it dash 2, ok, it's
+now dash 2, done. Now if I click here on
+
+0:05:30.500,0:05:38.000
+this one it's here, if I click on this one it's
+here, it's going correctly to the tabs, it's all
+
+0:05:38.000,0:05:43.500
+correct here if I enable the editor
+
+0:05:43.500,0:05:48.500
+I keep fine-tuning these little guys, right?
+
+0:05:48.500,0:05:56.500
+I already did this in all of them, gave it some
+adjustments. Some things I did in batch,
+
+0:05:58.000,0:06:00.528
+did manually, a nice quick adjustment here,
+
+0:06:00.528,0:06:05.168
+and I'll load this map that I've already
+fixed here, so if I come here to
+
+0:06:05.168,0:06:09.428
+topology, there's this map of this...
+
+0:06:09.428,0:06:11.168
+then you...
+
+0:06:11.168,0:06:21.948
+load the map, and now you see it's
+all correct.
+
+0:06:22.528,0:06:29.928
+If I press here, you see it has
+SW11, I ended up putting SW11 and
+
+0:06:29.928,0:06:31.708
+it has no effect up there.
+
+0:06:31.708,0:06:42.368
+If I come here and change it to SW11, the
+moment I click here it's already there.
+
+0:06:42.528,0:06:50.268
+Click on the router, click here, so here
+I can already get a ready-made mapping,
+
+0:06:50.268,0:07:00.988
+or I ask the AI to speed up one side and then
+I keep fine-tuning here. It's possible to edit the
+
+0:07:00.988,0:07:06.268
+file there with the coordinates by hand, if
+it's faster. When I got it the
+
+0:07:06.268,0:07:11.768
+first time, I noticed there was a
+standard offset, standard size, I
+
+0:07:11.768,0:07:12.508
+went there and did it in
+
+0:07:12.508,0:07:16.408
+a batch, one adjustment, then I came here and
+did just a fine adjustment.
+
+0:07:16.408,0:07:19.248
+Turned out perfect, very good.
+
+0:07:19.248,0:07:27.028
+Here's version 0.2 with the mapping of the
+devices from the image to the tabs.
