@@ -3,3 +3,14 @@ ffmpeg -i Screencast\ From\ 2026-04-16\ 08-34-20.mp4 -i Recording\ 2.mp3 -vf "de
 
 Para guardar:
 ffmpeg -i Screencast\ From\ 2026-04-16\ 08-34-20.mp4 -i Recording\ 2.mp3 -vf "delogo=x=190:y=2:w=110:h=27,fps=10" -af "atrim=start=49,asetpts=PTS-STARTPTS" -c:v libx265 -crf 28 -to 00:07:30 -preset slow -c:a aac -b:a 128k Protected_Pyqttyai_v0.2_10fps_hevc.mp4
+
+Animmated GIF:
+ffmpeg -i Protected_Pyqttyai_v0.5_10fps_hevc.mp4 -i Protected_Pyqttyai_v0.4_10fps_hevc.mp4 -filter_complex \
+"[0:v]trim=start=20:end=21,setpts=PTS-STARTPTS[v0]; \
+ [0:v]trim=start=133:end=134,setpts=PTS-STARTPTS[v1]; \
+ [0:v]trim=start=415:end=419,setpts=PTS-STARTPTS[v2]; \
+ [0:v]trim=start=435:end=445,setpts=PTS-STARTPTS[v3]; \
+ [1:v]trim=start=333:end=340,setpts=PTS-STARTPTS[v4]; \
+ [v0][v1][v2][v3][v4]concat=n=5:v=1:a=0[vconcat]; \
+ [vconcat]fps=12,scale=480:-1:flags=lanczos,split[s0][s1];[s0]palettegen[p];[s1][p]paletteuse" \
+-loop 0 forum_teaser.gif
