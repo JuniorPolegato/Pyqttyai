@@ -1,13 +1,24 @@
 {
   "model": "large-v3-turbo",
-  "device": "cuda",
-  "compute_type": "int8_float16",
-  "cpu_threads": 0,
+  "device": "auto (faster)",
+  "beam_size": 5,
+  "compute_type": "int8",
+  "cpu_threads": 10,
   "num_workers": 1,
-  "download_root": "",
-  "local_files_only": false,
+  "download_root": "/tmp/models",
+  "local_files_only": true,
   "device_index": [
     0
   ],
-  "use_auth_token": ""
+  "use_auth_token": "",
+  "language": "",
+  "initial_prompt": "Network configuration with IPv4 and IPv6 addresses. Example: Router R1 has the IP 192.168.1.1/24. The server uses 10.0.0.5/32. Default route: 0.0.0.0/0. IPv6: 2002:CAFE:ABC::1/64. Use a slash for CIDR. The transcript covers network engineering, configurations for equipment such as Cisco, Mikrotik, Linux, etc., topologies, IPs, devices, or regions named with 1 to 3 letters plus 1 to 4 digits.",
+  "no_speech_text": "",
+  "noise_level": 0.1,
+  "delay_transcription": 1.5,
+  "vad_pretrim": true,
+  "vad_threshold": 0.2,
+  "vad_speech_pad_ms": 500,
+  "vad_min_silence_ms": 500,
+  "vad_keep_temp": false
 }
